@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Sekolah</title>
+</head>
+<body>
+    <h1>Displaying All Sekolah</h1>
+    
+    <h2>TK</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Kabupaten</th>
+                <th>Kecamatan</th>
+                <th>Bentuk Pendidikan</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($sekolah as $s)
+                @if(str_contains($s->bentuk_pendidikan, 'SPS') || str_contains($s->bentuk_pendidikan, 'TK'))
+                    <tr>
+                        <td>{{ $s->nama }}</td>
+                        <td>{{ $s->kabupaten }}</td>
+                        <td>{{ $s->kecamatan }}</td>
+                        <td>{{ $s->bentuk_pendidikan }}</td>
+                    </tr>
+                @endif
+            @endforeach
+        </tbody>
+    </table>
+    
+    <h2>SD</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Kabupaten</th>
+                <th>Kecamatan</th>
+                <th>Model Pendidikan</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($sekolah as $s)
+                @if(str_contains($s->bentuk_pendidikan, 'SD') || str_contains($s->bentuk_pendidikan, 'MI'))
+                    <tr>
+                        <td>{{ $s->nama }}</td>
+                        <td>{{ $s->kabupaten }}</td>
+                        <td>{{ $s->kecamatan }}</td>
+                        <td>{{ $s->bentuk_pendidikan }}</td>
+                    </tr>
+                @endif
+            @endforeach
+        </tbody>
+    </table>
+
+    <h2>SMP</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Kabupaten</th>
+                <th>Kecamatan</th>
+                <th>Model Pendidikan</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($sekolah as $s)
+                @if(str_contains($s->bentuk_pendidikan, 'SMP') || str_contains($s->bentuk_pendidikan, 'MA') || str_contains($s->bentuk_pendidikan, 'MTs')) 
+                    <tr>
+                        <td>{{ $s->nama }}</td>
+                        <td>{{ $s->kabupaten }}</td>
+                        <td>{{ $s->kecamatan }}</td>
+                        <td>{{ $s->bentuk_pendidikan }}</td>
+                    </tr>
+                @endif
+            @endforeach
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+<!-- <a href="{{ route('pesertadidik.create') }}"><button>Create PD</button></a> -->
+<a href="{{ route('pesertadidik.edit', ['peserta_didik_id' => $s->peserta_didik_id]) }}"><button>Edit</button></a>
+                            <a href="{{ route('pesertadidik.show', ['peserta_didik_id' => $s->peserta_didik_id]) }}"><button>View</button></a> -->
+
+
+
+                            <!-- <!-- <td> -->
+                            
+
+                            <form action="{{ route('pesertadidik.destroy', ['peserta_didik_id' => $s->peserta_didik_id]) }}" method="POST"
+                                style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">Delete</button>
+                            </form>

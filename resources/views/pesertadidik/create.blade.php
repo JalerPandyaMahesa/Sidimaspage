@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Peserta Didik</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Create Peserta Didik</h1>
+    <form action="{{ isset($pesertadidik) ? route('pesertadidik.update', $pesertadidik->peserta_didik_id) : route('pesertadidik.store') }}" method="POST">
+        @csrf
+        @if(isset($pesertadidik))
+            @method('PUT')
+        @endif
+
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" value="{{ isset($pesertadidik) ? $pesertadidik->nama : '' }}" required><br>
+
+        <label for="sekolah_id">Sekolah:</label>
+        <select id="sekolah_id" name="sekolah_id" required>
+            <option value="">Select a school</option>
+            @foreach($sekolah as $s)
+                <option value="{{ $s->sekolah_id }}" {{ isset($pesertadidik) && $pesertadidik->sekolah_id == $s->sekolah_id ? 'selected' : '' }}>
+                    {{ $s->nama }}
+                </option>
+            @endforeach
+        </select><br>
+
+        <button type="submit">{{ isset($pesertadidik) ? 'Update' : 'Create' }}</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#sekolah_id').select2({
+                placeholder: 'Select a school',
+                allowClear: true
+            });
+        });
+    </script>
+</body>
+</html>
