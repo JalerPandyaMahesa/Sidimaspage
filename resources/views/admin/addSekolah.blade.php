@@ -110,7 +110,7 @@
                         <li class="menu-title">Navigation</li>
 
                         <li>
-                            <a href="dashboard">
+                            <a href="{{route("admin.dashboard")}}">
                                 <i class="fe-airplay"></i>
                                 <span> Dashboard </span>
                             </a>
@@ -119,64 +119,64 @@
 
                         <li>
                             <a href="javascript: void(0);">
-                            <img src="{{ asset('img/Asset/p&d.png') }}" alt="" height="14">
-                                <span style="padding: 3px;" > Paud & Dikmas </span>
+                                <img src="{{ asset('img/Asset/p&d.png') }}" alt="" height="14">
+                                <span style="padding: 3px;"> Paud & Dikmas </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="addSekolah">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="viewPaud">Manage</a>
+                                    <a href="{{route("admin.viewPaud")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             <a href="javascript: void(0);">
-                            <img src="{{ asset('img/Asset/sd.png') }}" alt="" height="14">
-                                <span style="padding: 3px;">  SD </span>
+                                <img src="{{ asset('img/Asset/sd.png') }}" alt="" height="14">
+                                <span style="padding: 3px;"> SD </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="addSekolah">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="viewSd">Manage</a>
+                                    <a href="{{route("admin.viewSd")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             <a href="javascript: void(0);">
-                            <img src="{{ asset('img/Asset/smp.png') }}" alt="" height="12">
-                                <span style="padding: 3px;">  SMP </span>
+                                <img src="{{ asset('img/Asset/smp.png') }}" alt="" height="12">
+                                <span style="padding: 3px;"> SMP </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="addSekolah">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="viewSmp">Manage</a>
+                                    <a href="{{route("admin.viewSmp")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             <a href="javascript: void(0);">
-                            <img src="{{ asset('img/Asset/pgtk.png') }}" alt="" height="22">
-                                <span style="padding: 3px;">   PGTK </span>
+                                <img src="{{ asset('img/Asset/pgtk.png') }}" alt="" height="22">
+                                <span style="padding: 3px;"> PGTK </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="#">Add</a>
+                                    <a href="#">Tambah</a>
                                 </li>
                                 <li>
-                                    <a href="#">Manage</a>
+                                    <a href="#">Lihat</a>
                                 </li>
                             </ul>
                         </li>

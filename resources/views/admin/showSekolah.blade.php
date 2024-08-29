@@ -110,7 +110,7 @@
                         <li class="menu-title">Navigation</li>
 
                         <li>
-                            <a href="dashboard">
+                            <a href="{{route("admin.dashboard")}}">
                                 <i class="fe-airplay"></i>
                                 <span> Dashboard </span>
                             </a>
@@ -125,10 +125,10 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="addSekolah">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="viewPaud">Manage</a>
+                                    <a href="{{route("admin.viewPaud")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -141,10 +141,10 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="addSekolah">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="viewSd">Manage</a>
+                                    <a href="{{route("admin.viewSd")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -157,10 +157,10 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="addSekolah">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="viewSmp">Manage</a>
+                                    <a href="{{route("admin.viewSmp")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -173,10 +173,10 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="#">Add</a>
+                                    <a href="#">Tambah</a>
                                 </li>
                                 <li>
-                                    <a href="#">Manage</a>
+                                    <a href="#">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -222,11 +222,10 @@
                         <div class="text-right" style="padding-bottom: 10px">
                             <a href="{{ route('admin.editSekolah', ['sekolah_id' => $sekolah->sekolah_id]) }}"
                                 class="badge badge-warning"><i class="fas fa-clipboard-check "></i> Update</a>
-                            <button class="badge badge-danger" style="border:none" >
+                            <button class="badge badge-danger" style="border:none">
                                 <form
                                     action="{{ route('admin.destroySekolah', ['sekolah_id' => $sekolah->sekolah_id]) }}"
-                                    method="POST" style="display:inline;"><i
-                                        class="fas fa-trash-alt "></i> Delete
+                                    method="POST" style="display:inline;"><i class="fas fa-trash-alt "></i> Delete
                                     @csrf
                                     @method('DELETE')
                                 </form>

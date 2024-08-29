@@ -125,10 +125,10 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{route("admin.addSekolah")}}">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="{{route("admin.viewPaud")}}">Manage</a>
+                                    <a href="{{route("admin.viewPaud")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -141,10 +141,10 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{route("admin.addSekolah")}}">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="{{route("admin.viewSd")}}">Manage</a>
+                                    <a href="{{route("admin.viewSd")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -157,10 +157,10 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{route("admin.addSekolah")}}">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="{{route("admin.viewSmp")}}">Manage</a>
+                                    <a href="{{route("admin.viewSmp")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -173,10 +173,10 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="#">Add</a>
+                                    <a href="#">Tambah</a>
                                 </li>
                                 <li>
-                                    <a href="#">Manage</a>
+                                    <a href="#">Lihat</a>
                                 </li>
                             </ul>
                         </li>

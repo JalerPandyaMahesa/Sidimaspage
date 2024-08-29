@@ -110,7 +110,7 @@
                         <li class="menu-title">Navigation</li>
 
                         <li>
-                            <a href="{{ route('admin.dashboard') }}">
+                            <a href="{{route("admin.dashboard")}}">
                                 <i class="fe-airplay"></i>
                                 <span> Dashboard </span>
                             </a>
@@ -119,64 +119,64 @@
 
                         <li>
                             <a href="javascript: void(0);">
-                            <img src="{{ asset('img/Asset/p&d.png') }}" alt="" height="14">
-                                <span style="padding: 3px;" > Paud & Dikmas </span>
+                                <img src="{{ asset('img/Asset/p&d.png') }}" alt="" height="14">
+                                <span style="padding: 3px;"> Paud & Dikmas </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{ route('admin.addSekolah') }}">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.viewPaud') }}">Manage</a>
+                                    <a href="{{route("admin.viewPaud")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             <a href="javascript: void(0);">
-                            <img src="{{ asset('img/Asset/sd.png') }}" alt="" height="14">
-                                <span style="padding: 3px;">  SD </span>
+                                <img src="{{ asset('img/Asset/sd.png') }}" alt="" height="14">
+                                <span style="padding: 3px;"> SD </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{ route('admin.addSekolah') }}">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="viewSd">Manage</a>
+                                    <a href="{{route("admin.viewSd")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             <a href="javascript: void(0);">
-                            <img src="{{ asset('img/Asset/smp.png') }}" alt="" height="12">
-                                <span style="padding: 3px;">  SMP </span>
+                                <img src="{{ asset('img/Asset/smp.png') }}" alt="" height="12">
+                                <span style="padding: 3px;"> SMP </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{ route('admin.addSekolah') }}">Add</a>
+                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="viewSmp">Manage</a>
+                                    <a href="{{route("admin.viewSmp")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li>
                             <a href="javascript: void(0);">
-                            <img src="{{ asset('img/Asset/pgtk.png') }}" alt="" height="22">
-                                <span style="padding: 3px;">   PGTK </span>
+                                <img src="{{ asset('img/Asset/pgtk.png') }}" alt="" height="22">
+                                <span style="padding: 3px;"> PGTK </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="#">Add</a>
+                                    <a href="#">Tambah</a>
                                 </li>
                                 <li>
-                                    <a href="#">Manage</a>
+                                    <a href="#">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -223,11 +223,12 @@
                                             <i class="font-22 avatar-title text-primary"></i>
                                             IMAGE SAJA
                                         </div> -->
-                                        <img src="{{ asset('img/Asset/p&d.png') }}" style="width:50%" >
+                                        <img src="{{ asset('img/Asset/p&d.png') }}" style="width:50%">
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
-                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">{{ $totalTk ?? 0 }}</span></h3>
+                                            <h3 class="text-dark mt-1"><span
+                                                    data-plugin="counterup">{{ $totalTk }}</span></h3>
                                             <p class="text-muted mb-1 text-truncate">Paud & Dikmas</p>
                                         </div>
                                     </div>
@@ -246,11 +247,12 @@
                                             <i class="font-22 avatar-title text-primary"></i>
                                             IMAGE SAJA
                                         </div> -->
-                                        <img src="{{ asset('img/Asset/sd.png') }}" style="width:50%" >
+                                        <img src="{{ asset('img/Asset/sd.png') }}" style="width:50%">
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
-                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">{{ $totalSd ?? 0 }}</span></h3>
+                                            <h3 class="text-dark mt-1"><span
+                                                    data-plugin="counterup">{{ $totalSd }}</span></h3>
                                             <p class="text-muted mb-1 text-truncate">SD</p>
                                         </div>
                                     </div>
@@ -260,7 +262,7 @@
                         <!--End -->
 
                         <!--Start Employees-->
-                         <!-- end col-->
+                        <!-- end col-->
                         <!--End Employees-->
 
                     </div>
@@ -276,7 +278,7 @@
                                             <i class="font-22 avatar-title text-primary"></i>
                                             IMAGE SAJA
                                         </div> -->
-                                        <img src="{{ asset('img/Asset/pgtk.png') }}" style="width:30%" >
+                                        <img src="{{ asset('img/Asset/pgtk.png') }}" style="width:30%">
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
@@ -296,11 +298,12 @@
                                             <i class="font-22 avatar-title text-primary"></i>
                                             IMAGE SAJA
                                         </div> -->
-                                        <img src="{{ asset('img/Asset/smp.png') }}" style="width:50%" >
+                                        <img src="{{ asset('img/Asset/smp.png') }}" style="width:50%">
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
-                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">{{ $totalSmp ?? 0 }}</span></h3>
+                                            <h3 class="text-dark mt-1"><span
+                                                    data-plugin="counterup">{{ $totalSmp }}</span></h3>
                                             <p class="text-muted mb-1 text-truncate">SMP</p>
                                         </div>
                                     </div>
@@ -330,8 +333,8 @@
                                         <tbody>
                                             <tr>
                                                 <td style="width: 36px;">
-                                                    <img src="#" alt="img"
-                                                        title="contact-img" class="rounded-circle avatar-sm" />
+                                                    <img src="#" alt="img" title="contact-img"
+                                                        class="rounded-circle avatar-sm" />
                                                 </td>
                                                 <td>
                                                 </td>
@@ -342,8 +345,8 @@
                                                 <td>
                                                     D </td>
                                                 <td>
-                                                    <a href="#"
-                                                        class="btn btn-xs btn-primary"><i class="mdi mdi-eye"></i>
+                                                    <a href="#" class="btn btn-xs btn-primary"><i
+                                                            class="mdi mdi-eye"></i>
                                                         View</a>
                                                 </td>
                                             </tr>
