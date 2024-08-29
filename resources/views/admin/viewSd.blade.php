@@ -227,15 +227,6 @@
                                 <div class="mb-2">
                                     <div class="row">
                                         <div class="col-12 text-sm-center form-inline">
-                                            <!-- <div class="form-group mr-2" style="display:none">
-                                                <select id="demo-foo-filter-status"
-                                                    class="custom-select custom-select-sm">
-                                                    <option value="">Show all</option>
-                                                    <option value="Discharged">Discharged</option>
-                                                    <option value="OutPatients">OutPatients</option>
-                                                    <option value="InPatients">InPatients</option>
-                                                </select>
-                                            </div> -->
                                             <div class="form-group">
                                                 <select id="filter-kecamatan" class="custom-select custom-select-sm">
                                                     <option value="">Pilih Kecamatan</option>
@@ -301,6 +292,18 @@
                                                     <td>#</td>
                                                     <td><a href="{{ route('admin.showSekolah', ['sekolah_id' => $s->sekolah_id]) }}"
                                                             class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
+                                                        <a href="{{ route('admin.editSekolah', ['sekolah_id' => $s->sekolah_id]) }}"
+                                                            class="badge badge-warning"><i
+                                                                class="fas fa-clipboard-check "></i> Update</a>
+                                                        <button class="badge badge-danger" style="border:none">
+                                                            <form
+                                                                action="{{ route('admin.destroySekolah', ['sekolah_id' => $s->sekolah_id]) }}"
+                                                                method="POST" style="display:inline;"><i
+                                                                    class="fas fa-trash-alt "></i> Delete
+                                                                @csrf
+                                                                @method('DELETE')
+                                                            </form>
+                                                        </button>
                                                     </td>
                                                 </tr>
                                         @endforeach
@@ -376,15 +379,17 @@
 
             filterKecamatan.addEventListener('change', function () {
                 const selectedKecamatan = filterKecamatan.value.toLowerCase();
+                let rowIndex = 1; // Start row index from 1
 
                 tableRows.forEach(row => {
                     const kecamatanCell = row.querySelector('td:nth-child(4)');
                     const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
 
                     if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
-                        row.style.display = '';
+                        row.style.display = '';  // Show the row
+                        row.querySelector('td').textContent = rowIndex++;  // Update the row number
                     } else {
-                        row.style.display = 'none';
+                        row.style.display = 'none';  // Hide the row
                     }
                 });
             });
