@@ -105,3 +105,56 @@
     max-width: 1170px;
   }
 }
+
+/* Header tetap di atas saat window dikecilkan */
+@media (max-width: 768px) {
+  .header_section {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  }
+
+}
+
+/* Mengembalikan fungsi scroll normal saat window dalam keadaan normal */
+@media (min-width: 769px) {
+  .header_section {
+    position: static;
+    box-shadow: none;   
+  }
+
+  .main_content {
+    padding-top: 0;
+  }
+}
+
+/* Default behavior (Normal window size) */
+.header_section {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Pada ukuran layar kecil (<= 768px) */
+@media (max-width: 768px) {
+  .header_section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: #fff; /* Ganti dengan warna yang diinginkan */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Memberikan bayangan */
+  }
+
+}
+
+/* Pada ukuran layar > 768px (kembali ke normal) */
+@media (min-width: 769px) {
+  .header_section {
+      position: relative;
+  }
+}
