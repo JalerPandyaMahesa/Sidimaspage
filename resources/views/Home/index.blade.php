@@ -254,9 +254,9 @@
                 <!-- end Jumlah Sekolah -->
 
                 <!-- Grafik Section -->
-                <section class="grafik-section">
+                <section class="grafik-section layout_padding style="padding: 100px 0"">
                     <div class="grafik-container">
-                        
+
                     </div>
                 </section>
                 <!-- End Grafik Section -->
