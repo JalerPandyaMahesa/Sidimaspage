@@ -10,6 +10,8 @@
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="MartDevelopers" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link href=" {{ asset('assets/css/main.css') }} " rel="stylesheet">
     <!-- App favicon -->
     <link rel="shortcut icon" href=" {{ asset('img/Asset/favicon.ico') }} ">
 
@@ -274,7 +276,7 @@
                                 </div>
 
                                 <div class="table-responsive">
-                                    <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
+                                    <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0 table-sortable"
                                         data-page-size="7">
                                         <thead>
                                             <tr>
@@ -368,6 +370,8 @@
 
     <!-- App js-->
     <script src=" {{ asset('assets/js/app.min.js') }} "></script>
+
+    <script src=" {{ asset('assets/js/tablesort.js') }} "></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
