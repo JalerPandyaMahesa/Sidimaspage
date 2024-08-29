@@ -87,8 +87,7 @@
                                     <a class="nav-link" href="why.html">Tentang</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> <i class="fa fa-user"
-                                            aria-hidden="true"></i>
+                                    <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i>
                                         Login</a>
                                 </li>
                             </ul>
@@ -257,7 +256,7 @@
                 <!-- Grafik Section -->
                 <section class="grafik-section">
                     <div class="grafik-container">
-
+                        
                     </div>
                 </section>
                 <!-- End Grafik Section -->
@@ -286,7 +285,7 @@
         <!-- End Master BG -->
 
 
-        
+
         <!-- jQery -->
         <script type="text/javascript" src="{{ asset('asset/3/js/jquery-3.4.1.min.js') }}"></script>
         <!-- popper js -->
