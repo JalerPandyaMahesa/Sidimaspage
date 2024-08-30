@@ -366,6 +366,22 @@
                 </div> <!-- container -->
 
             </div> <!-- content -->
+            <h2>Peserta Didik</h2>
+            <table>
+    <tr>
+        <th>Nama</th>
+        <th>Kelas</th>
+        <!-- Add other columns as needed -->
+    </tr>
+    @foreach($sekolah->pesertaDidik as $peserta)
+    <tr>
+        <td>{{ $peserta->nama }}</td>
+        <td>{{ $peserta->kelas }}</td>
+        <!-- Add other data fields as needed -->
+    </tr>
+    @endforeach
+</table>
+<a href="{{ route('pesertadidik.create', $sekolah->sekolah_id) }}">Add New Peserta Didik</a>
 
             <!-- Footer Start -->
             <footer class="footer">

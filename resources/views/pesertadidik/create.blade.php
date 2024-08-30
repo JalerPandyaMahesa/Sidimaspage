@@ -17,15 +17,7 @@
         <label for="nama">Nama:</label>
         <input type="text" id="nama" name="nama" value="{{ isset($pesertadidik) ? $pesertadidik->nama : '' }}" required><br>
 
-        <label for="sekolah_id">Sekolah:</label>
-        <select id="sekolah_id" name="sekolah_id" required>
-            <option value="">Select a school</option>
-            @foreach($sekolah as $s)
-                <option value="{{ $s->sekolah_id }}" {{ isset($pesertadidik) && $pesertadidik->sekolah_id == $s->sekolah_id ? 'selected' : '' }}>
-                    {{ $s->nama }}
-                </option>
-            @endforeach
-        </select><br>
+        <input type="hidden" name="sekolah_id" value="{{ $sekolah_id }}">
 
         <button type="submit">{{ isset($pesertadidik) ? 'Update' : 'Create' }}</button>
     </form>

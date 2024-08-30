@@ -47,11 +47,12 @@ class PesertadidikController extends Controller
         return view('sekolah.filter', ['sekolah' => $sekolah, 'filter' => 'SMP']);
     }
 
-    public function create()
+    public function create($sekolah_id = null)
     {
         $sekolah = Sekolah::all(); // Fetch all sekolah records
-        return view('pesertadidik.create', compact('sekolah'));
+        return view('pesertadidik.create', compact('sekolah', 'sekolah_id'));
     }
+    
 
     public function store(Request $request)
     {
@@ -62,7 +63,8 @@ class PesertadidikController extends Controller
 
         Pesertadidik::create($validatedData);
 
-        return redirect()->route('pesertadidik.index')->with('success', 'Pesertadidik created successfully.');
+          return redirect()->route('admin.showSekolah', ['sekolah_id' => $request->input('sekolah_id')])
+                     ->with('success', 'Peserta didik created successfully.');
     }
 
     public function edit($peserta_didik_id)

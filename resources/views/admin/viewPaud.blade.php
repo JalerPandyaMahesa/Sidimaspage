@@ -274,6 +274,24 @@
                                     <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0 "
                                         data-page-size="7">
                                         <thead>
+<<<<<<< HEAD
+    <tr>
+        <th>#</th>
+        <th data-toggle="true">NPSN</th>
+        <th data-hide="phone">Nama <button onclick="sortTable(2, 'text')">Sort</button></th>
+        <th data-hide="phone">Kecamatan</th>
+        <th data-hide="phone">Bentuk Pendidikan</th>
+        <th data-hide="phone">Status Sekolah</th>
+        <th data-hide="phone">Peserta Didik <button onclick="sortTable(6, 'number')">Sort</button></th>
+        <th data-hide="phone">Action</th>
+    </tr>
+</thead>
+
+
+                                        @foreach ($sekolah as $index => $s)
+                                            <tbody>
+                                                <tr>
+=======
                                             <tr>
                                                 <th>#</th>
                                                 <th data-toggle="true">NPSN</th>
@@ -288,6 +306,7 @@
                                         <tbody>
                                             @foreach ($sekolah as $index => $s)
                                                 <tr data-index="{{ $index }}">
+>>>>>>> 4f40c863ea2fb995c843514f655076acf3a87e4f
                                                     <td>{{ $index + 1 }}</td>
                                                     <td>{{ $s->npsn }}</td>
                                                     <td>{{ $s->nama }}</td>
@@ -399,7 +418,38 @@
                 });
             });
         });
-    </script>
+        function sortTable(columnIndex, type) {
+    const table = document.getElementById("demo-foo-filtering");
+    const rows = Array.from(table.rows).slice(1); // Get rows except header
+    let direction = table.getAttribute("data-sort-direction") === "asc" ? "desc" : "asc";
+    
+    const compare = (a, b) => {
+        let x = a.cells[columnIndex].innerText;
+        let y = b.cells[columnIndex].innerText;
+
+        if (type === 'number') {
+            x = parseFloat(x);
+            y = parseFloat(y);
+        } else {
+            x = x.toLowerCase();
+            y = y.toLowerCase();
+        }
+
+        if (direction === "asc") {
+            return x > y ? 1 : -1;
+        } else {
+            return x < y ? 1 : -1;
+        }
+    };
+
+    rows.sort(compare);
+
+    // Rebuild the table with sorted rows
+    rows.forEach(row => table.appendChild(row));
+    
+    // Update the sort direction attribute
+    table.setAttribute("data-sort-direction", direction);
+}
 
 
 </body>
