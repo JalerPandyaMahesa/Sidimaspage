@@ -272,6 +272,16 @@
                 </section>
                 <!-- End Grafik Section -->
 
+                <!-- Tentang Section -->
+                `<section class="tentang-section layout padding">
+                    <div class="tentang-container"> 
+                        <div class="row">
+
+                        </div>
+                    </div>
+                </section>   
+                <!-- End Tentang Section -->
+
 
 
                 <!-- Footer -->
