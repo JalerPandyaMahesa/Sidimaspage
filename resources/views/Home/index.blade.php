@@ -338,8 +338,6 @@
         </div>
         <!-- End Master BG -->
 
-
-
         <!-- jQery -->
         <script type="text/javascript" src="{{ asset('asset/3/js/jquery-3.4.1.min.js') }}"></script>
         <!-- popper js -->
