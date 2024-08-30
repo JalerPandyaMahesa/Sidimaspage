@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap");
 body {
-  //background-image: url('img/bg.png');
-  //background-repeat: no-repeat;
-  //background-size: cover;
-  //background-position: center;
+  background-image: url('img/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   font-family: "Open Sans", sans-serif;
   color: #0c0c0c;
-  //background-color: #ffffff;
+  background-color: #ffffff;
   overflow-x: hidden;
 }
 
@@ -150,6 +150,7 @@ a:focus {
 
 .header_section {
   padding: 15px 0;
+  background-color: #C70000;  
 }
 
 .header_section .container-fluid {
@@ -280,7 +281,7 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  padding: 45px 0 145px 0;
+  padding: 0px 0 145px 0;
 }
 
 .slider_section .row {
@@ -994,14 +995,15 @@ a:focus {
 /* footer section*/
 .footer_section {
   position: relative;
-  background-color: #ffffff;
+  background-color: #C70000;
   text-align: center;
 }
 
 .footer_section p {
-  color: #00204a;
-  padding: 25px 0;
+  color: #ffffff;
+  padding: 5px 0;
   margin: 0;
+  font-size: 14px;
 }
 
 .footer_section p a {
@@ -1043,16 +1045,17 @@ a:focus {
 }
 
 
-.service_section .row {
+/* .service_section .row {
   display: grid;
   grid-template-columns: 1fr repeat(3, 1fr) 1fr;  
   justify-content: center; 
   align-items: center; 
   gap: 30px; 
-}
+} */
 
 .jenjang-pendidikan {
-  //flex-basis: 300px; 
+  /* flex-basis: 300px;  */
+  padding-left: 60px;
 }
 
 .jenjang-pendidikan .jenjang-box { 
@@ -1062,7 +1065,7 @@ a:focus {
   justify-content: center; 
   text-align: center;
   background-color: #fff;
-  padding: 30px; 
+  padding: 0px; 
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -1123,5 +1126,102 @@ a:focus {
   width: 80%; 
   height: auto;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 50px;
+  justify-items: center;
+  align-items: center;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.school-box { /* Ganti dari .box ke .school-box */
+  background: linear-gradient(to right, #E84341, #7D1918);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
+  width: 500px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold; 
+  color: white; 
+}
+
+p {
+  margin: 0;
+  font-size: 24px;
+}
+
+
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: 1fr; 
+  }
+
+  .school-box {
+      width: 80%; 
+  }
+}
+
+
+@media (max-width: 480px) {
+  .school-box {
+      width: 100%;
+  }
+
+  h3, p {
+      font-size: 18px; 
+  }
+}
+
+.footer_section span {
+  font-weight : bold;
+  color: white;
+}
+
+.footer_section .text-atas {
+  padding-top : 15px;
+}
+
+.footer_section .text-bawah {
+  padding-bottom : 15px;
+}
+
+.grafik-section {
+  position : relative;
+  background-color: #E23739;
+}
+
+.isi-text-grafik{
+  position : relative;
+  background-color: #BB2324;
+  padding-top: 69px;
+  padding-bottom: 69px;
+  margin-left: 72px;
+}
+
+.grafik-isi {
+  position : relative;
+}
+
 
 /*# sourceMappingURL=style.css.map */
