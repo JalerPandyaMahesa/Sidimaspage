@@ -219,44 +219,55 @@
                                 </div>
                             </div>
                             {{-- <div class="row">
-                <div class="col-md-6">
-                    <div class="grid-item">
-                        <div class="school-box">
-                            <h3>PAUD & DIKMAS</h3>
-                            <p>999</p>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="school-box">
-                            <h3>Sekolah Menengah</h3>
-                            <p>999</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="grid-item">
-                        <div class="school-box">
-                            <h3>Sekolah Dasar</h3>
-                            <p>999</p>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="school-box">
-                            <h3>Jumlah Guru & PGTK</h3>
-                            <p>999</p>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+                                <div class="col-md-6">
+                                    <div class="grid-item">
+                                        <div class="school-box">
+                                            <h3>PAUD & DIKMAS</h3>
+                                            <p>999</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item">
+                                        <div class="school-box">
+                                            <h3>Sekolah Menengah</h3>
+                                            <p>999</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="grid-item">
+                                        <div class="school-box">
+                                            <h3>Sekolah Dasar</h3>
+                                            <p>999</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item">
+                                        <div class="school-box">
+                                            <h3>Jumlah Guru & PGTK</h3>
+                                            <p>999</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
                         </div>
                     </div>
                 </section>
                 <!-- end Jumlah Sekolah -->
 
                 <!-- Grafik Section -->
-                <section class="grafik-section layout_padding style="padding: 100px 0"">
+                <section class="grafik-section layout_padding ">
                     <div class="grafik-container">
-
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="isi-text-grafik">
+                                    <p>fdgchvbknm</p>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="" >
+                                    <p>etrxctvhkn;</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <!-- End Grafik Section -->
@@ -291,14 +302,15 @@
         <!-- popper js -->
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
+            </script>
         <!-- bootstrap js -->
         <script type="text/javascript" src="{{ asset('asset/3/js/bootstrap.js') }}"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
         <!-- owl slider -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-        </script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+            </script>
         <!-- custom js -->
         <script type="text/javascript" src="{{ asset('asset/3/js/custom.js') }}"></script>
         {{-- <!-- scroll -->
@@ -310,7 +322,7 @@
                     header.querySelectorAll('.navbar-nav .nav-link, .navbar-brand span').forEach(item => {
                         item.style.color = 'black';
                     });
-                    header.querySelector('.navbar-brand img').src = '{{ asset('img/Logo-hitam.png   ') }}';
+                    header.querySelector('.navbar-brand img').src = '{{ asset('img / Logo - hitam.png   ') }}';
                     header.classList.add('scrolled'); // Tambahkan kelas 'scrolled'
                     if (navbarToggler && window.getComputedStyle(navbarToggler).display !== 'none') {
                         navbarToggler.querySelectorAll('span').forEach(span => {
@@ -322,7 +334,7 @@
                     header.querySelectorAll('.navbar-nav .nav-link, .navbar-brand span').forEach(item => {
                         item.style.color = 'white';
                     });
-                    header.querySelector('.navbar-brand img').src = '{{ asset('img/Logo_Sidimas2.png    ') }}';
+                    header.querySelector('.navbar-brand img').src = '{{ asset('img / Logo_Sidimas2.png    ') }}';
                     header.classList.remove('scrolled');
                     if (navbarToggler && window.getComputedStyle(navbarToggler).display !== 'none') {
                         navbarToggler.querySelectorAll('span').forEach(span => {
