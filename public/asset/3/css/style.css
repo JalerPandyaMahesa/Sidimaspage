@@ -1217,10 +1217,27 @@ p {
   padding-top: 69px;
   padding-bottom: 69px;
   margin-left: 72px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.isi-text-kepala{
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 28px;
+}
+
+.isi-text-badan{
+  color: #fff;
+  padding-top: 5px;
+  margin-left: 28px;
 }
 
 .grafik-isi {
   position : relative;
+  max-width: 858px;
+  max-height: 480px;
+  text-align: center;
 }
 
 
