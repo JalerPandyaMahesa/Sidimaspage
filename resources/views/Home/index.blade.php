@@ -263,7 +263,7 @@
                                 </div>
                             </div>
                             <div class="col-8">
-                                <div class="" >
+                                <div class="">
                                     <p>etrxctvhkn;</p>
                                 </div>
                             </div>
@@ -274,12 +274,32 @@
 
                 <!-- Tentang Section -->
                 `<section class="tentang-section layout padding">
-                    <div class="tentang-container"> 
+                    <div class="tentang-container">
                         <div class="row">
+                            <div class="col-6">
+                                <div class="isi-tentang">
+                                    <div class="">
+                                        <img src="{{ asset('img/logo_sidimas.png') }}" alt="">
+                                    </div>
+                                    <div>
+                                        tulisan
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="isi-tentang">
+                                    <div class="">
+                                        gamabr
+                                    </div>
+                                    <div>
+                                        tulisan
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
-                </section>   
+                </section>
                 <!-- End Tentang Section -->
 
 
@@ -312,15 +332,14 @@
         <!-- popper js -->
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-            </script>
+        </script>
         <!-- bootstrap js -->
         <script type="text/javascript" src="{{ asset('asset/3/js/bootstrap.js') }}"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
         <!-- owl slider -->
-        <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-            </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+        </script>
         <!-- custom js -->
         <script type="text/javascript" src="{{ asset('asset/3/js/custom.js') }}"></script>
         {{-- <!-- scroll -->

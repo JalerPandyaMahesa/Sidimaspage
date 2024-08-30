@@ -1224,10 +1224,13 @@ p {
 }
 
 .tentang-section {
-  background-color: #E23739;
+  background-color: #ffffff;
   position: relative;
 }
 
+.isi-tentang {
+  text-align : center;
+}
 
 
 /*# sourceMappingURL=style.css.map */

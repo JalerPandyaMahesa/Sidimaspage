@@ -15,6 +15,10 @@ Route::get('/home', function () {
     return view('Home.index');
 })->name('home.index');
 
+Route::get('/home/paud', function(){
+    return view('Home.paud');
+});
+
 
 // Route::get('/paud', function () {
 //     return view('paud.index');
