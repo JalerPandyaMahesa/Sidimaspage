@@ -38,6 +38,6 @@ class Sekolah extends Model
 
     public function pesertadidik()
     {
-        return $this->hasMany(pesertadidik::class);
+        return $this->hasMany(pesertadidik::class, 'sekolah_id');
     }
 }

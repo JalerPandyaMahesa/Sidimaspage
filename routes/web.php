@@ -48,13 +48,18 @@ Route::get('/', function () {
 // Route::get('/pesertadidik/sd', [pesertadidikController::class, 'sd'])->name('pesertadidik.sd');
 // Route::get('/pesertadidik/smp', [pesertadidikController::class, 'smp'])->name('pesertadidik.smp');
 
-// Route::get('/pesertadidik/create', [pesertadidikController::class, 'create'])->name('pesertadidik.create');
-// Route::post('/pesertadidik', [pesertadidikController::class, 'store'])->name('pesertadidik.store');
+// Remove this route, as it's less specific and can cause conflicts
+// Route::get('/pesertadidik/create', [PesertaDidikController::class, 'create'])->name('pesertadidik.create');
 
-// Route::get('/pesertadidik/{peserta_didik_id}/edit', [pesertadidikController::class, 'edit'])->name('pesertadidik.edit');
-// Route::put('/pesertadidik/{peserta_didik_id}', [pesertadidikController::class, 'update'])->name('pesertadidik.update');
-// Route::get('/pesertadidik/{peserta_didik_id}', [pesertadidikController::class, 'show'])->name('pesertadidik.show');
-// Route::delete('/pesertadidik/{peserta_didik_id}', [pesertadidikController::class, 'destroy'])->name('pesertadidik.destroy');
+// Keep this route, which expects a sekolah_id
+Route::get('/pesertadidik/create/{sekolah_id}', [PesertaDidikController::class, 'create'])->name('pesertadidik.create');
+
+Route::post('/pesertadidik', [PesertaDidikController::class, 'store'])->name('pesertadidik.store');
+
+Route::get('/pesertadidik/{peserta_didik_id}/edit', [PesertaDidikController::class, 'edit'])->name('pesertadidik.edit');
+Route::put('/pesertadidik/{peserta_didik_id}', [PesertaDidikController::class, 'update'])->name('pesertadidik.update');
+Route::get('/pesertadidik/{peserta_didik_id}', [PesertaDidikController::class, 'show'])->name('pesertadidik.show');
+Route::delete('/pesertadidik/{peserta_didik_id}', [PesertaDidikController::class, 'destroy'])->name('pesertadidik.destroy');
 
 // Login
 // Route::get('login', [UserController::class, 'index'])->middleware('guest')->name('login');
