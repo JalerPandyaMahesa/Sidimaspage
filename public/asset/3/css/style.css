@@ -1231,6 +1231,9 @@ p {
   color: #fff;
   padding-top: 5px;
   margin-left: 28px;
+  margin-right: 46px;
+  font-size: 18px;
+  text-align: justify;
 }
 
 .grafik-isi {
