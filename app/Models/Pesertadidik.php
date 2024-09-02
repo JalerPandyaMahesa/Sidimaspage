@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pesertadidik extends Model
 {
@@ -22,6 +23,7 @@ class Pesertadidik extends Model
 
     // Disable timestamps if you don't have created_at and updated_at columns
     public $timestamps = false;
+    
 
     protected static function boot()
     {
@@ -37,6 +39,6 @@ class Pesertadidik extends Model
     // Define the relationship to Sekolah
     public function sekolah()
     {
-        return $this->belongsTo(Sekolah::class, 'sekolah_id', 'sekolah_id');
+        return $this->belongsTo(Sekolah::class, 'sekolah_id');
     }
 }
