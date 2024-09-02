@@ -38,7 +38,9 @@
             background-image: url({{ asset('img/bg.png') }});
             background-size: cover;
             background-repeat: no-repeat;
-            z-index: -2;
+            background-position: center;
+            //height: 100vh;
+            z-index: 0;
         }
     </style>
 </head>
@@ -46,7 +48,6 @@
 <body>
     <!-- Master BG -->
     <div class="master-bg">
-
 
         <!-- header section strats -->
         <header class="header_section">
