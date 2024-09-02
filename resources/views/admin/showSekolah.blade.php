@@ -366,35 +366,50 @@
                 </div> <!-- container -->
 
             </div> <!-- content -->
+
             <h2>Peserta Didik</h2>
-            <table>
-    <tr>
-        <th>Nama</th>
-        <th>Kelas</th>
-        <!-- Add other columns as needed -->
-    </tr>
-    @foreach($sekolah->pesertaDidik as $peserta)
-    <tr>
-        <td>{{ $peserta->nama }}</td>
-        <td>{{ $peserta->kelas }}</td>
-        <!-- Add other data fields as needed -->
-    </tr>
-    @endforeach
-</table>
-<a href="{{ route('pesertadidik.create', $sekolah->sekolah_id) }}">Add New Peserta Didik</a>
-<table>
-    <tr>
-        <th>Nama</th>
-        <!-- Add other columns as needed -->
-    </tr>
-    @foreach($sekolah->ptk as $ptk)
-    <tr>
-        <td>{{ $ptk->nama }}</td>
-        <!-- Add other data fields as needed -->
-    </tr>
-    @endforeach
-</table>
-<a href="{{ route('ptk.create', $sekolah->sekolah_id) }}">Add New ptgk</a>
+            <div class="table-responsive">
+                <table class="table table-bordered toggle-circle mb-0" data-page-size="7">
+                    <tr>
+                        <th>NISN</th>
+                        <th>Nama</th>
+                        <th>Tempat Lahir</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Agama</th>
+                        <!-- Add other columns as needed -->
+                    </tr>
+                    @foreach($sekolah->pesertaDidik as $peserta)
+                        <tr>
+                            <td>{{ $peserta->nisn }}</td>
+                            <td>{{ $peserta->nama }}</td>
+                            <td>{{ $peserta->tempat_lahir }}</td>
+                            <td>{{ $peserta->tanggal_lahir }}</td>
+                            <td>{{ $peserta->jenis_kelamin }}</td>
+                            <td>{{ $peserta->Agama }}</td>
+                            <!-- Add other data fields as needed -->
+                        </tr>
+                    @endforeach
+                </table>
+                <a href="{{ route('pesertadidik.create', $sekolah->sekolah_id) }}">Add New Peserta Didik</a>
+            </div>
+
+            <h2>PGTK</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered toggle-circle mb-0" data-page-size="7">
+                    <tr>
+                        <th>Nama</th>
+                        <!-- Add other columns as needed -->
+                    </tr>
+                    @foreach($sekolah->ptk as $ptk)
+                        <tr>
+                            <td>{{ $ptk->nama }}</td>
+                            <!-- Add other data fields as needed -->
+                        </tr>
+                    @endforeach
+                </table>
+                <a href="{{ route('ptk.create', $sekolah->sekolah_id) }}">Add New ptgk</a>
+            </div>
 
             <!-- Footer Start -->
             <footer class="footer">
