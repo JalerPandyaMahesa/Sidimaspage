@@ -71,20 +71,20 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav  ">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('home.index') }}">Beranda <span
+                                    <a class="nav-link" href="#beranda">Beranda<span
                                             class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="team.html">Jenjang</a>
+                                    <a class="nav-link" href="#jenjang">Jenjang</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about.html">Sekolah</a>
+                                    <a class="nav-link" href="#sekolah">Sekolah</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="service.html">Grafik</a>
+                                    <a class="nav-link" href="#grafik">Grafik</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="why.html">Tentang</a>
+                                    <a class="nav-link" href="#tentang">Tentang</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i>
@@ -97,8 +97,8 @@
             </header>
             <!-- end header section -->
             <div class="content">
-                <!-- slider section -->
-                <section class="slider_section ">
+                <!-- beranda section -->
+                <section id="beranda" class="slider_section ">
                     <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -134,11 +134,11 @@
                         </div>
                     </div>
                 </section>
-                <!-- end slider section -->
+                <!-- end beranda section -->
 
 
                 <!-- jenjang section -->
-                <section class="service_section layout_padding " style="padding: 100px 0">
+                <section id="jenjang" class="service_section layout_padding " style="padding: 100px 0">
                     <div class="service_container">
                         <div class="container ">
                             <div class="heading_container heading_center">
@@ -184,7 +184,7 @@
                 <!-- end jenjang section -->
 
                 <!-- Jumlah Sekolah -->
-                <section class="service_section layout_padding" style="padding: 100px 0">
+                <section id="sekolah" class="service_section layout_padding" style="padding: 100px 0">
                     <div class="service_container">
                         <div class="container">
                             <div class="heading_container heading_center">
@@ -254,7 +254,7 @@
                 <!-- end Jumlah Sekolah -->
 
                 <!-- Grafik Section -->
-                <section class="grafik-section layout_padding ">
+                <section id="grafik" class="grafik-section layout_padding ">
                     <div class="grafik-container">
                         <div class="row">
                             <div class="col-4">
@@ -286,7 +286,7 @@
                 <!-- End Grafik Section -->
 
                 <!-- Tentang Section -->
-                `<section class="tentang-section layout padding">
+                `<section id="tentang" class="tentang-section layout padding">
                     <div class="tentang-container">
                         <div class="row">
                             <div class="col-6">
