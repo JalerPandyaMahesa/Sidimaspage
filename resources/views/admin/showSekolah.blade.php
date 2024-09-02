@@ -382,6 +382,19 @@
     @endforeach
 </table>
 <a href="{{ route('pesertadidik.create', $sekolah->sekolah_id) }}">Add New Peserta Didik</a>
+<table>
+    <tr>
+        <th>Nama</th>
+        <!-- Add other columns as needed -->
+    </tr>
+    @foreach($sekolah->ptk as $ptk)
+    <tr>
+        <td>{{ $ptk->nama }}</td>
+        <!-- Add other data fields as needed -->
+    </tr>
+    @endforeach
+</table>
+<a href="{{ route('ptk.create', $sekolah->sekolah_id) }}">Add New ptgk</a>
 
             <!-- Footer Start -->
             <footer class="footer">
