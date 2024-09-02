@@ -41,4 +41,9 @@ class Sekolah extends Model
     {
         return $this->hasMany(pesertadidik::class, 'sekolah_id');
     }
+
+    public function ptk()
+    {
+        return $this->hasMany(ptk::class, 'sekolah_id');
+    }
 }
