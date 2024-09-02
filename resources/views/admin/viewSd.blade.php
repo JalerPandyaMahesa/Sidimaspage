@@ -29,7 +29,7 @@
     <!--Load Sweet Alert Javascript-->
     <script src=" {{ asset('assets/js/swal.js') }} "></script>
 
-    <!--Inject SWAL-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 
 </head>
@@ -265,6 +265,15 @@
                                 </div>
 
                                 <div class="table-responsive">
+                                    <div class="d-flex justify-content-end mb-3">
+                                        <form action="{{ route('admin.addSekolah') }}" method="GET" class="me-2 pr-3">
+                                            <button type="submit" class="btn btn-primary badge-success">
+                                                Tambah Sekolah
+                                            </button>
+                                        </form>
+
+                                        <button id="export-button" class="btn btn-primary">Export to Excel</button>
+                                    </div>
                                     <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
                                         data-page-size="7">
                                         <thead>
@@ -289,7 +298,7 @@
                                                     <td>{{ $s->kecamatan }}</td>
                                                     <td>{{ $s->bentuk_pendidikan }}</td>
                                                     <td>{{ $s->status_sekolah }}</td>
-                                                    <td>#</td>
+                                                    <td>{{ $s->pesertadidik_count }}</td>
                                                     <td><a href="{{ route('admin.showSekolah', ['sekolah_id' => $s->sekolah_id]) }}"
                                                             class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
                                                         <a href="{{ route('admin.editSekolah', ['sekolah_id' => $s->sekolah_id]) }}"
@@ -392,6 +401,12 @@
                         row.style.display = 'none';  // Hide the row
                     }
                 });
+            });
+
+            document.getElementById('export-button').addEventListener('click', function () {
+                const table = document.getElementById('demo-foo-filtering');
+                const workbook = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+                XLSX.writeFile(workbook, 'table-export.xlsx');
             });
         });
     </script>

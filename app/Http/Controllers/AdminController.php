@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sekolah;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -18,28 +19,36 @@ class AdminController extends Controller
 
     public function viewPaud()
     {
-        $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['TK', 'SPS', 'TPA', 'RA', 'KB'])->get();
+        $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['TK', 'SPS', 'TPA', 'RA', 'KB'])
+            ->withCount('pesertadidik')
+            ->get();
 
         return view('admin.viewPaud', compact('sekolah'));
     }
 
     public function viewSd()
     {
-        $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['SD', 'MI', 'SPK SD'])->get();
+        $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['SD', 'MI', 'SPK SD'])
+            ->withCount('pesertadidik')
+            ->get();
 
         return view('admin.viewSd', compact('sekolah'));
     }
 
     public function viewSmp()
     {
-        $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['SMP', 'MTS', 'SPK SMP'])->get();
+        $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['SMP', 'MTS', 'SPK SMP'])
+            ->withCount('pesertadidik')
+            ->get();
 
         return view('admin.viewSmp', compact('sekolah'));
     }
 
     public function viewPendidikanMasyarakat()
     {
-        $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['PKBM', 'SKB', 'KURSUS', 'SLB'])->get();
+        $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['PKBM', 'SKB', 'KURSUS', 'SLB'])
+            ->withCount('pesertadidik')
+            ->get();
 
         return view('admin.viewPendidikanMasyarakat', compact('sekolah'));
     }
@@ -213,4 +222,4 @@ class AdminController extends Controller
         return redirect()->route('admin.dashboard');
     }
 
-}   
+}

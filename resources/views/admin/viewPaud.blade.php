@@ -267,7 +267,17 @@
                                 </div>
 
                                 <div class="table-responsive">
-                                <button id="export-button" class="btn btn-primary mb-3">Export to Excel</button>
+                                    <div class="d-flex justify-content-end mb-3">
+                                        <form action="{{ route('admin.addSekolah') }}" method="GET" class="me-2 pr-3">
+                                            <button type="submit" class="btn btn-primary badge-success">
+                                                Tambah Sekolah
+                                            </button>
+                                        </form>
+
+                                        <button id="export-button" class="btn btn-primary">Export to Excel</button>
+                                    </div>
+
+
                                     <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
                                         data-page-size="7">
                                         <thead>
@@ -292,7 +302,7 @@
                                                     <td>{{ $s->kecamatan }}</td>
                                                     <td>{{ $s->bentuk_pendidikan }}</td>
                                                     <td>{{ $s->status_sekolah }}</td>
-                                                    <td>#</td>
+                                                    <td>{{ $s->pesertadidik_count }}</td>
                                                     <td><a href="{{ route('admin.showSekolah', $s->sekolah_id) }}"
                                                             class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
                                                         <a href="{{ route('admin.editSekolah', $s->sekolah_id) }}"
@@ -399,37 +409,37 @@
     });
 </script> -->
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const filterKecamatan = document.getElementById('filter-kecamatan');
-        const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterKecamatan = document.getElementById('filter-kecamatan');
+            const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
 
-        filterKecamatan.addEventListener('change', function () {
-            const selectedKecamatan = filterKecamatan.value.toLowerCase();
-            let rowIndex = 1; // Start row index from 1
+            filterKecamatan.addEventListener('change', function () {
+                const selectedKecamatan = filterKecamatan.value.toLowerCase();
+                let rowIndex = 1; // Start row index from 1
 
-            tableRows.forEach(row => {
-                const kecamatanCell = row.querySelector('td:nth-child(4)');
-                const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
+                tableRows.forEach(row => {
+                    const kecamatanCell = row.querySelector('td:nth-child(4)');
+                    const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
 
-                if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
-                    row.style.display = '';  // Show the row
-                    row.querySelector('td').textContent = rowIndex++;  // Update the row number
-                } else {
-                    row.style.display = 'none';  // Hide the row
-                }
+                    if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
+                        row.style.display = '';  // Show the row
+                        row.querySelector('td').textContent = rowIndex++;  // Update the row number
+                    } else {
+                        row.style.display = 'none';  // Hide the row
+                    }
+                });
+            });
+
+            document.getElementById('export-button').addEventListener('click', function () {
+                const table = document.getElementById('demo-foo-filtering');
+                const workbook = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+                XLSX.writeFile(workbook, 'table-export.xlsx');
             });
         });
-
-        document.getElementById('export-button').addEventListener('click', function () {
-            const table = document.getElementById('demo-foo-filtering');
-            const workbook = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
-            XLSX.writeFile(workbook, 'table-export.xlsx');
-        });
-    });
-</script>
+    </script>
 
 
-</body >
+</body>
 
-</html >
+</html>

@@ -4,26 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Pesertadidik extends Model
+class ptk extends Model
 {
-    protected $table = 'peserta_didik'; // Explicitly set the table name
+    protected $table = 'ptk'; // Explicitly set the table name
 
-    protected $primaryKey = 'peserta_didik_id'; // Explicitly set the primary key
+    protected $primaryKey = 'ptk_id'; // Explicitly set the primary key
     public $incrementing = false; // Disable auto-incrementing
     protected $keyType = 'string'; // Set the primary key type to string
 
     // Define the fillable fields
     protected $fillable = [
-        'peserta_didik_id', // Ensure that the UUID is fillable if set manually
+        'ptk_id', // Ensure that the UUID is fillable if set manually
         'nama',
         'sekolah_id' // Include sekolah_id as fillable
     ];
 
     // Disable timestamps if you don't have created_at and updated_at columns
     public $timestamps = false;
-    
 
     protected static function boot()
     {
@@ -39,6 +37,6 @@ class Pesertadidik extends Model
     // Define the relationship to Sekolah
     public function sekolah()
     {
-        return $this->belongsTo(Sekolah::class, 'sekolah_id');
+        return $this->belongsTo(Sekolah::class, 'sekolah_id', 'sekolah_id');
     }
 }

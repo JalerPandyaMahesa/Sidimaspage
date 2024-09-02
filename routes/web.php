@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PtkController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PesertadidikController;
@@ -71,6 +72,12 @@ Route::get('/pesertadidik/{peserta_didik_id}/edit', [PesertaDidikController::cla
 Route::put('/pesertadidik/{peserta_didik_id}', [PesertaDidikController::class, 'update'])->name('pesertadidik.update');
 Route::get('/pesertadidik/{peserta_didik_id}', [PesertaDidikController::class, 'show'])->name('pesertadidik.show');
 Route::delete('/pesertadidik/{peserta_didik_id}', [PesertaDidikController::class, 'destroy'])->name('pesertadidik.destroy');
+
+
+//ptk
+Route::get('/ptk/create/{sekolah_id}', [PtkController::class, 'create'])->name('ptk.create');
+
+Route::post('/ptk', [PtkController::class, 'store'])->name('ptk.store');
 
 // Login
 // Route::get('login', [UserController::class, 'index'])->middleware('guest')->name('login');

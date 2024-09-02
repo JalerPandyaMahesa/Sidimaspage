@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Sekolah extends Model
 {
@@ -39,5 +40,10 @@ class Sekolah extends Model
     public function pesertadidik()
     {
         return $this->hasMany(pesertadidik::class, 'sekolah_id');
+    }
+
+    public function ptk()
+    {
+        return $this->hasMany(ptk::class, 'sekolah_id');
     }
 }
