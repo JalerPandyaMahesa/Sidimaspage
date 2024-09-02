@@ -226,9 +226,9 @@
                                 <h4 class="header-title"></h4>
                                 <div class="mb-2">
                                     <div class="row">
-                                        <div class="col-6 text-sm-center form-inline">
-                                            <!-- <div class="form-group mr-2" style="display:none">
-                                            </div> -->
+                                        <div class="col-12 text-sm-center form-inline">
+                                            <div class="form-group mr-2" style="display:none">
+                                            </div>
                                             <div class="form-group">
                                                 <select id="filter-kecamatan" class="custom-select custom-select-sm">
                                                     <option value="">Pilih Kecamatan</option>
@@ -263,35 +263,13 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-6 text-right">
-                                        <a href="{{ route('admin.addSekolah') }}"
-                                        class="badge badge-info pt-1 pb-1">Tambah Sekolah</a>
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="table-responsive">
-                                    <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0 "
+                                    <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
                                         data-page-size="7">
                                         <thead>
-<<<<<<< HEAD
-    <tr>
-        <th>#</th>
-        <th data-toggle="true">NPSN</th>
-        <th data-hide="phone">Nama <button onclick="sortTable(2, 'text')">Sort</button></th>
-        <th data-hide="phone">Kecamatan</th>
-        <th data-hide="phone">Bentuk Pendidikan</th>
-        <th data-hide="phone">Status Sekolah</th>
-        <th data-hide="phone">Peserta Didik <button onclick="sortTable(6, 'number')">Sort</button></th>
-        <th data-hide="phone">Action</th>
-    </tr>
-</thead>
-
-
-                                        @foreach ($sekolah as $index => $s)
-                                            <tbody>
-                                                <tr>
-=======
                                             <tr>
                                                 <th>#</th>
                                                 <th data-toggle="true">NPSN</th>
@@ -303,10 +281,10 @@
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            @foreach ($sekolah as $index => $s)
-                                                <tr data-index="{{ $index }}">
->>>>>>> 4f40c863ea2fb995c843514f655076acf3a87e4f
+
+                                        @foreach ($sekolah as $index => $s)
+                                            <tbody>
+                                                <tr>
                                                     <td>{{ $index + 1 }}</td>
                                                     <td>{{ $s->npsn }}</td>
                                                     <td>{{ $s->nama }}</td>
@@ -330,7 +308,7 @@
                                                         </button>
                                                     </td>
                                                 </tr>
-                                            @endforeach
+                                        @endforeach
                                         </tbody>
                                         <tfoot>
                                             <tr class="active">
@@ -397,61 +375,30 @@
     <script src=" {{ asset('assets/js/app.min.js') }} "></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const filterKecamatan = document.getElementById('filter-kecamatan');
-            const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterKecamatan = document.getElementById('filter-kecamatan');
+        const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
 
-            filterKecamatan.addEventListener('change', function () {
-                const selectedKecamatan = filterKecamatan.value.toLowerCase();
-                let rowIndex = 1; // Start row index from 1
+        filterKecamatan.addEventListener('change', function () {
+            const selectedKecamatan = filterKecamatan.value.toLowerCase();
+            let rowIndex = 1; // Start row index from 1
 
-                tableRows.forEach(row => {
-                    const kecamatanCell = row.querySelector('td:nth-child(4)');
-                    const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
+            tableRows.forEach(row => {
+                const kecamatanCell = row.querySelector('td:nth-child(4)');
+                const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
 
-                    if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
-                        row.style.display = '';  // Show the row
-                        row.querySelector('td').textContent = rowIndex++;  // Update the row number
-                    } else {
-                        row.style.display = 'none';  // Hide the row
-                    }
-                });
+                if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
+                    row.style.display = '';  // Show the row
+                    row.querySelector('td').textContent = rowIndex++;  // Update the row number
+                } else {
+                    row.style.display = 'none';  // Hide the row
+                }
             });
         });
-        function sortTable(columnIndex, type) {
-    const table = document.getElementById("demo-foo-filtering");
-    const rows = Array.from(table.rows).slice(1); // Get rows except header
-    let direction = table.getAttribute("data-sort-direction") === "asc" ? "desc" : "asc";
-    
-    const compare = (a, b) => {
-        let x = a.cells[columnIndex].innerText;
-        let y = b.cells[columnIndex].innerText;
-
-        if (type === 'number') {
-            x = parseFloat(x);
-            y = parseFloat(y);
-        } else {
-            x = x.toLowerCase();
-            y = y.toLowerCase();
-        }
-
-        if (direction === "asc") {
-            return x > y ? 1 : -1;
-        } else {
-            return x < y ? 1 : -1;
-        }
-    };
-
-    rows.sort(compare);
-
-    // Rebuild the table with sorted rows
-    rows.forEach(row => table.appendChild(row));
-    
-    // Update the sort direction attribute
-    table.setAttribute("data-sort-direction", direction);
-}
+    });
+</script>
 
 
-</body>
+</body >
 
-</html>
+</html >

@@ -292,14 +292,14 @@
                                                     <td>{{ $s->bentuk_pendidikan }}</td>
                                                     <td>{{ $s->status_sekolah }}</td>
                                                     <td>#</td>
-                                                    <td><a href="{{ route('admin.showSekolah', ['sekolah_id' => $s->sekolah_id]) }}"
+                                                    <td><a href="{{ route('admin.showSekolah', $s->sekolah_id) }}"
                                                             class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
-                                                        <a href="{{ route('admin.editSekolah', ['sekolah_id' => $sekolah->sekolah_id]) }}"
+                                                        <a href="{{ route('admin.editSekolah', $s->sekolah_id) }}"
                                                             class="badge badge-warning"><i
                                                                 class="fas fa-clipboard-check "></i> Update</a>
                                                         <button class="badge badge-danger" style="border:none">
                                                             <form
-                                                                action="{{ route('admin.destroySekolah', ['sekolah_id' => $sekolah->sekolah_id]) }}"
+                                                                action="{{ route('admin.destroySekolah', $s->sekolah_id) }}"
                                                                 method="POST" style="display:inline;"><i
                                                                     class="fas fa-trash-alt "></i> Delete
                                                                 @csrf
