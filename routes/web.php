@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PesertadidikController;
 use App\Http\Controllers\SekolahController;
+use App\Http\Controllers\UmumController;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,10 @@ Route::get('/home', function () {
     return view('Home.index');
 })->name('home.index');
 
-Route::get('/home/paud', function(){
-    return view('Home.paud');
-});
+Route::get('/home/paud', [UmumController::class, 'viewPaud'])->name('home.paud');
+
+
+
 
 
 // Route::get('/paud', function () {
