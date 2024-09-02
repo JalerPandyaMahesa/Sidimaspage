@@ -395,6 +395,12 @@
                     }
                 });
             });
+
+            document.getElementById('export-button').addEventListener('click', function () {
+                const table = document.getElementById('demo-foo-filtering');
+                const workbook = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+                XLSX.writeFile(workbook, 'table-export.xlsx');
+            });
         });
     </script>
 

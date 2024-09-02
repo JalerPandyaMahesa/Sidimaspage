@@ -29,7 +29,7 @@
     <!--Load Sweet Alert Javascript-->
     <script src=" {{ asset('assets/js/swal.js') }} "></script>
 
-    <!--Inject SWAL-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 
 </head>
@@ -267,6 +267,7 @@
                                 </div>
 
                                 <div class="table-responsive">
+                                <button id="export-button" class="btn btn-primary mb-3">Export to Excel</button>
                                     <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
                                         data-page-size="7">
                                         <thead>
@@ -374,7 +375,7 @@
     <!-- App js-->
     <script src=" {{ asset('assets/js/app.min.js') }} "></script>
 
-    <script>
+    <!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         const filterKecamatan = document.getElementById('filter-kecamatan');
         const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
@@ -394,6 +395,36 @@
                     row.style.display = 'none';  // Hide the row
                 }
             });
+        });
+    });
+</script> -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterKecamatan = document.getElementById('filter-kecamatan');
+        const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+
+        filterKecamatan.addEventListener('change', function () {
+            const selectedKecamatan = filterKecamatan.value.toLowerCase();
+            let rowIndex = 1; // Start row index from 1
+
+            tableRows.forEach(row => {
+                const kecamatanCell = row.querySelector('td:nth-child(4)');
+                const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
+
+                if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
+                    row.style.display = '';  // Show the row
+                    row.querySelector('td').textContent = rowIndex++;  // Update the row number
+                } else {
+                    row.style.display = 'none';  // Hide the row
+                }
+            });
+        });
+
+        document.getElementById('export-button').addEventListener('click', function () {
+            const table = document.getElementById('demo-foo-filtering');
+            const workbook = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+            XLSX.writeFile(workbook, 'table-export.xlsx');
         });
     });
 </script>
