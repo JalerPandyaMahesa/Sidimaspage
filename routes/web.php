@@ -19,6 +19,14 @@ Route::get('/home', function () {
 
 Route::get('/home/paud', [UmumController::class, 'viewPaud'])->name('home.paud');
 
+Route::get('/home/sd', function () {
+    return view('Home.sd');
+})->name('home.sd');
+
+Route::get('/home/smp', function () {
+    return view('Home.smp');
+})->name('home.smp');
+
 
 
 

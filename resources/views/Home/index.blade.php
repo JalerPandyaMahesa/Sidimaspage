@@ -149,31 +149,37 @@
                             <div class="row">
                                 <div class="col-md-4 ">
                                     <div class="jenjang-pendidikan">
-                                        <div class="box jenjang-box paud">
-                                            <div class="content-wrapper">
-                                                <img src="{{ asset('img/paud.png') }}" alt="PAUD & Dikmas">
+                                        <a href="{{ route('home.paud') }}">
+                                            <div class="box jenjang-box paud">
+                                                <div class="content-wrapper">
+                                                    <img src="{{ asset('img/paud.png') }}" alt="Paud & Dikmas">
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4 ">
                                     <div class="jenjang-pendidikan">
-                                        <div class="box jenjang-box sd">
-                                            <div class="content-wrapper">
-                                                <img src="{{ asset('img/sd.png') }}" alt="SEKOLAH Dasar">
+                                        <a href="{{ route('home.sd') }}">
+                                            <div class="box jenjang-box sd">
+                                                <div class="content-wrapper">
+                                                    <img src="{{ asset('img/sd.png') }}" alt="Sekolah Dasar">
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4 ">
                                     <div class="jenjang-pendidikan">
-                                        <div class="box jenjang-box smp">
-                                            <div class="content-wrapper">
-                                                <img src="{{ asset('img/smp.png') }}" alt="SEKOLAH Menengah">
+                                        <a href="{{ route('home.smp') }}">
+                                            <div class="box jenjang-box smp">
+                                                <div class="content-wrapper">
+                                                    <img src="{{ asset('img/smp.png') }}" alt="Sekolah Menengah">
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
 
@@ -259,8 +265,13 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="isi-text-grafik">
-                                    <p class="isi-text-kepala" >Grafik Siswa</p>
-                                    <p class="isi-text-badan" >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                    <p class="isi-text-kepala">Grafik Siswa</p>
+                                    <p class="isi-text-badan">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                                        ever since the 1500s, when an unknown printer took a galley of type and
+                                        scrambled it to make a type specimen book. It has survived not only five
+                                        centuries, but also the leap into electronic typesetting, remaining essentially
+                                        unchanged.</p>
                                 </div>
                             </div>
                             <div class="col-7">
@@ -394,7 +405,7 @@
                     labels: ['Paud & Dikmas', 'Sekolah Dasar', 'Sekolah Menengah'],
                     datasets: [{
                         label: 'Jumlah Siswa',
-                        data: [100, 200, 150,],
+                        data: [100, 200, 150, ],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 99, 132, 0.2)',
