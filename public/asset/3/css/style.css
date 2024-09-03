@@ -567,8 +567,8 @@ a:focus {
 }
 
 .about_section {
-    background-color: #00204a;
-    color: #ffffff;
+    //background-color: #00204a;
+    //color: #ffffff;
 }
 
 .about_section .heading_container {
@@ -582,7 +582,7 @@ a:focus {
 }
 
 .about_section .img-box img {
-    max-width: 100%;
+    max-width: 65%;
 }
 
 .about_section .detail-box h3 {
@@ -591,12 +591,14 @@ a:focus {
 
 .about_section .detail-box p {
     margin-top: 15px;
+    font-size : 18px;
+    text-align: justify;
 }
 
 .about_section .detail-box a {
     display: inline-block;
     padding: 10px 45px;
-    background-color: #00bbf0;
+    background-color:#ee0000;
     color: #ffffff;
     border-radius: 0px;
     -webkit-transition: all 0.3s;
@@ -606,7 +608,7 @@ a:focus {
 }
 
 .about_section .detail-box a:hover {
-    background-color: #007fa4;
+    background-color: #a60202;
 }
 
 .why_section .box {

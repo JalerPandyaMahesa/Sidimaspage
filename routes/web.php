@@ -9,11 +9,12 @@ use App\Http\Controllers\UmumController;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return redirect('/home');
-});
-Route::get('/', [UmumController::class, 'index'])->name('home.index');
-Route::get('/home', [UmumController::class, 'index'])->name('home.index');
+// Route::get('/', function () {
+//     return redirect('/home');
+// });
+
+Route::get('/', [UmumController::class, 'index'])->name('Home.index');
+Route::get('/home', [UmumController::class, 'index'])->name('Home.index');
 
 
 Route::get('/home/paud', [UmumController::class, 'viewPaud'])->name('home.paud');

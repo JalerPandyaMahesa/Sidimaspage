@@ -58,7 +58,7 @@
             <header class="header_section">
                 <div class="container-fluid">
                     <nav class="navbar navbar-expand-lg custom_nav-container ">
-                        <a class="navbar-brand" href="{{ route('home.index') }}">
+                        <a class="navbar-brand" href="{{ route('Home.index') }}">
                             <img src="{{ asset('img/Logo_Sidimas2.png') }}" alt="Logo SiDimas">
                         </a>
 
@@ -173,7 +173,7 @@
 
                                 <div class="col-md-4 ">
                                     <div class="jenjang-pendidikan">
-                                        <a href="{{ route('hzome.smp') }}">
+                                        <a href="{{ route('home.smp') }}">
                                             <div class="box jenjang-box smp">
                                                 <div class="content-wrapper">
                                                     <img src="{{ asset('img/smp.png') }}" alt="Sekolah Menengah">
@@ -202,19 +202,19 @@
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>PAUD & DIKMAS</h3>
-                                        <p>999</p>
+                                        <p>{{ $totalTk }}</p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Sekolah Menengah</h3>
-                                        <p>999</p>
+                                        <p>{{ $totalSmp }}</p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Sekolah Dasar</h3>
-                                        <p>999</p>
+                                        <p>{{ $totalSd }}</p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
@@ -297,33 +297,44 @@
                 <!-- End Grafik Section -->
 
                 <!-- Tentang Section -->
-                `<section id="tentang" class="tentang-section layout padding">
-                    <div class="tentang-container">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="isi-tentang">
-                                    <div class="">
-                                        <img src="{{ asset('img/logo_sidimas.png') }}" alt="">
-                                    </div>
-                                    <div>
-                                        tulisan
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="isi-tentang">
-                                    <div class="">
-                                        gamabr
-                                    </div>
-                                    <div>
-                                        tulisan
-                                    </div>
-                                </div>
-                            </div>
-
+                <section class="about_section layout_padding">
+                    <div class="container  ">
+                      <div class="heading_container heading_center">
+                        <h2>
+                          Tentang Kami
+                        </h2>
+                        <p>
+                          Magni quod blanditiis non minus sed aut voluptatum illum quisquam aspernatur ullam vel beatae rerum ipsum voluptatibus
+                        </p>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 ">
+                          <div class="img-box justify-content-center d-flex">
+                            <img src="{{ ('img/image2.png') }}" alt="">
+                          </div>
                         </div>
+                        <div class="col-md-6">
+                          <div class="detail-box">
+                            {{-- <h3>
+                              We Are Finexo
+                            </h3> --}}
+                            <p>
+                              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
+                              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
+                              the middle of text. All
+                            </p>
+                            <p>
+                              Molestiae odio earum non qui cumque provident voluptates, repellendus exercitationem, possimus at iste corrupti officiis unde alias eius ducimus reiciendis soluta eveniet. Nobis ullam ab omnis quasi expedita.
+                            </p>
+                            <a href="">
+                              Read More
+                            </a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                </section>
+                  </section>
                 <!-- End Tentang Section -->
 
 
@@ -405,7 +416,7 @@
                     labels: ['Paud & Dikmas', 'Sekolah Dasar', 'Sekolah Menengah'],
                     datasets: [{
                         label: 'Jumlah Siswa',
-                        data: [100, 200, 150, ],
+                        data: [{{ $tsTk }}, {{ $tsSd }}, {{ $tsSmp }},],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 99, 132, 0.2)',
