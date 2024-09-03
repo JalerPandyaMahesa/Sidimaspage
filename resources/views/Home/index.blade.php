@@ -58,7 +58,7 @@
             <header class="header_section">
                 <div class="container-fluid">
                     <nav class="navbar navbar-expand-lg custom_nav-container ">
-                        <a class="navbar-brand" href="{{ route('Home.index') }}">
+                        <a class="navbar-brand" href="{{ route('home.index') }}">
                             <img src="{{ asset('img/Logo_Sidimas2.png') }}" alt="Logo SiDimas">
                         </a>
 
@@ -149,7 +149,7 @@
                             <div class="row">
                                 <div class="col-md-4 ">
                                     <div class="jenjang-pendidikan">
-                                        <a href="{{ route('Home.paud') }}">
+                                        <a href="{{ route('home.paud') }}">
                                             <div class="box jenjang-box paud">
                                                 <div class="content-wrapper">
                                                     <img src="{{ asset('img/paud.png') }}" alt="Paud & Dikmas">
@@ -161,7 +161,7 @@
 
                                 <div class="col-md-4 ">
                                     <div class="jenjang-pendidikan">
-                                        <a href="#">
+                                        <a href="{{ route('home.sd') }}">
                                             <div class="box jenjang-box sd">
                                                 <div class="content-wrapper">
                                                     <img src="{{ asset('img/sd.png') }}" alt="Sekolah Dasar">
@@ -173,7 +173,7 @@
 
                                 <div class="col-md-4 ">
                                     <div class="jenjang-pendidikan">
-                                        <a href="#">
+                                        <a href="{{ route('hzome.smp') }}">
                                             <div class="box jenjang-box smp">
                                                 <div class="content-wrapper">
                                                     <img src="{{ asset('img/smp.png') }}" alt="Sekolah Menengah">
@@ -202,19 +202,19 @@
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>PAUD & DIKMAS</h3>
-                                        <p>{{ $totalTk }}</p>
+                                        <p>999</p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Sekolah Menengah</h3>
-                                        <p>{{ $totalSmp }}</p>
+                                        <p>999</p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Sekolah Dasar</h3>
-                                        <p>{{ $totalSd }}</p>
+                                        <p>999</p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
@@ -405,7 +405,7 @@
                     labels: ['Paud & Dikmas', 'Sekolah Dasar', 'Sekolah Menengah'],
                     datasets: [{
                         label: 'Jumlah Siswa',
-                        data: [{{ $tsTk }}, {{ $tsSd }}, {{ $tsSmp }},],
+                        data: [100, 200, 150, ],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 99, 132, 0.2)',

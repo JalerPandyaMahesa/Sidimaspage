@@ -12,19 +12,19 @@ class UmumController extends Controller
     public function viewPaud()
     {
         $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['TK', 'SPS', 'TPA', 'RA', 'KB'])->get();
-        return view('Home.paud', compact('sekolah'));
+        return view('home.paud', compact('sekolah'));
     }
 
     public function viewSD()
     {
         $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['SD', 'MI', 'SPK SD'])->get();
-        return view('Home.sd', compact('sekolah'));
+        return view('home.sd', compact('sekolah'));
     }
 
     public function viewSMP()
     {
         $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['SMP', 'MTS', 'SPK SMP'])->get();
-        return view('Home.smp', compact('sekolah'));
+        return view('home.smp', compact('sekolah'));
     }
 
     public function index(Request $request)
@@ -45,6 +45,6 @@ class UmumController extends Controller
             $query->whereIn('bentuk_pendidikan', ['SMP', 'MTS', 'SPK SMP']);
         })->count();
 
-        return view('Home.index', compact('totalTk', 'totalSd', 'totalSmp', 'totalPgtk', 'tsTk', 'tsSd', 'tsSmp'));
+        return view('home.index', compact('totalTk', 'totalSd', 'totalSmp', 'totalPgtk', 'tsTk', 'tsSd', 'tsSmp'));
     }
 }
