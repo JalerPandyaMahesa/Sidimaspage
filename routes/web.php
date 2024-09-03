@@ -100,6 +100,8 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard')
 Route::get('/admin/viewPaud', [AdminController::class, 'viewPaud'])->name('admin.viewPaud');
 Route::get('/admin/viewSd', [AdminController::class, 'viewSd'])->name('admin.viewSd');
 Route::get('/admin/viewSmp', [AdminController::class, 'viewSmp'])->name('admin.viewSmp');
+Route::get('/admin/viewPgtk', [AdminController::class, 'viewPtk'])->name('admin.viewPgtk');
+
 
 Route::get('/admin/addSekolah', [AdminController::class, 'createSekolah'])->name('admin.addSekolah');
 Route::post('/admin/dashboard', [AdminController::class, 'store'])->name('admin.store');
