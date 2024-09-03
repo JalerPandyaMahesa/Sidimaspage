@@ -15,6 +15,7 @@ class AdminController extends Controller
         $totalSd = Sekolah::whereIn('bentuk_pendidikan', ['SD', 'MI', 'SPK SD'])->count();
         $totalSmp = Sekolah::whereIn('bentuk_pendidikan', ['SMP', 'MTS', 'SPK SMP'])->count();
         $totalPgtk = Sekolah::withCount('ptk')->get();
+        $totalPgtk = Ptk::count();
 
         return view('admin.dashboard', compact('totalTk', 'totalSd', 'totalSmp','totalPgtk'));
     }
