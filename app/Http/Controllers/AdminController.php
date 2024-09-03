@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sekolah;
-use App\Models\ptk;
+use App\Models\Ptk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -54,6 +54,12 @@ class AdminController extends Controller
             ->get();
 
         return view('admin.viewPendidikanMasyarakat', compact('sekolah'));
+    }
+
+    public function viewPtk($ptk_id)
+    {
+        $ptk = ptk::with('sekolah')->findOrFail($ptk_id);
+        return view('admin.viewPgtk', compact('ptk'));
     }
 
     public function createSekolah()

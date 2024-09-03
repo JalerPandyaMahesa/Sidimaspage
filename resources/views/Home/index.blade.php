@@ -58,7 +58,7 @@
             <header class="header_section">
                 <div class="container-fluid">
                     <nav class="navbar navbar-expand-lg custom_nav-container ">
-                        <a class="navbar-brand" href="{{ route('home.index') }}">
+                        <a class="navbar-brand" href="{{ route('Home.index') }}">
                             <img src="{{ asset('img/Logo_Sidimas2.png') }}" alt="Logo SiDimas">
                         </a>
 
@@ -149,7 +149,7 @@
                             <div class="row">
                                 <div class="col-md-4 ">
                                     <div class="jenjang-pendidikan">
-                                        <a href="{{ route('home.paud') }}">
+                                        <a href="{{ route('Home.paud') }}">
                                             <div class="box jenjang-box paud">
                                                 <div class="content-wrapper">
                                                     <img src="{{ asset('img/paud.png') }}" alt="Paud & Dikmas">
@@ -161,7 +161,7 @@
 
                                 <div class="col-md-4 ">
                                     <div class="jenjang-pendidikan">
-                                        <a href="{{ route('home.sd') }}">
+                                        <a href="#">
                                             <div class="box jenjang-box sd">
                                                 <div class="content-wrapper">
                                                     <img src="{{ asset('img/sd.png') }}" alt="Sekolah Dasar">
@@ -173,7 +173,7 @@
 
                                 <div class="col-md-4 ">
                                     <div class="jenjang-pendidikan">
-                                        <a href="{{ route('home.smp') }}">
+                                        <a href="#">
                                             <div class="box jenjang-box smp">
                                                 <div class="content-wrapper">
                                                     <img src="{{ asset('img/smp.png') }}" alt="Sekolah Menengah">
