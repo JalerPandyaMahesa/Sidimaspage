@@ -304,15 +304,17 @@
                                                         <a href="{{ route('admin.editSekolah', ['sekolah_id' => $s->sekolah_id]) }}"
                                                             class="badge badge-warning"><i
                                                                 class="fas fa-clipboard-check "></i> Update</a>
-                                                        <button class="badge badge-danger" style="border:none">
-                                                            <form
-                                                                action="{{ route('admin.destroySekolah', ['sekolah_id' => $s->sekolah_id]) }}"
-                                                                method="POST" style="display:inline;"><i
-                                                                    class="fas fa-trash-alt "></i> Delete
-                                                                @csrf
-                                                                @method('DELETE')
-                                                            </form>
-                                                        </button>
+                                                        <form
+                                                            action="{{ route('admin.destroySekolah', $s->sekolah_id) }}"
+                                                            method="POST" style="display:inline;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="badge badge-danger"
+                                                                style="border:none">
+                                                                <i class="fas fa-trash-alt"></i> Delete
+                                                            </button>
+                                                        </form>
+
                                                     </td>
                                                 </tr>
                                         @endforeach

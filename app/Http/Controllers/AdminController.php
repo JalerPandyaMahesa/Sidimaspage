@@ -13,8 +13,9 @@ class AdminController extends Controller
         $totalTk = Sekolah::whereIn('bentuk_pendidikan', ['TK', 'SPS', 'TPA', 'RA', 'KB'])->count();
         $totalSd = Sekolah::whereIn('bentuk_pendidikan', ['SD', 'MI', 'SPK SD'])->count();
         $totalSmp = Sekolah::whereIn('bentuk_pendidikan', ['SMP', 'MTS', 'SPK SMP'])->count();
+        $totalPgtk = Sekolah::withCount('ptk')->get();
 
-        return view('admin.dashboard', compact('totalTk', 'totalSd', 'totalSmp'));
+        return view('admin.dashboard', compact('totalTk', 'totalSd', 'totalSmp','totalPgtk'));
     }
 
     public function viewPaud()
