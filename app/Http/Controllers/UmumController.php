@@ -16,6 +16,20 @@ class UmumController extends Controller
         return view('Home.paud', compact('sekolah'));
     }
 
+    public function viewSD()
+    {
+        $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['TK', 'SPS', 'TPA', 'RA', 'KB'])->get();
+
+        return view('Home.sd', compact('sekolah'));
+    }
+
+    public function viewSMP()
+    {
+        $sekolah = Sekolah::whereIn('bentuk_pendidikan', ['TK', 'SPS', 'TPA', 'RA', 'KB'])->get();
+
+        return view('Home.smp', compact('sekolah'));
+    }
+
     public function index(Request $request)
     {
         $totalTk = Sekolah::whereIn('bentuk_pendidikan', ['TK', 'SPS', 'TPA', 'RA', 'KB'])->count();

@@ -9,17 +9,17 @@ use App\Http\Controllers\UmumController;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('Home.index');
-// })->name('home.index');
+Route::get('/', function () {
+    return view('Home.index');
+})->name('home.index');
 
 Route::get('/', [UmumController::class, 'index'])->name('Home.index');
 
-// Route::get('/home', function () {
-//     return view('Home.index');
-// })->name('home.index');
+Route::get('/home', function () {
+    return view('Home.index');
+})->name('home.index');
 
-Route::get('/home/paud', [UmumController::class, 'viewPaud'])->name('Home.paud');
+Route::get('/home/paud', [UmumController::class, 'viewPaud'])->name('home.paud');
 
 Route::get('/home/sd', function () {
     return view('Home.sd');

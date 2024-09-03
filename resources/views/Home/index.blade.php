@@ -220,7 +220,7 @@
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Jumlah Guru & PGTK</h3>
-                                        <p>{{ $totalPgtk }}</p>
+                                        <p>999</p>
                                     </div>
                                 </div>
                             </div>
