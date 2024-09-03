@@ -305,7 +305,7 @@
                                                             class="badge badge-warning"><i
                                                                 class="fas fa-clipboard-check "></i> Update</a>
                                                         <form
-                                                            action="{{ route('admin.destroySekolah', ['sekolah_id' => $sekolah->sekolah_id]) }}"
+                                                            action="{{ route('admin.destroySekolah', $s->sekolah_id) }}"
                                                             method="POST" style="display:inline;">
                                                             @csrf
                                                             @method('DELETE')
