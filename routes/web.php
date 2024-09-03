@@ -13,6 +13,8 @@ Route::get('/', function () {
     return view('Home.index');
 })->name('home.index');
 
+Route::get('/', [UmumController::class, 'index'])->name('Home.index');
+
 Route::get('/home', function () {
     return view('Home.index');
 })->name('home.index');

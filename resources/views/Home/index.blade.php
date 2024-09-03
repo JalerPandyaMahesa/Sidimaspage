@@ -196,19 +196,19 @@
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>PAUD & DIKMAS</h3>
-                                        <p>999</p>
+                                        <p>{{ $totalTk }}</p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Sekolah Menengah</h3>
-                                        <p>999</p>
+                                        <p>{{ $totalSmp }}</p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Sekolah Dasar</h3>
-                                        <p>999</p>
+                                        <p>{{ $totalSd }}</p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
@@ -394,7 +394,7 @@
                     labels: ['Paud & Dikmas', 'Sekolah Dasar', 'Sekolah Menengah'],
                     datasets: [{
                         label: 'Jumlah Siswa',
-                        data: [100, 200, 150,],
+                        data: [{{ $tsTk }}, {{ $tsSd }}, {{ $tsSmp }},],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 99, 132, 0.2)',
