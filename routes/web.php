@@ -9,7 +9,12 @@ use App\Http\Controllers\UmumController;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [UmumController::class, 'index'])->name('Home.index');
+Route::get('/', function () {
+    return redirect('/home');
+});
+Route::get('/', [UmumController::class, 'index'])->name('home.index');
+Route::get('/home', [UmumController::class, 'index'])->name('home.index');
+
 
 Route::get('/home/paud', [UmumController::class, 'viewPaud'])->name('home.paud');
 Route::get('/home/sd', [UmumController::class, 'viewSD'])->name('home.sd');
@@ -85,8 +90,6 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard')
 Route::get('/admin/viewPaud', [AdminController::class, 'viewPaud'])->name('admin.viewPaud');
 Route::get('/admin/viewSd', [AdminController::class, 'viewSd'])->name('admin.viewSd');
 Route::get('/admin/viewSmp', [AdminController::class, 'viewSmp'])->name('admin.viewSmp');
-Route::get('/admin/viewPgtk', [AdminController::class, 'viewPtk'])->name('admin.viewPgtk');
-
 
 Route::get('/admin/addSekolah', [AdminController::class, 'createSekolah'])->name('admin.addSekolah');
 Route::post('/admin/dashboard', [AdminController::class, 'store'])->name('admin.store');
