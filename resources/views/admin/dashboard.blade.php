@@ -282,7 +282,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
-                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">#</span></h3>
+                                            <h3 class="text-dark mt-1"><span data-plugin="counterup">{{ $totalPgtk }}</span></h3>
                                             <p class="text-muted mb-1 text-truncate">PGTK</p>
                                         </div>
                                     </div>
