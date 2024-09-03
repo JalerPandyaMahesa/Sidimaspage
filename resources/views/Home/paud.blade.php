@@ -53,7 +53,7 @@
         <header class="header_section">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
-                    <a class="navbar-brand" href="{{ route('home.index') }}">
+                    <a class="navbar-brand" href="{{ route('Home.index') }}">
                         <img src="{{ asset('img/Logo_Sidimas2.png') }}" alt="Logo SiDimas">
                     </a>
 
@@ -66,7 +66,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav  ">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('home.index') }}">Beranda <span
+                                <a class="nav-link" href="{{ route('Home.index') }}">Beranda <span
                                         class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
