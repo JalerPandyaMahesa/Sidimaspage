@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sekolah;
+use App\Models\ptk;
 use App\Models\Pesertadidik;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,7 @@ class UmumController extends Controller
         $totalTk = Sekolah::whereIn('bentuk_pendidikan', ['TK', 'SPS', 'TPA', 'RA', 'KB'])->count();
         $totalSd = Sekolah::whereIn('bentuk_pendidikan', ['SD', 'MI', 'SPK SD'])->count();
         $totalSmp = Sekolah::whereIn('bentuk_pendidikan', ['SMP', 'MTS', 'SPK SMP'])->count();
+        $totalPgtk = Ptk::count();
 
         $tsTk = PesertaDidik::whereHas('sekolah', function ($query) {
             $query->whereIn('bentuk_pendidikan', ['TK', 'SPS', 'TPA', 'RA', 'KB']);
@@ -33,6 +35,6 @@ class UmumController extends Controller
         })->count();
 
 
-        return view('Home.index', compact('totalTk', 'totalSd', 'totalSmp', 'tsTk', 'tsSd', 'tsSmp'));
+        return view('Home.index', compact('totalTk', 'totalSd', 'totalSmp', 'totalPgtk', 'tsTk', 'tsSd', 'tsSmp'));
     }
 }
