@@ -160,8 +160,8 @@ a:focus {
     left: 0;
     width: 100%;
     z-index: 1000;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
-
 
 .header_section .container-fluid {
     padding-right: 25px;
