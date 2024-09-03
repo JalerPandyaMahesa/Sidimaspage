@@ -222,14 +222,15 @@
                         <div class="text-right" style="padding-bottom: 10px">
                             <a href="{{ route('admin.editSekolah', ['sekolah_id' => $sekolah->sekolah_id]) }}"
                                 class="badge badge-warning"><i class="fas fa-clipboard-check "></i> Update</a>
-                            <button class="badge badge-danger" style="border:none">
-                                <form
-                                    action="{{ route('admin.destroySekolah', ['sekolah_id' => $sekolah->sekolah_id]) }}"
-                                    method="POST" style="display:inline;"><i class="fas fa-trash-alt "></i> Delete
-                                    @csrf
-                                    @method('DELETE')
-                                </form>
-                            </button>
+                            <form action="{{ route('admin.destroySekolah', ['sekolah_id' => $sekolah->sekolah_id]) }}"
+                                method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="badge badge-danger" style="border:none">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </button>
+                            </form>
+
                             <!-- <a href="{{ route('admin.destroySekolah', ['sekolah_id' => $sekolah->sekolah_id]) }}"
                                 class="badge badge-danger"><i class="fas fa-trash-alt ">@csrf
                                     @method('DELETE')</i>Delete</a> -->
