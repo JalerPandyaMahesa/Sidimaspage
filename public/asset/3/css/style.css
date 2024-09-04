@@ -154,7 +154,8 @@ a:focus {
 
 .header_section {
     padding: 15px 0;
-    background-color: #c70000;
+    //background-color: #c70000;
+    background: linear-gradient(to right, #c70000, #7d1918);
     position: fixed;
     top: 0;
     left: 0;

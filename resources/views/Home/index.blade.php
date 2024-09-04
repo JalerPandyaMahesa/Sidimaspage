@@ -238,7 +238,7 @@
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Jumlah Guru & PGTK</h3>
-                                        <p>999</p>
+                                        <p>-</p>
                                         <p class="status_sekolah">Negeri : 
                                             {{-- {{ $totalTkN }} --}}
                                         </p>
