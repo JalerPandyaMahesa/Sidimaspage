@@ -387,7 +387,7 @@
                             <td>{{ $peserta->tempat_lahir }}</td>
                             <td>{{ $peserta->tanggal_lahir }}</td>
                             <td>{{ $peserta->jenis_kelamin }}</td>
-                            <td>{{ $peserta->Agama }}</td>
+                            <td>{{ $peserta->agama }}</td>
                             <!-- Add other data fields as needed -->
                         </tr>
                     @endforeach
