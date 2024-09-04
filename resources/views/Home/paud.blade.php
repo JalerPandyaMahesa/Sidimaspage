@@ -73,13 +73,13 @@
                                         class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="team.html">Paud & Dikmas</a>
+                                <a class="nav-link" href="{{ route('home.paud') }}">Paud & Dikmas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html">SD</a>
+                                <a class="nav-link" href="{{ route('home.sd') }}">SD</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="service.html">SMP</a>
+                                <a class="nav-link" href="{{ route('home.smp') }}">SMP</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i>
@@ -183,6 +183,12 @@
                             </div> <!-- end .table-responsive -->
                         </div> <!-- end .table-container -->
                     </div> <!-- end card-box -->
+                    <div class="pagination-container">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                            </ul>
+                        </nav>
+                    </div>
                 </div> <!-- end container -->
             </section>
             <!-- End Tabel Section -->
@@ -229,18 +235,21 @@
                 const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
 
                 filterKecamatan.addEventListener('change', function() {
-                    const selectedKecamatan = filterKecamatan.value.toLowerCase();
-                    let rowIndex = 1; // Start row index from 1
+                    const selectedKecamatan = filterKecamatan.value.toLowerCase()
+                .trim(); // Menggunakan trim untuk menghapus spasi ekstra
+                    let rowIndex = 1;
 
                     tableRows.forEach(row => {
-                        const kecamatanCell = row.querySelector('td:nth-child(4)');
-                        const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
+                        const kecamatanCell = row.querySelector(
+                        'td:nth-child(6)'); // Mengubah ke kolom ke-6
+                        const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase()
+                        .trim() : '';
 
                         if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
-                            row.style.display = ''; // Show the row
-                            row.querySelector('td').textContent = rowIndex++; // Update the row number
+                            row.style.display = ''; // Tampilkan baris
+                            row.querySelector('td').textContent = rowIndex++; // Update nomor baris
                         } else {
-                            row.style.display = 'none'; // Hide the row
+                            row.style.display = 'none'; // Sembunyikan baris
                         }
                     });
                 });
@@ -252,6 +261,57 @@
                     });
                     XLSX.writeFile(workbook, 'table-export.xlsx');
                 });
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+                const rowsPerPage = 100; // Jumlah baris per halaman
+                const paginationContainer = document.querySelector('.pagination-container .pagination');
+
+                function displayRows(page) {
+                    const start = (page - 1) * rowsPerPage;
+                    const end = start + rowsPerPage;
+
+                    tableRows.forEach((row, index) => {
+                        row.style.display = (index >= start && index < end) ? '' : 'none';
+                    });
+                }
+
+                function setupPagination() {
+                    const totalPages = Math.ceil(tableRows.length / rowsPerPage);
+
+                    paginationContainer.innerHTML = ''; // Kosongkan pagination sebelumnya
+
+                    for (let i = 1; i <= totalPages; i++) {
+                        const li = document.createElement('li');
+                        li.classList.add('page-item');
+                        const a = document.createElement('a');
+                        a.classList.add('page-link');
+                        a.textContent = i;
+                        a.href = '#';
+
+                        li.appendChild(a);
+                        paginationContainer.appendChild(li);
+
+                        li.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const currentPage = parseInt(this.textContent);
+                            displayRows(currentPage);
+
+                            document.querySelectorAll('.pagination li').forEach(el => el.classList.remove(
+                                'active'));
+                            this.classList.add('active');
+                        });
+                    }
+
+                    // Set halaman pertama sebagai aktif
+                    paginationContainer.querySelector('li').classList.add('active');
+                }
+
+                // Inisialisasi pagination
+                displayRows(1);
+                setupPagination();
             });
         </script>
 </body>
