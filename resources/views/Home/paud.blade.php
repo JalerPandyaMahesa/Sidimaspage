@@ -43,6 +43,9 @@
             z-index: 0;
         }
     </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 </head>
 
 <body>
@@ -95,92 +98,92 @@
                 <div class="container">
                     <div class="card-box">
                         <h4 class="header-title"></h4>
-                        <div class="mb-2">
-                            <div class="row">
-                                <div class="col-12 text-sm-center form-inline">
-                                    <div class="form-group mr-2" style="display:none">
-                                    </div>
-                                    <div class="form-group">
-                                        <select id="filter-kecamatan" class="custom-select custom-select-sm">
-                                            <option value="">Pilih Kecamatan</option>
-                                            <option value="Kec. Ajibarang">Kec. Ajibarang</option>
-                                            <option value="Kec. Banyumas">Kec. Banyumas</option>
-                                            <option value="Kec. Baturaden">Kec. Baturaden</option>
-                                            <option value="Kec. Cilongok">Kec. Cilongok</option>
-                                            <option value="Kec. Gumelar">Kec. Gumelar</option>
-                                            <option value="Kec. Jatilawang">Kec. Jatilawang</option>
-                                            <option value="Kec. Kalibagor">Kec. Kalibagor</option>
-                                            <option value="Kec. Karanglewas">Kec. Karanglewas</option>
-                                            <option value="Kec. Kebasen">Kec. Kebasen</option>
-                                            <option value="Kec. Kedung Banteng">Kec. Kedung Banteng</option>
-                                            <option value="Kec. Kembaran">Kec. Kembaran</option>
-                                            <option value="Kec. Kemranjen">Kec. Kemranjen</option>
-                                            <option value="Kec. Lumbir">Kec. Lumbir</option>
-                                            <option value="Kec. Patikraja">Kec. Patikraja</option>
-                                            <option value="Kec. Pekuncen">Kec. Pekuncen</option>
-                                            <option value="Kec. Purwojati">Kec. Purwojati</option>
-                                            <option value="Kec. Purwokerto Barat">Kec. Purwokerto Barat</option>
-                                            <option value="Kec. Purwokerto Selatan">Kec. Purwokerto Selatan
-                                            </option>
-                                            <option value="Kec. Purwokerto Timur">Kec. Purwokerto Timur</option>
-                                            <option value="Kec. Purwokerto Utara">Kec. Purwokerto Utara</option>
-                                            <option value="Kec. Rawalo">Kec. Rawalo</option>
-                                            <option value="Kec. Sokaraja">Kec. Sokaraja</option>
-                                            <option value="Kec. Somagede">Kec. Somagede</option>
-                                            <option value="Kec. Sumbang">Kec. Sumbang</option>
-                                            <option value="Kec. Sumpiuh">Kec. Sumpiuh</option>
-                                            <option value="Kec. Tambak">Kec. Tambak</option>
-                                            <option value="Kec. Wangon">Kec. Wangon</option>
-                                        </select>
+                        <div class="table-container"> <!-- Mulai kotak putih -->
+                            <div class="mb-2">
+                                <div class="row">
+                                    <div class="col-12 text-sm-center form-inline">
+                                        <div class="form-group mr-2" style="display:none"></div>
+                                        <div class="form-group">
+                                            <select id="filter-kecamatan" class="custom-select custom-select-sm">
+                                                <option value="">Pilih Kecamatan</option>
+                                                <option value="Kec. Ajibarang">Kec. Ajibarang</option>
+                                                <option value="Kec. Banyumas">Kec. Banyumas</option>
+                                                <option value="Kec. Baturaden">Kec. Baturaden</option>
+                                                <option value="Kec. Cilongok">Kec. Cilongok</option>
+                                                <option value="Kec. Gumelar">Kec. Gumelar</option>
+                                                <option value="Kec. Jatilawang">Kec. Jatilawang</option>
+                                                <option value="Kec. Kalibagor">Kec. Kalibagor</option>
+                                                <option value="Kec. Karanglewas">Kec. Karanglewas</option>
+                                                <option value="Kec. Kebasen">Kec. Kebasen</option>
+                                                <option value="Kec. Kedung Banteng">Kec. Kedung Banteng</option>
+                                                <option value="Kec. Kembaran">Kec. Kembaran</option>
+                                                <option value="Kec. Kemranjen">Kec. Kemranjen</option>
+                                                <option value="Kec. Lumbir">Kec. Lumbir</option>
+                                                <option value="Kec. Patikraja">Kec. Patikraja</option>
+                                                <option value="Kec. Pekuncen">Kec. Pekuncen</option>
+                                                <option value="Kec. Purwojati">Kec. Purwojati</option>
+                                                <option value="Kec. Purwokerto Barat">Kec. Purwokerto Barat</option>
+                                                <option value="Kec. Purwokerto Selatan">Kec. Purwokerto Selatan
+                                                </option>
+                                                <option value="Kec. Purwokerto Timur">Kec. Purwokerto Timur</option>
+                                                <option value="Kec. Purwokerto Utara">Kec. Purwokerto Utara</option>
+                                                <option value="Kec. Rawalo">Kec. Rawalo</option>
+                                                <option value="Kec. Sokaraja">Kec. Sokaraja</option>
+                                                <option value="Kec. Somagede">Kec. Somagede</option>
+                                                <option value="Kec. Sumbang">Kec. Sumbang</option>
+                                                <option value="Kec. Sumpiuh">Kec. Sumpiuh</option>
+                                                <option value="Kec. Tambak">Kec. Tambak</option>
+                                                <option value="Kec. Wangon">Kec. Wangon</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="table-responsive">
-                            <button id="export-button" class="btn btn-primary mb-3">Export to Excel</button>
-                            <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
-                                data-page-size="7">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th data-toggle="true">NPSN</th>
-                                        <th data-hide="phone">Nama</th>
-                                        <th data-hide="phone">Kecamatan</th>
-                                        <th data-hide="phone">Bentuk Pendidikan</th>
-                                        <th data-hide="phone">Status Sekolah</th>
-                                        <th data-hide="phone">Peserta Didik</th>
-                                    </tr>
-                                </thead>
-
-                                @foreach ($sekolah as $index => $s)
-                                    <tbody>
+                            <div class="table-responsive">
+                                <button id="export-button" class="btn btn-primary mb-3">Export to Excel</button>
+                                <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
+                                    data-page-size="7">
+                                    <thead>
                                         <tr>
-                                            <td>{{ $index + 1 }}</td>
-                                            <td>{{ $s->npsn }}</td>
-                                            <td>{{ $s->nama }}</td>
-                                            <td>{{ $s->kecamatan }}</td>
-                                            <td>{{ $s->bentuk_pendidikan }}</td>
-                                            <td>{{ $s->status_sekolah }}</td>
-                                            <td>#</td>
+                                            <th>#</th>
+                                            <th data-toggle="true">NPSN</th>
+                                            <th data-hide="phone">Nama</th>
+                                            <th data-hide="phone">Bentuk Pendidikan</th>
+                                            <th data-hide="phone">Status Sekolah</th>
+                                            <th data-hide="phone">Kecamatan</th>
+                                            <th data-hide="phone">Alamat</th>
                                         </tr>
-                                @endforeach
-                                </tbody>
-                                <tfoot>
-                                    <tr class="active">
-                                        <td colspan="8">
-                                            <div class="text-right">
-                                                <ul
-                                                    class="pagination pagination-rounded justify-content-end footable-pagination m-t-10 mb-0">
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div> <!-- end .table-responsive-->
+                                    </thead>
+                                    @foreach ($sekolah as $index => $s)
+                                        <tbody>
+                                            <tr>
+                                                <td>{{ $index + 1 }}</td>
+                                                <td>{{ $s->npsn }}</td>
+                                                <td>{{ $s->nama }}</td>
+                                                <td>{{ $s->bentuk_pendidikan }}</td>
+                                                <td>{{ $s->status_sekolah }}</td>
+                                                <td>{{ $s->kecamatan }}</td>
+                                                <td>{{ $s->alamat_jalan }}</td>
+                                            </tr>
+                                    @endforeach
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="active">
+                                            <td colspan="8">
+                                                <div class="text-right">
+                                                    <ul
+                                                        class="pagination pagination-rounded justify-content-end footable-pagination m-t-10 mb-0">
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div> <!-- end .table-responsive -->
+                        </div> <!-- end .table-container -->
                     </div> <!-- end card-box -->
-                </div>
+                </div> <!-- end container -->
             </section>
             <!-- End Tabel Section -->
 
@@ -219,6 +222,38 @@
         </script>
         <!-- custom js -->
         <script type="text/javascript" src="{{ asset('asset/3/js/custom.js') }}"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const filterKecamatan = document.getElementById('filter-kecamatan');
+                const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+
+                filterKecamatan.addEventListener('change', function() {
+                    const selectedKecamatan = filterKecamatan.value.toLowerCase();
+                    let rowIndex = 1; // Start row index from 1
+
+                    tableRows.forEach(row => {
+                        const kecamatanCell = row.querySelector('td:nth-child(4)');
+                        const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
+
+                        if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
+                            row.style.display = ''; // Show the row
+                            row.querySelector('td').textContent = rowIndex++; // Update the row number
+                        } else {
+                            row.style.display = 'none'; // Hide the row
+                        }
+                    });
+                });
+
+                document.getElementById('export-button').addEventListener('click', function() {
+                    const table = document.getElementById('demo-foo-filtering');
+                    const workbook = XLSX.utils.table_to_book(table, {
+                        sheet: "Sheet1"
+                    });
+                    XLSX.writeFile(workbook, 'table-export.xlsx');
+                });
+            });
+        </script>
 </body>
 
 </html>
