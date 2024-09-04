@@ -173,7 +173,7 @@
 
                                 <div class="col-md-4 ">
                                     <div class="jenjang-pendidikan">
-                                        <a href="{{ route('hzome.smp') }}">
+                                        <a href="{{ route('home.smp') }}">
                                             <div class="box jenjang-box smp">
                                                 <div class="content-wrapper">
                                                     <img src="{{ asset('img/smp.png') }}" alt="Sekolah Menengah">
