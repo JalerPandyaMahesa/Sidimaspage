@@ -203,57 +203,51 @@
                                     <div class="school-box">
                                         <h3>PAUD & DIKMAS</h3>
                                         <p>{{ $totalTk }}</p>
+                                        <p class="status_sekolah">Negeri : 
+                                            {{-- {{ $totalTkN }} --}}
+                                        </p>
+                                        <p class="status_sekolah">Swasta : 
+                                            {{-- {{ $totalTkS }} --}}
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Sekolah Menengah</h3>
                                         <p>{{ $totalSmp }}</p>
+                                        <p class="status_sekolah">Negeri : 
+                                            {{-- {{ $totalTkN }} --}}
+                                        </p>
+                                        <p class="status_sekolah">Swasta : 
+                                            {{-- {{ $totalTkS }} --}}
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Sekolah Dasar</h3>
                                         <p>{{ $totalSd }}</p>
+                                        <p class="status_sekolah">Negeri : 
+                                            {{-- {{ $totalTkN }} --}}
+                                        </p>
+                                        <p class="status_sekolah">Swasta : 
+                                            {{-- {{ $totalTkS }} --}}
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Jumlah Guru & PGTK</h3>
                                         <p>999</p>
+                                        <p class="status_sekolah">Negeri : 
+                                            {{-- {{ $totalTkN }} --}}
+                                        </p>
+                                        <p class="status_sekolah">Swasta : 
+                                            {{-- {{ $totalTkS }} --}}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="row">
-                                <div class="col-md-6">
-                                    <div class="grid-item">
-                                        <div class="school-box">
-                                            <h3>PAUD & DIKMAS</h3>
-                                            <p>999</p>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="school-box">
-                                            <h3>Sekolah Menengah</h3>
-                                            <p>999</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="grid-item">
-                                        <div class="school-box">
-                                            <h3>Sekolah Dasar</h3>
-                                            <p>999</p>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="school-box">
-                                            <h3>Jumlah Guru & PGTK</h3>
-                                            <p>999</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </section>

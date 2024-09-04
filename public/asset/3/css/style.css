@@ -1158,7 +1158,7 @@ a:focus {
     text-align: center;
     font-size: 24px;
     width: 500px;
-    height: 150px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1260,5 +1260,7 @@ p {
     text-align: center;
 }
 
-
+.status_sekolah{
+    font-size: 16px;
+}
 /*# sourceMappingURL=style.css.map */
