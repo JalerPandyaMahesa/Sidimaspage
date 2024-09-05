@@ -192,7 +192,7 @@
                                         <a href="{{ route('home.paud') }}">
                                             <div class="box jenjang-box paud">
                                                 <div class="content-wrapper">
-                                                    <img src="{{ asset('img/paud.png') }}" alt="Paud & Dikmas">
+                                                    <img src="{{ asset('img/paud3.png') }}" alt="Paud & Dikmas">
                                                 </div>
                                             </div>
                                         </a>
@@ -204,7 +204,7 @@
                                         <a href="{{ route('home.sd') }}">
                                             <div class="box jenjang-box sd">
                                                 <div class="content-wrapper">
-                                                    <img src="{{ asset('img/sd.png') }}" alt="Sekolah Dasar">
+                                                    <img src="{{ asset('img/sd3.png') }}" alt="Sekolah Dasar">
                                                 </div>
                                             </div>
                                         </a>
@@ -216,7 +216,7 @@
                                         <a href="{{ route('home.smp') }}">
                                             <div class="box jenjang-box smp">
                                                 <div class="content-wrapper">
-                                                    <img src="{{ asset('img/smp.png') }}" alt="Sekolah Menengah">
+                                                    <img src="{{ asset('img/smp3.png') }}" alt="Sekolah Menengah">
                                                 </div>
                                             </div>
                                         </a>
@@ -242,7 +242,7 @@
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>PAUD & DIKMAS</h3>
-                                        <p>{{ $totalTk }}</p>
+                                        <p class="jmlh-sklh">{{ $totalTk }}</p>
                                         <p class="status_sekolah">Negeri : 
                                             {{-- {{ $totalTkN }} --}}
                                         </p>
@@ -254,7 +254,7 @@
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Sekolah Menengah</h3>
-                                        <p>{{ $totalSmp }}</p>
+                                        <p class="jmlh-sklh">{{ $totalSmp }}</p>
                                         <p class="status_sekolah">Negeri : 
                                             {{-- {{ $totalTkN }} --}}
                                         </p>
@@ -266,7 +266,7 @@
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Sekolah Dasar</h3>
-                                        <p>{{ $totalSd }}</p>
+                                        <p class="jmlh-sklh">{{ $totalSd }}</p>
                                         <p class="status_sekolah">Negeri : 
                                             {{-- {{ $totalTkN }} --}}
                                         </p>
@@ -278,7 +278,7 @@
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>Jumlah Guru & PGTK</h3>
-                                        <p>-</p>
+                                        <p class="jmlh-sklh">-</p>
                                         <p class="status_sekolah">Negeri : 
                                             {{-- {{ $totalTkN }} --}}
                                         </p>
