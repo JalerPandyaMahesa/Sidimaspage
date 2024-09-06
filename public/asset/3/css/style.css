@@ -23,7 +23,7 @@ body {
 } */
 
 .layout_padding {
-    //padding: 90px 0;
+    padding: 90px 0;
     padding: 10px 100px;
 }
 
@@ -155,7 +155,7 @@ a:focus {
 
 .header_section {
     padding: 15px 0;
-    //background-color: #c70000;
+    background-color: #c70000;
     background: linear-gradient(to right, #c70000, #7d1918);
     position: fixed;
     top: 0;
@@ -570,8 +570,8 @@ a:focus {
 }
 
 .about_section {
-    //background-color: #00204a;
-    //color: #ffffff;
+    /* background-color: #00204a; */
+    color: #000000;
     padding-bottom: 100px;
 }
 
@@ -1070,7 +1070,7 @@ a:focus {
 
 .jenjang-pendidikan {
     /* flex-basis: 300px;  */
-    //padding-left: 60px;
+    padding-left: 60px;
 }
 
 .jenjang-pendidikan .jenjang-box {
@@ -1279,6 +1279,10 @@ p {
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+}
+
+.beranda-body{
+    text-align: justify;
 }
 
 

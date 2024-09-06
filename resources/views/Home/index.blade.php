@@ -110,16 +110,19 @@
                                                     Dinas Pendidikan <br>
                                                     Kabupaten Banyumas
                                                 </h1>
-                                                <p>
-                                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque
-                                                    magnam
-                                                    fugiat hic? Esse dicta aliquid error repudiandae earum suscipit
-                                                    fugiat
-                                                    molestias, veniam, vel architecto veritatis delectus repellat
-                                                    modi
-                                                    impedit
-                                                    sequi.
+                                                <p class="beranda-body" >
+                                                Sistem Informasi Pendidikan Banyumas (SIDIMAS) adalah platform digital yang dikembangkan untuk mempermudah pengelolaan data pendidikan di Kabupaten Banyumas. Sistem ini membantu sekolah, dinas pendidikan, dan masyarakat dalam mengakses berbagai informasi terkait sekolah, siswa, tenaga pendidik, serta fasilitas pendidikan.
                                                 </p>
+                                                <!-- <p>
+                                                    Visi :<br>
+                                                    Meningkatkan kualitas hidup warga melalui pemenuhann kebutuhan dan layanan dasar pendidikan.
+                                                    <br>
+                                                    <br>
+                                                    Misi :<br>
+                                                    1. Meningkatkan layanan aksesbilitas pendidikan yang ramah dan santun.<br>
+                                                    2. Cepat dan tanggap terhadao perubahan, sinergi dengan tata kelola penyelenggaraa pendidikan.<br>
+                                                    3. Akurat dalam penyampaian data dan informasi pendidikan.
+                                                </p> -->
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -300,12 +303,7 @@
                             <div class="col-4">
                                 <div class="isi-text-grafik">
                                     <p class="isi-text-kepala">Grafik Siswa</p>
-                                    <p class="isi-text-badan">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                                        ever since the 1500s, when an unknown printer took a galley of type and
-                                        scrambled it to make a type specimen book. It has survived not only five
-                                        centuries, but also the leap into electronic typesetting, remaining essentially
-                                        unchanged.</p>
+                                    <p class="isi-text-badan">Grafik siswa adalah visualisasi data yang menggambarkan berapa banyak siswa yang terdaftar di setiap sekolah yang ada dalam suatu wilayah atau sistem pendidikan. </p>
                                 </div>
                             </div>
                             <div class="col-7">
