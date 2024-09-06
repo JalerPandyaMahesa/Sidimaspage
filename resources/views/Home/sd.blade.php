@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Basic -->
     <meta charset="UTF-8">
@@ -31,82 +32,190 @@
     <!-- responsive style -->
     <link href="{{ asset('asset/3/css/responsive.css') }}" rel="stylesheet" />
 
-    <title>SD</title>
+    <title>Paud & Dikmas</title>
     <style>
         .master-bg {
             background-image: url({{ asset('img/bg.png') }});
             background-size: cover;
             background-repeat: no-repeat;
-            z-index: -2;
+            background-position: center;
+            //height: 100vh;
+            z-index: 0;
         }
     </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 </head>
+
 <body>
     <!-- Master BG -->
     <div class="master-bg">
 
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                    <a class="navbar-brand" href="{{ route('Home.index') }}">
+                        <img src="{{ asset('img/Logo_Sidimas2.png') }}" alt="Logo SiDimas">
+                    </a>
 
-            <!-- header section strats -->
-            <header class="header_section">
-                <div class="container-fluid">
-                    <nav class="navbar navbar-expand-lg custom_nav-container ">
-                        <a class="navbar-brand" href="{{ route('Home.index') }}">
-                            <img src="{{ asset('img/Logo_Sidimas2.png') }}" alt="Logo SiDimas">
-                        </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class=""> </span>
+                    </button>
 
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class=""> </span>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav  ">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('Home.index') }}">Beranda <span
-                                            class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="team.html">Jenjang</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about.html">Sekolah</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="service.html">Grafik</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="why.html">Tentang</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i>
-                                        Login</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </header>
-            <!-- end header section -->
-            <div class="content">
-
-                <!-- Footer -->
-                <section class="footer_section">
-                    <div class="container">
-                        <div>
-                            <p class="text-atas">
-                                Di Desain Oleh : <span>Dinas Pendidikan Pemerintahan Kab. Banyumas</span>
-                            </p>
-                            <p class="text-bawah">
-                                - V01.2024 <a href="https://ittelkom-pwt.ac.id/">Tel-U Purwokerto</a>
-                            </p>
-                        </div>
-
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav  ">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('Home.index') }}">Beranda <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home.paud') }}">Paud & Dikmas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home.sd') }}">SD</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home.smp') }}">SMP</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i>
+                                    Login</a>
+                            </li>
+                        </ul>
                     </div>
-                </section>
-                <!-- end Footer -->
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+        <div class="content">
 
-            
+            <!-- Tabel Section -->
+            <section id="tabel-paud" class="paud_section">
+                <div class="container">
+                    <div class="card-box">
+                        <h4 class="header-title"></h4>
+                        <div class="table-container"> <!-- Mulai kotak putih -->
+                            <div class="mb-2">
+                                <div class="row">
+                                    <div class="col-12 text-sm-center form-inline">
+                                        <div class="form-group mr-2" style="display:none"></div>
+                                        <div class="form-group">
+                                            <select id="filter-kecamatan" class="custom-select custom-select-sm">
+                                                <option value="">Pilih Kecamatan</option>
+                                                <option value="Kec. Ajibarang">Kec. Ajibarang</option>
+                                                <option value="Kec. Banyumas">Kec. Banyumas</option>
+                                                <option value="Kec. Baturaden">Kec. Baturaden</option>
+                                                <option value="Kec. Cilongok">Kec. Cilongok</option>
+                                                <option value="Kec. Gumelar">Kec. Gumelar</option>
+                                                <option value="Kec. Jatilawang">Kec. Jatilawang</option>
+                                                <option value="Kec. Kalibagor">Kec. Kalibagor</option>
+                                                <option value="Kec. Karanglewas">Kec. Karanglewas</option>
+                                                <option value="Kec. Kebasen">Kec. Kebasen</option>
+                                                <option value="Kec. Kedung Banteng">Kec. Kedung Banteng</option>
+                                                <option value="Kec. Kembaran">Kec. Kembaran</option>
+                                                <option value="Kec. Kemranjen">Kec. Kemranjen</option>
+                                                <option value="Kec. Lumbir">Kec. Lumbir</option>
+                                                <option value="Kec. Patikraja">Kec. Patikraja</option>
+                                                <option value="Kec. Pekuncen">Kec. Pekuncen</option>
+                                                <option value="Kec. Purwojati">Kec. Purwojati</option>
+                                                <option value="Kec. Purwokerto Barat">Kec. Purwokerto Barat</option>
+                                                <option value="Kec. Purwokerto Selatan">Kec. Purwokerto Selatan
+                                                </option>
+                                                <option value="Kec. Purwokerto Timur">Kec. Purwokerto Timur</option>
+                                                <option value="Kec. Purwokerto Utara">Kec. Purwokerto Utara</option>
+                                                <option value="Kec. Rawalo">Kec. Rawalo</option>
+                                                <option value="Kec. Sokaraja">Kec. Sokaraja</option>
+                                                <option value="Kec. Somagede">Kec. Somagede</option>
+                                                <option value="Kec. Sumbang">Kec. Sumbang</option>
+                                                <option value="Kec. Sumpiuh">Kec. Sumpiuh</option>
+                                                <option value="Kec. Tambak">Kec. Tambak</option>
+                                                <option value="Kec. Wangon">Kec. Wangon</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <button id="export-button" class="btn btn-primary mb-3">Export to Excel</button>
+                                <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
+                                    data-page-size="7">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th data-toggle="true">NPSN</th>
+                                            <th data-hide="phone">Nama</th>
+                                            <th data-hide="phone">Bentuk Pendidikan</th>
+                                            <th data-hide="phone">Status Sekolah</th>
+                                            <th data-hide="phone">Kecamatan</th>
+                                            <th data-hide="phone">Kelurahan</th>
+                                            <th data-hide="phone">Alamat</th>
+                                            <th data-hide="phone">Nomor Telepon</th>
+                                            <th data-hide="phone">Email</th>
+                                        </tr>
+                                    </thead>
+                                    @foreach ($sekolah as $index => $s)
+                                        <tbody>
+                                            <tr>
+                                                <td>{{ $index + 1 }}</td>
+                                                <td>{{ $s->npsn }}</td>
+                                                <td>{{ $s->nama }}</td>
+                                                <td>{{ $s->bentuk_pendidikan }}</td>
+                                                <td>{{ $s->status_sekolah }}</td>
+                                                <td>{{ $s->kecamatan }}</td>
+                                                <td>{{ $s->desa_kelurahan }}</td>
+                                                <td>{{ $s->alamat_jalan }}</td>
+                                                <td>{{ $s->nomor_telepon }}</td>
+                                                <td>{{ $s->email }}</td>
+                                            </tr>
+                                    @endforeach
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="active">
+                                            <td colspan="8">
+                                                <div class="text-right">
+                                                    <ul
+                                                        class="pagination pagination-rounded justify-content-end footable-pagination m-t-10 mb-0">
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div> <!-- end .table-responsive -->
+                        </div> <!-- end .table-container -->
+                    </div> <!-- end card-box -->
+                    <div class="pagination-container">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                            </ul>
+                        </nav>
+                    </div>
+                </div> <!-- end container -->
+            </section>
+            <!-- End Tabel Section -->
+
+            <!-- Footer -->
+            <section class="footer_section">
+                <div class="container">
+                    <div>
+                        <p class="text-atas">
+                            Di Desain Oleh : <span>Dinas Pendidikan Pemerintahan Kab. Banyumas</span>
+                        </p>
+                        <p class="text-bawah">
+                            - V01.2024 <a href="https://ittelkom-pwt.ac.id/">Tel-U Purwokerto</a>
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+            <!-- end Footer -->
+
+
         </div>
         <!-- End Master BG -->
 
@@ -125,5 +234,92 @@
         </script>
         <!-- custom js -->
         <script type="text/javascript" src="{{ asset('asset/3/js/custom.js') }}"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const filterKecamatan = document.getElementById('filter-kecamatan');
+                const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+
+                filterKecamatan.addEventListener('change', function() {
+                    const selectedKecamatan = filterKecamatan.value.toLowerCase()
+                .trim(); // Menggunakan trim untuk menghapus spasi ekstra
+                    let rowIndex = 1;
+
+                    tableRows.forEach(row => {
+                        const kecamatanCell = row.querySelector(
+                        'td:nth-child(6)'); // Mengubah ke kolom ke-6
+                        const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase()
+                        .trim() : '';
+
+                        if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
+                            row.style.display = ''; // Tampilkan baris
+                            row.querySelector('td').textContent = rowIndex++; // Update nomor baris
+                        } else {
+                            row.style.display = 'none'; // Sembunyikan baris
+                        }
+                    });
+                });
+
+                document.getElementById('export-button').addEventListener('click', function() {
+                    const table = document.getElementById('demo-foo-filtering');
+                    const workbook = XLSX.utils.table_to_book(table, {
+                        sheet: "Sheet1"
+                    });
+                    XLSX.writeFile(workbook, 'table-export.xlsx');
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+                const rowsPerPage = 100; // Jumlah baris per halaman
+                const paginationContainer = document.querySelector('.pagination-container .pagination');
+
+                function displayRows(page) {
+                    const start = (page - 1) * rowsPerPage;
+                    const end = start + rowsPerPage;
+
+                    tableRows.forEach((row, index) => {
+                        row.style.display = (index >= start && index < end) ? '' : 'none';
+                    });
+                }
+
+                function setupPagination() {
+                    const totalPages = Math.ceil(tableRows.length / rowsPerPage);
+
+                    paginationContainer.innerHTML = ''; // Kosongkan pagination sebelumnya
+
+                    for (let i = 1; i <= totalPages; i++) {
+                        const li = document.createElement('li');
+                        li.classList.add('page-item');
+                        const a = document.createElement('a');
+                        a.classList.add('page-link');
+                        a.textContent = i;
+                        a.href = '#';
+
+                        li.appendChild(a);
+                        paginationContainer.appendChild(li);
+
+                        li.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const currentPage = parseInt(this.textContent);
+                            displayRows(currentPage);
+
+                            document.querySelectorAll('.pagination li').forEach(el => el.classList.remove(
+                                'active'));
+                            this.classList.add('active');
+                        });
+                    }
+
+                    // Set halaman pertama sebagai aktif
+                    paginationContainer.querySelector('li').classList.add('active');
+                }
+
+                // Inisialisasi pagination
+                displayRows(1);
+                setupPagination();
+            });
+        </script>
 </body>
+
 </html>

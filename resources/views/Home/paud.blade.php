@@ -146,13 +146,16 @@
                                     data-page-size="7">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>No.</th>
                                             <th data-toggle="true">NPSN</th>
                                             <th data-hide="phone">Nama</th>
                                             <th data-hide="phone">Bentuk Pendidikan</th>
                                             <th data-hide="phone">Status Sekolah</th>
                                             <th data-hide="phone">Kecamatan</th>
+                                            <th data-hide="phone">Kelurahan</th>
                                             <th data-hide="phone">Alamat</th>
+                                            <th data-hide="phone">Nomor Telepon</th>
+                                            <th data-hide="phone">Email</th>
                                         </tr>
                                     </thead>
                                     @foreach ($sekolah as $index => $s)
@@ -164,7 +167,10 @@
                                                 <td>{{ $s->bentuk_pendidikan }}</td>
                                                 <td>{{ $s->status_sekolah }}</td>
                                                 <td>{{ $s->kecamatan }}</td>
+                                                <td>{{ $s->desa_kelurahan }}</td>
                                                 <td>{{ $s->alamat_jalan }}</td>
+                                                <td>{{ $s->nomor_telepon }}</td>
+                                                <td>{{ $s->email }}</td>
                                             </tr>
                                     @endforeach
                                     </tbody>
