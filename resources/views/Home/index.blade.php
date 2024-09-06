@@ -207,7 +207,7 @@
                                         <a href="{{ route('home.sd') }}">
                                             <div class="box jenjang-box sd">
                                                 <div class="content-wrapper">
-                                                    <img src="{{ asset('img/sd3.png') }}" alt="Sekolah Dasar">
+                                                    <img  src="{{ asset('img/sd3.png') }}" alt="Sekolah Dasar">
                                                 </div>
                                             </div>
                                         </a>

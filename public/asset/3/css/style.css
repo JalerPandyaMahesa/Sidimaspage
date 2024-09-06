@@ -460,9 +460,7 @@ a:focus {
     text-align: center;
     margin-top: 45px;
     background-color: #f8f8f9;
-    padding: 20px;
     border-radius: 5px;
-
     overflow: hidden;
     transition: all 0.3s ease;
 }
@@ -1080,7 +1078,7 @@ a:focus {
     justify-content: center;
     text-align: center;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -1110,31 +1108,31 @@ a:focus {
 
 .paud .content-wrapper {
     /* background-color: #808080; */
-    padding: 20px;
+    padding: 0px;
 }
 
 .paud img {
-    width: 80%;
+    width: 100%;
     height: auto;
 }
 
 .sd .content-wrapper {
     /* background-color: #808080; */
-    padding: 20px;
+    padding: 0px;
 }
 
 .sd img {
-    width: 80%;
+    width: 100%;
     height: auto;
 }
 
 .smp .content-wrapper {
     /* background-color: #808080; */
-    padding: 20px;
+    padding: 0px;
 }
 
 .smp img {
-    width: 80%;
+    width: 100%;
     height: auto;
 }
 
