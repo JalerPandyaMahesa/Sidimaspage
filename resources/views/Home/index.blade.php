@@ -247,10 +247,10 @@
                                         <h3>PAUD & DIKMAS</h3>
                                         <p class="jmlh-sklh">{{ $totalTk }}</p>
                                         <p class="status_sekolah">Negeri : 
-                                            {{-- {{ $totalTkN }} --}}
+                                            {{ $tTkn }}
                                         </p>
                                         <p class="status_sekolah">Swasta : 
-                                            {{-- {{ $totalTkS }} --}}
+                                            {{ $tTks }}
                                         </p>
                                     </div>
                                 </div>
@@ -259,10 +259,10 @@
                                         <h3>Sekolah Menengah</h3>
                                         <p class="jmlh-sklh">{{ $totalSmp }}</p>
                                         <p class="status_sekolah">Negeri : 
-                                            {{-- {{ $totalTkN }} --}}
+                                            {{ $tSmpn }}
                                         </p>
                                         <p class="status_sekolah">Swasta : 
-                                            {{-- {{ $totalTkS }} --}}
+                                            {{ $tSmps }}
                                         </p>
                                     </div>
                                 </div>
