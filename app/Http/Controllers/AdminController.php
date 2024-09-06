@@ -56,9 +56,9 @@ class AdminController extends Controller
         return view('admin.viewPendidikanMasyarakat', compact('sekolah'));
     }
 
-    public function viewPtk($ptk_id)
+    public function viewPtk()
     {
-        $ptk = ptk::with('sekolah')->findOrFail($ptk_id);
+        $ptk = ptk::with('sekolah')->get();
         return view('admin.viewPgtk', compact('ptk'));
     }
 
