@@ -293,23 +293,6 @@
                                                 <tr>
                                                     <td>{{ $index + 1 }}</td>
                                                     <td>{{ $p->nama }}</td>
-                                                    <td><a href="{{ route('admin.showSekolah', $s->sekolah_id) }}"
-                                                            class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
-                                                        <a href="{{ route('admin.editSekolah', $s->sekolah_id) }}"
-                                                            class="badge badge-warning"><i
-                                                                class="fas fa-clipboard-check "></i> Update</a>
-                                                        <form
-                                                            action="{{ route('admin.destroySekolah',$s->sekolah_id) }}"
-                                                            method="POST" style="display:inline;">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="badge badge-danger"
-                                                                style="border:none">
-                                                                <i class="fas fa-trash-alt"></i> Delete
-                                                            </button>
-                                                        </form>
-
-                                                    </td>
                                                 </tr>
                                         @endforeach
                                         </tbody>
