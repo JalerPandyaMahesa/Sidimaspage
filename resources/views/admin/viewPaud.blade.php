@@ -176,7 +176,7 @@
                                     <a href="#">Tambah</a>
                                 </li>
                                 <li>
-                                    <a href="#">Lihat</a>
+                                    <a href="{{route("admin.viewPgtk")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -308,8 +308,7 @@
                                                         <a href="{{ route('admin.editSekolah', $s->sekolah_id) }}"
                                                             class="badge badge-warning"><i
                                                                 class="fas fa-clipboard-check "></i> Update</a>
-                                                        <form
-                                                            action="{{ route('admin.destroySekolah',$s->sekolah_id) }}"
+                                                        <form action="{{ route('admin.destroySekolah', $s->sekolah_id) }}"
                                                             method="POST" style="display:inline;">
                                                             @csrf
                                                             @method('DELETE')
@@ -336,6 +335,12 @@
                                         </tfoot>
                                     </table>
                                 </div> <!-- end .table-responsive-->
+                                <div class="pagination-container">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div> <!-- end card-box -->
                         </div> <!-- end col -->
                     </div>
@@ -387,30 +392,6 @@
     <!-- App js-->
     <script src=" {{ asset('assets/js/app.min.js') }} "></script>
 
-    <!-- <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const filterKecamatan = document.getElementById('filter-kecamatan');
-        const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
-
-        filterKecamatan.addEventListener('change', function () {
-            const selectedKecamatan = filterKecamatan.value.toLowerCase();
-            let rowIndex = 1; // Start row index from 1
-
-            tableRows.forEach(row => {
-                const kecamatanCell = row.querySelector('td:nth-child(4)');
-                const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
-
-                if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
-                    row.style.display = '';  // Show the row
-                    row.querySelector('td').textContent = rowIndex++;  // Update the row number
-                } else {
-                    row.style.display = 'none';  // Hide the row
-                }
-            });
-        });
-    });
-</script> -->
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const filterKecamatan = document.getElementById('filter-kecamatan');
@@ -438,6 +419,57 @@
                 const workbook = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
                 XLSX.writeFile(workbook, 'table-export.xlsx');
             });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+            const rowsPerPage = 100; // Jumlah baris per halaman
+            const paginationContainer = document.querySelector('.pagination-container .pagination');
+
+            function displayRows(page) {
+                const start = (page - 1) * rowsPerPage;
+                const end = start + rowsPerPage;
+
+                tableRows.forEach((row, index) => {
+                    row.style.display = (index >= start && index < end) ? '' : 'none';
+                });
+            }
+
+            function setupPagination() {
+                const totalPages = Math.ceil(tableRows.length / rowsPerPage);
+
+                paginationContainer.innerHTML = ''; // Kosongkan pagination sebelumnya
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const li = document.createElement('li');
+                    li.classList.add('page-item');
+                    const a = document.createElement('a');
+                    a.classList.add('page-link');
+                    a.textContent = i;
+                    a.href = '#';
+
+                    li.appendChild(a);
+                    paginationContainer.appendChild(li);
+
+                    li.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const currentPage = parseInt(this.textContent);
+                        displayRows(currentPage);
+
+                        document.querySelectorAll('.pagination li').forEach(el => el.classList.remove(
+                            'active'));
+                        this.classList.add('active');
+                    });
+                }
+
+                // Set halaman pertama sebagai aktif
+                paginationContainer.querySelector('li').classList.add('active');
+            }
+
+            // Inisialisasi pagination
+            displayRows(1);
+            setupPagination();
         });
     </script>
 

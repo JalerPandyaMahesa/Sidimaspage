@@ -176,7 +176,7 @@
                                     <a href="#">Tambah</a>
                                 </li>
                                 <li>
-                                    <a href="#">Lihat</a>
+                                    <a href="{{route("admin.viewPgtk")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>

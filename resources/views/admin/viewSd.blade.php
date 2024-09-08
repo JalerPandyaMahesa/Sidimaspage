@@ -176,7 +176,7 @@
                                     <a href="#">Tambah</a>
                                 </li>
                                 <li>
-                                    <a href="#">Lihat</a>
+                                    <a href="{{route("admin.viewPgtk")}}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -332,6 +332,12 @@
                                         </tfoot>
                                     </table>
                                 </div> <!-- end .table-responsive-->
+                                <div class="pagination-container">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div> <!-- end card-box -->
                         </div> <!-- end col -->
                     </div>
@@ -412,7 +418,58 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+            const rowsPerPage = 100; // Jumlah baris per halaman
+            const paginationContainer = document.querySelector('.pagination-container .pagination');
 
+            function displayRows(page) {
+                const start = (page - 1) * rowsPerPage;
+                const end = start + rowsPerPage;
+
+                tableRows.forEach((row, index) => {
+                    row.style.display = (index >= start && index < end) ? '' : 'none';
+                });
+            }
+
+            function setupPagination() {
+                const totalPages = Math.ceil(tableRows.length / rowsPerPage);
+
+                paginationContainer.innerHTML = ''; // Kosongkan pagination sebelumnya
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const li = document.createElement('li');
+                    li.classList.add('page-item');
+                    const a = document.createElement('a');
+                    a.classList.add('page-link');
+                    a.textContent = i;
+                    a.href = '#';
+
+                    li.appendChild(a);
+                    paginationContainer.appendChild(li);
+
+                    li.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const currentPage = parseInt(this.textContent);
+                        displayRows(currentPage);
+
+                        document.querySelectorAll('.pagination li').forEach(el => el.classList.remove(
+                            'active'));
+                        this.classList.add('active');
+                    });
+                }
+
+                // Set halaman pertama sebagai aktif
+                paginationContainer.querySelector('li').classList.add('active');
+            }
+
+            // Inisialisasi pagination
+            displayRows(1);
+            setupPagination();
+        });
+    </script>
+    
 
 </body>
 
