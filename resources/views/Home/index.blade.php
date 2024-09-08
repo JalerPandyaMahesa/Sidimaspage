@@ -271,22 +271,23 @@
                                         <h3>Sekolah Dasar</h3>
                                         <p class="jmlh-sklh">{{ $totalSd }}</p>
                                         <p class="status_sekolah">Negeri : 
-                                            {{-- {{ $totalTkN }} --}}
+                                            {{ $tTkn }}
                                         </p>
                                         <p class="status_sekolah">Swasta : 
-                                            {{-- {{ $totalTkS }} --}}
+                                            {{ $tTks }}
                                         </p>
                                     </div>
                                 </div>
                                 <div class="grid-item">
                                     <div class="school-box">
-                                        <h3>Jumlah Guru & PGTK</h3>
-                                        <p class="jmlh-sklh">-</p>
+                                        <h3>
+                                        Pusat Kegiatan Belajar Masyarakat</h3>
+                                        <p class="jmlh-sklh">{{ $totalPkbm }}</p>
                                         <p class="status_sekolah">Negeri : 
-                                            {{-- {{ $totalTkN }} --}}
+                                            {{ $tPkbmn }}
                                         </p>
                                         <p class="status_sekolah">Swasta : 
-                                            {{-- {{ $totalTkS }} --}}
+                                            {{ $tPkbms }}
                                         </p>
                                     </div>
                                 </div>
@@ -409,7 +410,7 @@
                     labels: ['Paud & Dikmas', 'Sekolah Dasar', 'Sekolah Menengah'],
                     datasets: [{
                         label: 'Jumlah Siswa',
-                        data: [{{ $tsTk }}, {{ $tsSd }}, {{ $tsSmp }},],
+                        data: [{{ $tsTk }}, {{ $tsSd }}, {{ $tsSmp }}, {{ $tsPkbm }}],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 99, 132, 0.2)',
