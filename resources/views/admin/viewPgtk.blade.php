@@ -214,7 +214,7 @@
                                         <li class="breadcrumb-item active">View Paud & Dikmas</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">List Paud & Dikmas</h4>
+                                <h4 class="page-title">List PGTK</h4>
                             </div>
                         </div>
                     </div>
@@ -224,7 +224,7 @@
                         <div class="col-12">
                             <div class="card-box">
                                 <h4 class="header-title"></h4>
-                                <div class="mb-2">
+                                <!-- <div class="mb-2">
                                     <div class="row">
                                         <div class="col-12 text-sm-center form-inline">
                                             <div class="form-group mr-2" style="display:none">
@@ -264,10 +264,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="table-responsive">
-                                    <div class="d-flex justify-content-end mb-3">
+                                    <!-- <div class="d-flex justify-content-end mb-3">
                                         <form action="{{ route('admin.addSekolah') }}" method="GET" class="me-2 pr-3">
                                             <button type="submit" class="btn btn-primary badge-success">
                                                 Tambah Sekolah
@@ -275,7 +275,7 @@
                                         </form>
 
                                         <button id="export-button" class="btn btn-primary">Export to Excel</button>
-                                    </div>
+                                    </div> -->
 
 
                                     <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
@@ -385,26 +385,26 @@
 </script> -->
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const filterKecamatan = document.getElementById('filter-kecamatan');
-            const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const filterKecamatan = document.getElementById('filter-kecamatan');
+        //     const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
 
-            filterKecamatan.addEventListener('change', function () {
-                const selectedKecamatan = filterKecamatan.value.toLowerCase();
-                let rowIndex = 1; // Start row index from 1
+        //     filterKecamatan.addEventListener('change', function () {
+        //         const selectedKecamatan = filterKecamatan.value.toLowerCase();
+        //         let rowIndex = 1; // Start row index from 1
 
-                tableRows.forEach(row => {
-                    const kecamatanCell = row.querySelector('td:nth-child(4)');
-                    const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
+        //         tableRows.forEach(row => {
+        //             const kecamatanCell = row.querySelector('td:nth-child(4)');
+        //             const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
 
-                    if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
-                        row.style.display = '';  // Show the row
-                        row.querySelector('td').textContent = rowIndex++;  // Update the row number
-                    } else {
-                        row.style.display = 'none';  // Hide the row
-                    }
-                });
-            });
+        //             if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
+        //                 row.style.display = '';  // Show the row
+        //                 row.querySelector('td').textContent = rowIndex++;  // Update the row number
+        //             } else {
+        //                 row.style.display = 'none';  // Hide the row
+        //             }
+        //         });
+        //     });
 
             document.getElementById('export-button').addEventListener('click', function () {
                 const table = document.getElementById('demo-foo-filtering');

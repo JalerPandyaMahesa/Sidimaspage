@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginsController;
 use App\Http\Controllers\PtkController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
@@ -20,22 +21,9 @@ Route::get('/home/paud', [UmumController::class, 'viewPaud'])->name('home.paud')
 Route::get('/home/sd', [UmumController::class, 'viewSD'])->name('home.sd');
 Route::get('/home/smp', [UmumController::class, 'viewSMP'])->name('home.smp');
 
-
-
-
-// Route::get('/paud', function () {
-//     return view('paud.index');
-// });
-
-// Route::get('/sd', function () {
-//     return view('sd.index');
-// });
-
-// Route::get('/smp', function () {
-//     return view('smp.index');
-// });
-
-
+Route::get('login', [LoginsController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginsController::class, 'login']);
+Route::post('logout', [LoginsController::class, 'logout'])->name('logout');
 // Route::get('/sekolah', [SekolahController::class, 'index'])->name('sekolah.index');
 // Route::get('/sekolah/tk', [SekolahController::class, 'tk'])->name('sekolah.tk');
 // Route::get('/sekolah/sd', [SekolahController::class, 'sd'])->name('sekolah.sd');
@@ -86,15 +74,15 @@ Route::post('/ptk', [PtkController::class, 'store'])->name('ptk.store');
 
 
 //admin
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
-Route::get('/admin/viewPaud', [AdminController::class, 'viewPaud'])->name('admin.viewPaud');
-Route::get('/admin/viewSd', [AdminController::class, 'viewSd'])->name('admin.viewSd');
-Route::get('/admin/viewSmp', [AdminController::class, 'viewSmp'])->name('admin.viewSmp');
-Route::get('/admin/viewPgtk', [AdminController::class, 'viewPtk'])->name('admin.viewPgtk');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('login');
+Route::get('/admin/viewPaud', [AdminController::class, 'viewPaud'])->name('admin.viewPaud')->middleware('login');
+Route::get('/admin/viewSd', [AdminController::class, 'viewSd'])->name('admin.viewSd')->middleware('login');
+Route::get('/admin/viewSmp', [AdminController::class, 'viewSmp'])->name('admin.viewSmp')->middleware('login');
+Route::get('/admin/viewPgtk', [AdminController::class, 'viewPtk'])->name('admin.viewPgtk')->middleware('login');
 
-Route::get('/admin/addSekolah', [AdminController::class, 'createSekolah'])->name('admin.addSekolah');
-Route::post('/admin/dashboard', [AdminController::class, 'store'])->name('admin.store');
-Route::get('/admin/{sekolah_id}', [AdminController::class, 'showSekolah'])->name('admin.showSekolah');
-Route::get('/admin/{sekolah_id}/edit', [AdminController::class, 'editSekolah'])->name('admin.editSekolah');
-Route::put('/admin/{sekolah_id}', [AdminController::class, 'update'])->name('admin.updateSekolah');
-Route::delete('/admin/{sekolah_id}', [AdminController::class, 'destroySekolah'])->name('admin.destroySekolah');
+Route::get('/admin/addSekolah', [AdminController::class, 'createSekolah'])->name('admin.addSekolah')->middleware('login');
+Route::post('/admin/dashboard', [AdminController::class, 'store'])->name('admin.store')->middleware('login');
+Route::get('/admin/{sekolah_id}', [AdminController::class, 'showSekolah'])->name('admin.showSekolah')->middleware('login');
+Route::get('/admin/{sekolah_id}/edit', [AdminController::class, 'editSekolah'])->name('admin.editSekolah')->middleware('login');
+Route::put('/admin/{sekolah_id}', [AdminController::class, 'update'])->name('admin.updateSekolah')->middleware('login');
+Route::delete('/admin/{sekolah_id}', [AdminController::class, 'destroySekolah'])->name('admin.destroySekolah')->middleware('login');
