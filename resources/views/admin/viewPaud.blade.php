@@ -66,9 +66,12 @@
                         <!-- <div class="dropdown-divider"></div> -->
 
                         <!-- item-->
-                        <a href="#" class="dropdown-item notify-item">
-                            <i class="fe-log-out"></i>
-                            <span>Logout</span>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
                         </a>
                     </div>
                 </li>
@@ -269,7 +272,7 @@
                                 <div class="table-responsive">
                                     <div class="d-flex justify-content-end mb-3">
                                         <form action="{{ route('admin.addSekolah') }}" method="GET" class="me-2 pr-3">
-                                            <button type="submit" class="btn btn-primary badge-success">
+                                            <button type="submit" class="btn badge-success">
                                                 Tambah Sekolah
                                             </button>
                                         </form>
