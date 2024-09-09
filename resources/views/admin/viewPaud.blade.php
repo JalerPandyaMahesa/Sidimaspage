@@ -66,9 +66,12 @@
                         <!-- <div class="dropdown-divider"></div> -->
 
                         <!-- item-->
-                        <a href="#" class="dropdown-item notify-item">
-                            <i class="fe-log-out"></i>
-                            <span>Logout</span>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
                         </a>
                     </div>
                 </li>
@@ -209,7 +212,7 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Paud & Dikmas</a>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">PAUD & DIKMAS</a>
                                         </li>
                                         <li class="breadcrumb-item active">View Paud & Dikmas</li>
                                     </ol>
@@ -227,8 +230,6 @@
                                 <div class="mb-2">
                                     <div class="row">
                                         <div class="col-12 text-sm-center form-inline">
-                                            <div class="form-group mr-2" style="display:none">
-                                            </div>
                                             <div class="form-group">
                                                 <select id="filter-kecamatan" class="custom-select custom-select-sm">
                                                     <option value="">Pilih Kecamatan</option>
@@ -269,15 +270,13 @@
                                 <div class="table-responsive">
                                     <div class="d-flex justify-content-end mb-3">
                                         <form action="{{ route('admin.addSekolah') }}" method="GET" class="me-2 pr-3">
-                                            <button type="submit" class="btn btn-primary badge-success">
+                                            <button type="submit" class="btn badge-success">
                                                 Tambah Sekolah
                                             </button>
                                         </form>
 
                                         <button id="export-button" class="btn btn-primary">Export to Excel</button>
                                     </div>
-
-
                                     <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
                                         data-page-size="7">
                                         <thead>
@@ -303,9 +302,9 @@
                                                     <td>{{ $s->bentuk_pendidikan }}</td>
                                                     <td>{{ $s->status_sekolah }}</td>
                                                     <td>{{ $s->pesertadidik_count }}</td>
-                                                    <td><a href="{{ route('admin.showSekolah', $s->sekolah_id) }}"
+                                                    <td><a href="{{ route('admin.showSekolah', ['sekolah_id' => $s->sekolah_id]) }}"
                                                             class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
-                                                        <a href="{{ route('admin.editSekolah', $s->sekolah_id) }}"
+                                                        <a href="{{ route('admin.editSekolah', ['sekolah_id' => $s->sekolah_id]) }}"
                                                             class="badge badge-warning"><i
                                                                 class="fas fa-clipboard-check "></i> Update</a>
                                                         <form action="{{ route('admin.destroySekolah', $s->sekolah_id) }}"
@@ -396,11 +395,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             const filterKecamatan = document.getElementById('filter-kecamatan');
             const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
-               const selectedKecamatan = this.value;
-    const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set('kecamatan', selectedKecamatan);
-    urlParams.set('page', 1); // Set kembali ke halaman pertama
-    window.location.search = urlParams.toString();
 
             filterKecamatan.addEventListener('change', function () {
                 const selectedKecamatan = filterKecamatan.value.toLowerCase();
