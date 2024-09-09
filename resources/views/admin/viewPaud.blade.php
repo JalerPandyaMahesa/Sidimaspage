@@ -393,86 +393,106 @@
     <script src=" {{ asset('assets/js/app.min.js') }} "></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const filterKecamatan = document.getElementById('filter-kecamatan');
-            const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
-
-            filterKecamatan.addEventListener('change', function () {
-                const selectedKecamatan = filterKecamatan.value.toLowerCase();
-                let rowIndex = 1; // Start row index from 1
-
-                tableRows.forEach(row => {
-                    const kecamatanCell = row.querySelector('td:nth-child(4)');
-                    const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
-
-                    if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
-                        row.style.display = '';  // Show the row
-                        row.querySelector('td').textContent = rowIndex++;  // Update the row number
-                    } else {
-                        row.style.display = 'none';  // Hide the row
-                    }
-                });
-            });
-
-            document.getElementById('export-button').addEventListener('click', function () {
-                const table = document.getElementById('demo-foo-filtering');
-                const workbook = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
-                XLSX.writeFile(workbook, 'table-export.xlsx');
-            });
+    document.addEventListener('DOMContentLoaded', function () {
+    const filterKecamatan = document.getElementById('filter-kecamatan');
+    
+    if (filterKecamatan) {
+        filterKecamatan.addEventListener('change', function () {
+            const selectedKecamatan = this.value;
+            const urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('kecamatan', selectedKecamatan);
+            urlParams.set('page', 1); // Set kembali ke halaman pertama
+            window.location.search = urlParams.toString();
         });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
-            const rowsPerPage = 100; // Jumlah baris per halaman
-            const paginationContainer = document.querySelector('.pagination-container .pagination');
+    }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const filterKecamatan = document.getElementById('filter-kecamatan');
+    const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+    
+    if (filterKecamatan) {
+        filterKecamatan.addEventListener('change', function () {
+            const selectedKecamatan = this.value.toLowerCase();
+            let rowIndex = 1; // Start row index from 1
 
-            function displayRows(page) {
-                const start = (page - 1) * rowsPerPage;
-                const end = start + rowsPerPage;
+            tableRows.forEach(row => {
+                const kecamatanCell = row.querySelector('td:nth-child(4)');
+                const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
 
-                tableRows.forEach((row, index) => {
-                    row.style.display = (index >= start && index < end) ? '' : 'none';
-                });
-            }
-
-            function setupPagination() {
-                const totalPages = Math.ceil(tableRows.length / rowsPerPage);
-
-                paginationContainer.innerHTML = ''; // Kosongkan pagination sebelumnya
-
-                for (let i = 1; i <= totalPages; i++) {
-                    const li = document.createElement('li');
-                    li.classList.add('page-item');
-                    const a = document.createElement('a');
-                    a.classList.add('page-link');
-                    a.textContent = i;
-                    a.href = '#';
-
-                    li.appendChild(a);
-                    paginationContainer.appendChild(li);
-
-                    li.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const currentPage = parseInt(this.textContent);
-                        displayRows(currentPage);
-
-                        document.querySelectorAll('.pagination li').forEach(el => el.classList.remove(
-                            'active'));
-                        this.classList.add('active');
-                    });
+                if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
+                    row.style.display = '';  // Show the row
+                    row.querySelector('td').textContent = rowIndex++;  // Update the row number
+                } else {
+                    row.style.display = 'none';  // Hide the row
                 }
-
-                // Set halaman pertama sebagai aktif
-                paginationContainer.querySelector('li').classList.add('active');
-            }
-
-            // Inisialisasi pagination
-            displayRows(1);
-            setupPagination();
+            });
         });
-    </script>
+    }
+});
 
+</script>
+
+<script
+document.addEventListener('DOMContentLoaded', function () {
+    const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
+    const rowsPerPage = 100; // Jumlah baris per halaman
+    const paginationContainer = document.querySelector('.pagination-container .pagination');
+
+    function displayRows(page) {
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+
+        let visibleRows = Array.from(tableRows).filter(row => row.style.display !== 'none');
+
+        visibleRows.forEach((row, index) => {
+            row.style.display = (index >= start && index < end) ? '' : 'none';
+        });
+    }
+
+    function setupPagination() {
+        let visibleRows = Array.from(tableRows).filter(row => row.style.display !== 'none');
+        const totalPages = Math.ceil(visibleRows.length / rowsPerPage);
+
+        paginationContainer.innerHTML = ''; // Kosongkan pagination sebelumnya
+
+        for (let i = 1; i <= totalPages; i++) {
+            const li = document.createElement('li');
+            li.classList.add('page-item');
+            const a = document.createElement('a');
+            a.classList.add('page-link');
+            a.textContent = i;
+            a.href = '#';
+
+            li.appendChild(a);
+            paginationContainer.appendChild(li);
+
+            li.addEventListener('click', function (e) {
+                e.preventDefault();
+                const currentPage = parseInt(this.textContent);
+                displayRows(currentPage);
+
+                document.querySelectorAll('.pagination li').forEach(el => el.classList.remove('active'));
+                this.classList.add('active');
+            });
+        }
+
+        // Set halaman pertama sebagai aktif
+        paginationContainer.querySelector('li').classList.add('active');
+    }
+
+    // Inisialisasi pagination
+    displayRows(1);
+    setupPagination();
+
+    // Ketika filter diubah, reset pagination
+    document.getElementById('filter-kecamatan').addEventListener('change', function() {
+        displayRows(1);
+        setupPagination();
+    });
+});
+</script>
 
 </body>
 
