@@ -396,11 +396,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             const filterKecamatan = document.getElementById('filter-kecamatan');
             const tableRows = document.querySelectorAll('#demo-foo-filtering tbody tr');
-               const selectedKecamatan = this.value;
-    const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set('kecamatan', selectedKecamatan);
-    urlParams.set('page', 1); // Set kembali ke halaman pertama
-    window.location.search = urlParams.toString();
 
             filterKecamatan.addEventListener('change', function () {
                 const selectedKecamatan = filterKecamatan.value.toLowerCase();
@@ -477,7 +472,6 @@
             setupPagination();
         });
     </script>
-
 
 </body>
 
