@@ -87,7 +87,7 @@
                                     <a class="nav-link" href="#grafik">Grafik</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i>
+                                    <a class="nav-link" href="{{ route('login') }}"> <i class="fa fa-user" aria-hidden="true"></i>
                                         Login</a>
                                 </li>
                             </ul>
