@@ -87,7 +87,8 @@
                                     <a class="nav-link" href="#grafik">Grafik</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}"> <i class="fa fa-user" aria-hidden="true"></i>
+                                    <a class="nav-link" href="{{ route('login') }}"> <i class="fa fa-user"
+                                            aria-hidden="true"></i>
                                         Login</a>
                                 </li>
                             </ul>
@@ -110,8 +111,12 @@
                                                     Dinas Pendidikan <br>
                                                     Kabupaten Banyumas
                                                 </h1>
-                                                <p class="beranda-body" >
-                                                Sistem Informasi Pendidikan Banyumas (SIDIMAS) adalah platform digital yang dikembangkan untuk mempermudah pengelolaan data pendidikan di Kabupaten Banyumas. Sistem ini membantu sekolah, dinas pendidikan, dan masyarakat dalam mengakses berbagai informasi terkait sekolah, siswa, tenaga pendidik, serta fasilitas pendidikan.
+                                                <p class="beranda-body">
+                                                    Sistem Informasi Pendidikan Banyumas (SIDIMAS) adalah platform
+                                                    digital yang dikembangkan untuk mempermudah pengelolaan data
+                                                    pendidikan di Kabupaten Banyumas. Sistem ini membantu sekolah, dinas
+                                                    pendidikan, dan masyarakat dalam mengakses berbagai informasi
+                                                    terkait sekolah, siswa, tenaga pendidik, serta fasilitas pendidikan.
                                                 </p>
                                                 <!-- <p>
                                                     Visi :<br>
@@ -142,41 +147,49 @@
                 <!-- Tentang Section -->
                 <section id="tentang" class="about_section layout_padding">
                     <div class="container">
-                      <div class="heading_container heading_center">
-                        <h2>
-                          Profile Kami
-                        </h2>
-                        <p>
-                            
-                        </p>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6 ">
-                          <div class="img-box justify-content-center d-flex">
-                            <img src="{{ ('img/image2.png') }}" alt="">
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="detail-box">
-                            <h3>
-                                Dinas Pendidikan Kabupaten Banyumas 
-                            </h3>
+                        <div class="heading_container heading_center">
+                            <h2>
+                                Profile Kami
+                            </h2>
                             <p>
-                                Dinas Pendidikan Kabupaten Banyumas memiliki tugas membantu Bupati melaksanakan urusan pemerintahan di bidang pendidikan yang menjadi kewenangan daerah. 
-                                Fungsi Dinas Pendidikan mencakup penyusunan kebijakan di bidang pembinaan guru dan tenaga kependidikan, pembinaan sekolah dasar, sekolah menengah pertama, serta pembinaan PAUD dan Dikmas. 
-                                Profil pendidikan Kabupaten Banyumas mencakup lima indikator prioritas: kemampuan literasi, numerasi, indeks karakter, iklim keamanan, dan iklim kebhinekaan.
+
                             </p>
-                            <p>
-                              Molestiae odio earum non qui cumque provident voluptates, repellendus exercitationem, possimus at iste corrupti officiis unde alias eius ducimus reiciendis soluta eveniet. Nobis ullam ab omnis quasi expedita.
-                            </p>
-                            <a href="">
-                              Read More
-                            </a>
-                          </div>
                         </div>
-                      </div>
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <div class="img-box justify-content-center d-flex">
+                                    <img src="{{ 'img/image2.png' }}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="detail-box">
+                                    <h3>
+                                        Dinas Pendidikan Kabupaten Banyumas
+                                    </h3>
+                                    <p>
+                                        Dinas Pendidikan Kabupaten Banyumas adalah instansi pemerintah yang bertanggung
+                                        jawab atas pengelolaan dan pengembangan sektor pendidikan di wilayah Banyumas.
+                                        Dengan fokus pada peningkatan kualitas pendidikan, Dinas Pendidikan mengawasi
+                                        berbagai jenjang sekolah, mulai dari PAUD, SD, hingga SMP. Melalui pengelolaan
+                                        yang profesional, dinas ini memastikan setiap sekolah dapat memberikan layanan
+                                        pendidikan yang berkualitas, sesuai dengan standar nasional, serta memperhatikan
+                                        kebutuhan lokal.
+                                    </p>
+                                    <p>
+                                        Selain itu, Dinas Pendidikan Kabupaten Banyumas juga memanfaatkan teknologi
+                                        melalui Sistem Informasi Pendidikan Banyumas (SIDIMAS), yang memudahkan akses
+                                        masyarakat terhadap data pendidikan. Layanan ini memberikan informasi terkait
+                                        sekolah, siswa, guru, dan fasilitas pendidikan, serta mendukung transparansi dan
+                                        akurasi dalam pengambilan keputusan di bidang pendidikan.
+                                    </p>
+                                    <a href="">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </section>
+                </section>
                 <!-- End Tentang Section -->
 
                 <!-- jenjang section -->
@@ -206,7 +219,7 @@
                                         <a href="{{ route('home.sd') }}">
                                             <div class="box jenjang-box sd">
                                                 <div class="content-wrapper">
-                                                    <img  src="{{ asset('img/sd3.png') }}" alt="Sekolah Dasar">
+                                                    <img src="{{ asset('img/sd3.png') }}" alt="Sekolah Dasar">
                                                 </div>
                                             </div>
                                         </a>
@@ -245,10 +258,10 @@
                                     <div class="school-box">
                                         <h3>PAUD & DIKMAS</h3>
                                         <p class="jmlh-sklh">{{ $totalTk }}</p>
-                                        <p class="status_sekolah">Negeri : 
+                                        <p class="status_sekolah">Negeri :
                                             {{ $tTkn }}
                                         </p>
-                                        <p class="status_sekolah">Swasta : 
+                                        <p class="status_sekolah">Swasta :
                                             {{ $tTks }}
                                         </p>
                                     </div>
@@ -257,10 +270,10 @@
                                     <div class="school-box">
                                         <h3>Sekolah Menengah</h3>
                                         <p class="jmlh-sklh">{{ $totalSmp }}</p>
-                                        <p class="status_sekolah">Negeri : 
+                                        <p class="status_sekolah">Negeri :
                                             {{ $tSmpn }}
                                         </p>
-                                        <p class="status_sekolah">Swasta : 
+                                        <p class="status_sekolah">Swasta :
                                             {{ $tSmps }}
                                         </p>
                                     </div>
@@ -269,10 +282,10 @@
                                     <div class="school-box">
                                         <h3>Sekolah Dasar</h3>
                                         <p class="jmlh-sklh">{{ $totalSd }}</p>
-                                        <p class="status_sekolah">Negeri : 
+                                        <p class="status_sekolah">Negeri :
                                             {{ $tTkn }}
                                         </p>
-                                        <p class="status_sekolah">Swasta : 
+                                        <p class="status_sekolah">Swasta :
                                             {{ $tTks }}
                                         </p>
                                     </div>
@@ -280,12 +293,12 @@
                                 <div class="grid-item">
                                     <div class="school-box">
                                         <h3>
-                                        Pusat Kegiatan Belajar Masyarakat</h3>
+                                            Pusat Kegiatan Belajar Masyarakat</h3>
                                         <p class="jmlh-sklh">{{ $totalPkbm }}</p>
-                                        <p class="status_sekolah">Negeri : 
+                                        <p class="status_sekolah">Negeri :
                                             {{ $tPkbmn }}
                                         </p>
-                                        <p class="status_sekolah">Swasta : 
+                                        <p class="status_sekolah">Swasta :
                                             {{ $tPkbms }}
                                         </p>
                                     </div>
@@ -303,7 +316,9 @@
                             <div class="col-4">
                                 <div class="isi-text-grafik">
                                     <p class="isi-text-kepala">Grafik Siswa</p>
-                                    <p class="isi-text-badan">Grafik siswa adalah visualisasi data yang menggambarkan berapa banyak siswa yang terdaftar di setiap sekolah yang ada dalam suatu wilayah atau sistem pendidikan. </p>
+                                    <p class="isi-text-badan">Grafik siswa adalah visualisasi data yang menggambarkan
+                                        berapa banyak siswa yang terdaftar di setiap sekolah yang ada dalam suatu
+                                        wilayah atau sistem pendidikan. </p>
                                 </div>
                             </div>
                             <div class="col-7">
@@ -328,7 +343,7 @@
                 </section>
                 <!-- End Grafik Section -->
 
-                
+
 
 
 
@@ -409,7 +424,9 @@
                     labels: ['Paud & Dikmas', 'Sekolah Dasar', 'Sekolah Menengah'],
                     datasets: [{
                         label: 'Jumlah Siswa',
-                        data: [{{ $tsTk }}, {{ $tsSd }}, {{ $tsSmp }}, {{ $tsPkbm }}],
+                        data: [{{ $tsTk }}, {{ $tsSd }}, {{ $tsSmp }},
+                            {{ $tsPkbm }}
+                        ],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 99, 132, 0.2)',

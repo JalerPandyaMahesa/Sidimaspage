@@ -32,7 +32,7 @@
     <!-- responsive style -->
     <link href="{{ asset('asset/3/css/responsive.css') }}" rel="stylesheet" />
 
-    <title>Paud & Dikmas</title>
+    <title>Sekolah Dasar</title>
     <style>
         .master-bg {
             background-image: url({{ asset('img/bg.png') }});
