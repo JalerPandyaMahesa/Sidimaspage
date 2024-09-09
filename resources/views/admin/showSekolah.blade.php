@@ -79,7 +79,7 @@
 
             <!-- LOGO -->
             <div class="logo-box">
-                <a href="dashboard" class="logo text-center">
+                <a href="{{route("admin.dashboard")}}" class="logo text-center">
                     <span class="logo-lg">
                         <img src="{{ asset('img/Asset/Logo_Sidimas2.png') }}" alt="" height="24">
                     </span>
@@ -211,7 +211,7 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="{{route("admin.dashboard")}}">Dashboard</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Sekolah</a></li>
                                         <li class="breadcrumb-item active">View Sekolah</li>
                                     </ol>
@@ -375,22 +375,26 @@
             <div class="table-responsive">
                 <table class="table table-bordered toggle-circle mb-0" data-page-size="7">
                     <tr>
+                        <th>#</th>
                         <th>NISN</th>
                         <th>Nama</th>
                         <th>Tempat Lahir</th>
                         <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
                         <th>Agama</th>
+                        
                         <!-- Add other columns as needed -->
                     </tr>
-                    @foreach($sekolah->pesertaDidik as $peserta)
+                    @foreach($sekolah->pesertaDidik as $index => $peserta)
                         <tr>
+                            <td>{{ $index + 1 }}</td>
                             <td>{{ $peserta->nisn }}</td>
                             <td>{{ $peserta->nama }}</td>
                             <td>{{ $peserta->tempat_lahir }}</td>
                             <td>{{ $peserta->tanggal_lahir }}</td>
                             <td>{{ $peserta->jenis_kelamin }}</td>
                             <td>{{ $peserta->agama }}</td>
+                            
                             <!-- Add other data fields as needed -->
                         </tr>
                     @endforeach
@@ -402,13 +406,29 @@
             <div class="table-responsive">
                 <table class="table table-bordered toggle-circle mb-0" data-page-size="7">
                     <tr>
+                        <th>#</th>
                         <th>Nama</th>
-                        <!-- Add other columns as needed -->
+                        <th>NIP</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Status Kepegawaian</th>
+                        <th>Jenis PTK</th>
+                        <th>Agama</th>
+                        <th>Status Keaktifan</th>
+                        <th>No HP</th>
+                        <th>Email</th>
                     </tr>
-                    @foreach($sekolah->ptk as $ptk)
+                    @foreach($sekolah->ptk as $index => $ptk)
                         <tr>
+                            <td>{{ $index + 1 }}</td>
                             <td>{{ $ptk->nama }}</td>
-                            <!-- Add other data fields as needed -->
+                            <td>{{ $ptk->nip }}</td>
+                            <td>{{ $ptk->jenis_kelamin }}</td>
+                            <td>{{ $ptk->status_kepegawaian }}</td>
+                            <td>{{ $ptk->jenis_ptk }}</td>
+                            <td>{{ $ptk->agama }}</td>
+                            <td>{{ $ptk->status_keaktifan }}</td>
+                            <td>{{ $ptk->no_hp }}</td>
+                            <td>{{ $ptk->email }}</td>
                         </tr>
                     @endforeach
                 </table>
