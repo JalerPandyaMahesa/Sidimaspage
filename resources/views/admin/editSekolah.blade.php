@@ -79,7 +79,7 @@
 
             <!-- LOGO -->
             <div class="logo-box">
-                <a href="../dashboard" class="logo text-center">
+                <a href="{{route("admin.dashboard")}}" class="logo text-center">
                     <span class="logo-lg">
                         <img src="{{ asset('img/Asset/Logo_Sidimas2.png') }}" alt="" height="24">
                     </span>
