@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Login</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{{ asset('assets/img/Logo.png') }}" rel="icon">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
 </head>
 <body>
-    <h2>Login</h2>
+<div class="login-dark">
     
     @if($errors->any())
         <div>
@@ -18,15 +28,17 @@
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" value="{{ old('username') }}" required>
+        <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><img src="{{ asset('assets/img/logo.png') }}" width="50%"></div>
+        <div class="form-group">
+            <input class="form-control" type="text" id="username" name="username" value="{{ old('username') }}" placeholder="Username" required>
         </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+        <div class="form-group">
+            <input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
         </div>
-        <button type="submit">Login</button>
+        <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit">Login</button>
+        </div>
     </form>
 </body>
 </html>
