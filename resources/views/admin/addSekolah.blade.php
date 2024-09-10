@@ -205,7 +205,8 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="{{route("admin.dashboard")}}">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="{{route("admin.dashboard")}}">Dashboard</a>
+                                        </li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Sekolah</a></li>
                                         <li class="breadcrumb-item active">Add Sekolah</li>
                                     </ol>
@@ -220,6 +221,14 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
+                                    <label class="col-form-label">Import Dengan Excel (xls, xlsx)</label>
+                                    <form action="{{ route('import.excel') }}" method="POST"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="file" name="file" required>
+                                        <button class="col-form-label" type="submit">Import Data</button>
+                                    </form>
+                                    <h2></h2>
                                     <!-- <h4 class="header-title">Fill all fields</h4> -->
                                     <!--Add Sekolah Form-->
                                     <form action="{{ route('admin.store') }}" method="POST">
