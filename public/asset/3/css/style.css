@@ -592,6 +592,10 @@ a:focus {
     font-weight: bold;
 }
 
+.about_section h1 {
+    font-weight: bold;
+}
+
 .about_section .detail-box p {
     margin-top: 15px;
     font-size : 18px;

@@ -148,9 +148,9 @@
                 <section id="tentang" class="about_section layout_padding">
                     <div class="container">
                         <div class="heading_container heading_center">
-                            <h2>
+                            <h1>
                                 Profile Kami
-                            </h2>
+                            </h1>
                             <p>
 
                             </p>
