@@ -163,9 +163,12 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="detail-box">
-                                    <h3>
+                                    {{-- <h3>
                                         Dinas Pendidikan Kabupaten Banyumas
-                                    </h3>
+                                    </h3> --}}
+                                    <h2>
+                                        Dinas Pendidikan Kabupaten Banyumas
+                                    </h2>
                                     <p>
                                         Dinas Pendidikan Kabupaten Banyumas adalah instansi pemerintah yang bertanggung
                                         jawab atas pengelolaan dan pengembangan sektor pendidikan di wilayah Banyumas.
