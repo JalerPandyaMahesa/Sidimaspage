@@ -14,14 +14,6 @@ body {
     overflow-x: hidden;
 }
 
-/* .background-image {
-  background-image: url('img/bg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-} */
-
 .layout_padding {
     padding: 90px 0;
     padding: 10px 100px;
@@ -465,21 +457,6 @@ a:focus {
     transition: all 0.3s ease;
 }
 
-/* .service_section .box {
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-start;  
-  text-align: center; 
-  margin-top: 45px; 
-  background-color: #f8f8f9; 
-  padding: 20px; 
-  border-radius: 5px;
-
-  width: 200px; 
-  height: 200px; 
-  overflow: hidden; 
-  transition: all 0.3s ease; 
-} */
 
 .box .content-wrapper {
     display: flex;
@@ -1062,17 +1039,9 @@ a:focus {
     transition: all 0.3s ease;
 }
 
-/* .service_section .row {
-  display: grid;
-  grid-template-columns: 1fr repeat(3, 1fr) 1fr;  
-  justify-content: center; 
-  align-items: center; 
-  gap: 30px; 
-} */
-
 .jenjang-pendidikan {
     /* flex-basis: 300px;  */
-    padding-left: 60px;
+    //padding-left: 60px;
 }
 
 .jenjang-pendidikan .jenjang-box {
@@ -1265,6 +1234,24 @@ p {
 .beranda-body{
     text-align: justify;
 }
+
+.row-jenjang {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.row-jenjang .jenjang-pendidikan {
+    flex: 1;
+    min-width: 250px; /* Menyesuaikan lebar minimal agar tetap responsif */
+}
+
+
+.row-jenjang .jenjang-box img {
+    width: 100%;
+    height: auto;
+}
+
 
 
 /*# sourceMappingURL=style.css.map */
