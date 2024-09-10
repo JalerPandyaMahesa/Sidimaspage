@@ -48,7 +48,6 @@
     <!-- Master BG -->
     <div class="master-bg">
         <div class="hero_area">
-
             <div class="hero_bg_box">
                 <div class="bg_img_box">
                     <img src="{{ asset('img/hero-red3.png') }}" alt="">
@@ -97,286 +96,273 @@
                 </div>
             </header>
             <!-- end header section -->
-            <div class="content">
-                <!-- beranda section -->
-                <section id="beranda" class="slider_section ">
-                    <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="container ">
-                                    <div class="row">
-                                        <div class="col-md-6 ">
-                                            <div class="detail-box">
-                                                <h1>
-                                                    Dinas Pendidikan <br>
-                                                    Kabupaten Banyumas
-                                                </h1>
-                                                <p class="beranda-body">
-                                                    Sistem Informasi Pendidikan Banyumas (SIDIMAS) adalah platform
-                                                    digital yang dikembangkan untuk mempermudah pengelolaan data
-                                                    pendidikan di Kabupaten Banyumas. Sistem ini membantu sekolah, dinas
-                                                    pendidikan, dan masyarakat dalam mengakses berbagai informasi
-                                                    terkait sekolah, siswa, tenaga pendidik, serta fasilitas pendidikan.
-                                                </p>
-                                            </div>
+
+
+            <!-- beranda section -->
+            <section id="beranda" class="slider_section ">
+                <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container ">
+                                <div class="row">
+                                    <div class="col-md-6 ">
+                                        <div class="detail-box">
+                                            <h1>
+                                                Dinas Pendidikan <br>
+                                                Kabupaten Banyumas
+                                            </h1>
+                                            <p class="beranda-body">
+                                                Sistem Informasi Pendidikan Banyumas (SIDIMAS) adalah platform
+                                                digital yang dikembangkan untuk mempermudah pengelolaan data
+                                                pendidikan di Kabupaten Banyumas. Sistem ini membantu sekolah, dinas
+                                                pendidikan, dan masyarakat dalam mengakses berbagai informasi
+                                                terkait sekolah, siswa, tenaga pendidik, serta fasilitas pendidikan.
+                                            </p>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="img-box ">
-                                                <img style='padding: 45px 0 40px' class="logo-bms tengah"
-                                                    src="img/LogoBMS2.png" alt="">
-                                            </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="img-box ">
+                                            <img style='padding: 45px 0 40px' class="logo-bms tengah"
+                                                src="img/LogoBMS2.png" alt="">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-                <!-- end beranda section -->
+                </div>
+            </section>
+            <!-- end beranda section -->
+        </div>
+        <!-- End Hero Area -->
 
-                <!-- Tentang Section -->
-                <section id="tentang" class="about_section layout_padding">
-                    <div class="container">
-                        <div class="heading_container heading_center">
-                            <h1>
-                                Profile Kami
-                            </h1>
-                            <p>
+        <!-- Tentang Section -->
+        <section id="tentang" class="about_section layout_padding">
+            <div class="container">
+                <div class="heading_container heading_center">
+                    <h1>
+                        Profile Kami
+                    </h1>
+                    <p>
 
-                            </p>
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <div class="img-box justify-content-center d-flex">
+                            <img src="{{ 'img/image2.png' }}" alt="">
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 ">
-                                <div class="img-box justify-content-center d-flex">
-                                    <img src="{{ 'img/image2.png' }}" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="detail-box">
-                                    {{-- <h3>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="detail-box">
+                            {{-- <h3>
                                         Dinas Pendidikan Kabupaten Banyumas
                                     </h3> --}}
-                                    <h2>
-                                        Dinas Pendidikan Kabupaten Banyumas
-                                    </h2>
-                                    <p>
-                                        Dinas Pendidikan Kabupaten Banyumas adalah instansi pemerintah yang bertanggung
-                                        jawab atas pengelolaan dan pengembangan sektor pendidikan di wilayah Banyumas.
-                                        Dengan fokus pada peningkatan kualitas pendidikan, Dinas Pendidikan mengawasi
-                                        berbagai jenjang sekolah, mulai dari PAUD, SD, hingga SMP. Melalui pengelolaan
-                                        yang profesional, dinas ini memastikan setiap sekolah dapat memberikan layanan
-                                        pendidikan yang berkualitas, sesuai dengan standar nasional, serta memperhatikan
-                                        kebutuhan lokal.
-                                    </p>
-                                    <p>
-                                        Selain itu, Dinas Pendidikan Kabupaten Banyumas juga memanfaatkan teknologi
-                                        melalui Sistem Informasi Pendidikan Banyumas (SIDIMAS), yang memudahkan akses
-                                        masyarakat terhadap data pendidikan. Layanan ini memberikan informasi terkait
-                                        sekolah, siswa, guru, dan fasilitas pendidikan, serta mendukung transparansi dan
-                                        akurasi dalam pengambilan keputusan di bidang pendidikan.
-                                    </p>
-                                    <a href="">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- End Tentang Section -->
-
-                <!-- jenjang section -->
-                <section id="jenjang" class="service_section layout_padding">
-                    <div class="service_container">
-                        <div class="container ">
-                            <div class="heading_container heading_center">
-                                <h2>
-                                    Jenjang <span>Pendidikan</span>
-                                </h2>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 ">
-                                    <div class="jenjang-pendidikan">
-                                        <a href="{{ route('home.paud') }}">
-                                            <div class="box jenjang-box paud">
-                                                <div class="content-wrapper">
-                                                    <img src="{{ asset('img/paud3.png') }}" alt="Paud & Dikmas">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4 ">
-                                    <div class="jenjang-pendidikan">
-                                        <a href="{{ route('home.sd') }}">
-                                            <div class="box jenjang-box sd">
-                                                <div class="content-wrapper">
-                                                    <img src="{{ asset('img/sd3.png') }}" alt="Sekolah Dasar">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4 ">
-                                    <div class="jenjang-pendidikan">
-                                        <a href="{{ route('home.smp') }}">
-                                            <div class="box jenjang-box smp">
-                                                <div class="content-wrapper">
-                                                    <img src="{{ asset('img/smp3.png') }}" alt="Sekolah Menengah">
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- end jenjang section -->
-
-                <!-- Jumlah Sekolah -->
-                <section id="sekolah" class="service_section layout_padding">
-                    <div class="service_container">
-                        <div class="container">
-                            <div class="heading_container heading_center">
-                                <h2>
-                                    Jumlah <span>Sekolah</span>
-                                </h2>
-                            </div>
-                            <div class="grid-container">
-                                <div class="grid-item">
-                                    <div class="school-box">
-                                        <h3>PAUD & DIKMAS</h3>
-                                        <p class="jmlh-sklh">{{ $totalTk }}</p>
-                                        <p class="status_sekolah">Negeri :
-                                            {{ $tTkn }}
-                                        </p>
-                                        <p class="status_sekolah">Swasta :
-                                            {{ $tTks }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="grid-item">
-                                    <div class="school-box">
-                                        <h3>Sekolah Menengah</h3>
-                                        <p class="jmlh-sklh">{{ $totalSmp }}</p>
-                                        <p class="status_sekolah">Negeri :
-                                            {{ $tSmpn }}
-                                        </p>
-                                        <p class="status_sekolah">Swasta :
-                                            {{ $tSmps }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="grid-item">
-                                    <div class="school-box">
-                                        <h3>Sekolah Dasar</h3>
-                                        <p class="jmlh-sklh">{{ $totalSd }}</p>
-                                        <p class="status_sekolah">Negeri :
-                                            {{ $tTkn }}
-                                        </p>
-                                        <p class="status_sekolah">Swasta :
-                                            {{ $tTks }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="grid-item">
-                                    <div class="school-box">
-                                        <h3>
-                                            Pusat Kegiatan Belajar Masyarakat</h3>
-                                        <p class="jmlh-sklh">{{ $totalPkbm }}</p>
-                                        <p class="status_sekolah">Negeri :
-                                            {{ $tPkbmn }}
-                                        </p>
-                                        <p class="status_sekolah">Swasta :
-                                            {{ $tPkbms }}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- end Jumlah Sekolah -->
-
-                <!-- Grafik Section -->
-                <section id="grafik" class="grafik-section layout_padding " style="padding: 100px 0">
-                    <div class="grafik-container">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="isi-text-grafik">
-                                    <p class="isi-text-kepala">Grafik Siswa</p>
-                                    <p class="isi-text-badan">Grafik siswa adalah visualisasi data yang menggambarkan
-                                        berapa banyak siswa yang terdaftar di setiap sekolah yang ada dalam suatu
-                                        wilayah atau sistem pendidikan. </p>
-                                </div>
-                            </div>
-                            <div class="col-7">
-                                <div class="grafik-isi justify-content-center align-items-center">
-                                    <div class="card shadow mb-4">
-                                        <!-- Card Header - Dropdown -->
-                                        <div
-                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                            <h6 class="m-0 font-weight-bold text-primary">Grafik Siswa</h6>
-                                        </div>
-                                        <!-- Card Body -->
-                                        <div class="card-body">
-                                            <div class="chart-area">
-                                                <canvas id="myAreaChart"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- End Grafik Section -->
-
-
-
-
-
-                <!-- Footer -->
-                <section class="footer_section">
-                    <div class="container">
-                        <div>
-                            <p class="text-atas">
-                                Di Desain Oleh : <span>Dinas Pendidikan Pemerintahan Kab. Banyumas</span>
+                            <h2>
+                                Dinas Pendidikan Kabupaten Banyumas
+                            </h2>
+                            <p>
+                                Dinas Pendidikan Kabupaten Banyumas adalah instansi pemerintah yang bertanggung
+                                jawab atas pengelolaan dan pengembangan sektor pendidikan di wilayah Banyumas.
+                                Dengan fokus pada peningkatan kualitas pendidikan, Dinas Pendidikan mengawasi
+                                berbagai jenjang sekolah, mulai dari PAUD, SD, hingga SMP. Melalui pengelolaan
+                                yang profesional, dinas ini memastikan setiap sekolah dapat memberikan layanan
+                                pendidikan yang berkualitas, sesuai dengan standar nasional, serta memperhatikan
+                                kebutuhan lokal.
                             </p>
-                            <p class="text-bawah">
-                                - V01.2024 <a href="https://ittelkom-pwt.ac.id/">Tel-U Purwokerto</a>
+                            <p>
+                                Selain itu, Dinas Pendidikan Kabupaten Banyumas juga memanfaatkan teknologi
+                                melalui Sistem Informasi Pendidikan Banyumas (SIDIMAS), yang memudahkan akses
+                                masyarakat terhadap data pendidikan. Layanan ini memberikan informasi terkait
+                                sekolah, siswa, guru, dan fasilitas pendidikan, serta mendukung transparansi dan
+                                akurasi dalam pengambilan keputusan di bidang pendidikan.
                             </p>
+                            <a href="">
+                                Read More
+                            </a>
                         </div>
-
                     </div>
-                </section>
-                <!-- end Footer -->
+                </div>
             </div>
+        </section>
+        <!-- End Tentang Section -->
+
+        <!-- jenjang section -->
+        <section id="jenjang" class="service_section layout_padding">
+            <div class="service_container">
+                <div class="container ">
+                    <div class="heading_container heading_center">
+                        <h2>
+                            Jenjang <span>Pendidikan</span>
+                        </h2>
+                    </div>
+                    <div class="row row-jenjang">
+                        <div class="col-md-4">
+                            <div class="jenjang-pendidikan">
+                                <a href="{{ route('home.paud') }}">
+                                    <div class="box jenjang-box paud">
+                                        <div class="content-wrapper">
+                                            <img src="{{ asset('img/paud3.png') }}" alt="Paud & Dikmas">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-4">
+                            <div class="jenjang-pendidikan">
+                                <a href="{{ route('home.sd') }}">
+                                    <div class="box jenjang-box sd">
+                                        <div class="content-wrapper">
+                                            <img src="{{ asset('img/sd3.png') }}" alt="Sekolah Dasar">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-4">
+                            <div class="jenjang-pendidikan">
+                                <a href="{{ route('home.smp') }}">
+                                    <div class="box jenjang-box smp">
+                                        <div class="content-wrapper">
+                                            <img src="{{ asset('img/smp3.png') }}" alt="Sekolah Menengah">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- end jenjang section -->
+
+        <!-- Jumlah Sekolah -->
+        <section id="sekolah" class="service_section layout_padding">
+            <div class="service_container">
+                <div class="container">
+                    <div class="heading_container heading_center">
+                        <h2>
+                            Jumlah <span>Sekolah</span>
+                        </h2>
+                    </div>
+                    <div class="grid-container grid-container-responsive">
+                        <div class="grid-item">
+                            <div class="school-box">
+                                <h3>PAUD & DIKMAS</h3>
+                                <p class="jmlh-sklh">{{ $totalTk }}</p>
+                                <p class="status_sekolah">Negeri : {{ $tTkn }}</p>
+                                <p class="status_sekolah">Swasta : {{ $tTks }}</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="school-box">
+                                <h3>Sekolah Menengah</h3>
+                                <p class="jmlh-sklh">{{ $totalSmp }}</p>
+                                <p class="status_sekolah">Negeri : {{ $tSmpn }}</p>
+                                <p class="status_sekolah">Swasta : {{ $tSmps }}</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="school-box">
+                                <h3>Sekolah Dasar</h3>
+                                <p class="jmlh-sklh">{{ $totalSd }}</p>
+                                <p class="status_sekolah">Negeri : {{ $tTkn }}</p>
+                                <p class="status_sekolah">Swasta : {{ $tTks }}</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="school-box">
+                                <h3>Pusat Kegiatan Belajar Masyarakat</h3>
+                                <p class="jmlh-sklh">{{ $totalPkbm }}</p>
+                                <p class="status_sekolah">Negeri : {{ $tPkbmn }}</p>
+                                <p class="status_sekolah">Swasta : {{ $tPkbms }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- end Jumlah Sekolah -->
+
+        <!-- Grafik Section -->
+        <section id="grafik" class="grafik-section layout_padding " style="padding: 100px 0">
+            <div class="grafik-container">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="isi-text-grafik">
+                            <p class="isi-text-kepala">Grafik Siswa</p>
+                            <p class="isi-text-badan">Grafik siswa adalah visualisasi data yang menggambarkan
+                                berapa banyak siswa yang terdaftar di setiap sekolah yang ada dalam suatu
+                                wilayah atau sistem pendidikan. </p>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="grafik-isi justify-content-center align-items-center">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Grafik Siswa</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Grafik Section -->
 
 
-        </div>
-        <!-- End Master BG -->
 
-        <!-- jQery -->
-        <script type="text/javascript" src="{{ asset('asset/3/js/jquery-3.4.1.min.js') }}"></script>
-        <!-- popper js -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
-        <!-- bootstrap js -->
-        <script type="text/javascript" src="{{ asset('asset/3/js/bootstrap.js') }}"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
-        <!-- owl slider -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-        </script>
-        <!-- custom js -->
-        <script type="text/javascript" src="{{ asset('asset/3/js/custom.js') }}"></script>
-        {{-- <!-- scroll -->
+
+        <!-- Footer -->
+        <section class="footer_section">
+            <div class="container">
+                <div>
+                    <p class="text-atas">
+                        Di Desain Oleh : <span>Dinas Pendidikan Pemerintahan Kab. Banyumas</span>
+                    </p>
+                    <p class="text-bawah">
+                        - V01.2024 <a href="https://ittelkom-pwt.ac.id/">Tel-U Purwokerto</a>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        <!-- end Footer -->
+
+
+
+    </div>
+    <!-- End Master BG -->
+
+    <!-- jQery -->
+    <script type="text/javascript" src="{{ asset('asset/3/js/jquery-3.4.1.min.js') }}"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="{{ asset('asset/3/js/bootstrap.js') }}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- owl slider -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script type="text/javascript" src="{{ asset('asset/3/js/custom.js') }}"></script>
+    {{-- <!-- scroll -->
         <script>
             window.addEventListener('scroll', () => {
                 const header = document.querySelector('.header_section');
@@ -408,50 +394,50 @@
 
             });
         </script> --}}
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-            var ctx = document.getElementById('myAreaChart').getContext('2d');
-            var myBarChart = new Chart(ctx, {
-                type: 'bar', // Ganti tipe grafik menjadi 'bar'
-                data: {
-                    labels: ['Paud & Dikmas', 'Sekolah Dasar', 'Sekolah Menengah'],
-                    datasets: [{
-                        label: 'Jumlah Siswa',
-                        data: [{{ $tsTk }}, {{ $tsSd }}, {{ $tsSmp }},
-                            {{ $tsPkbm }}
-                        ],
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        x: {
-                            beginAtZero: true
-                        },
-                        y: {
-                            beginAtZero: true
-                        }
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('myAreaChart').getContext('2d');
+        var myBarChart = new Chart(ctx, {
+            type: 'bar', // Ganti tipe grafik menjadi 'bar'
+            data: {
+                labels: ['Paud & Dikmas', 'Sekolah Dasar', 'Sekolah Menengah'],
+                datasets: [{
+                    label: 'Jumlah Siswa',
+                    data: [{{ $tsTk }}, {{ $tsSd }}, {{ $tsSmp }},
+                        {{ $tsPkbm }}
+                    ],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
                     }
                 }
-            });
-        </script>
+            }
+        });
+    </script>
 </body>
 
 </html>

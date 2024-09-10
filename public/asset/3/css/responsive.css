@@ -1,3 +1,4 @@
+/* Ukuran Layar Kecil */
 @media (max-width: 1300px) {}
 
 @media (max-width: 1120px) {}
@@ -5,9 +6,6 @@
 @media (max-width: 992px) {
   .hero_area {
     min-height: auto;
-  }
-
-  .hero_area {
     background: linear-gradient(130deg, #ff0000, #8b0000);
   }
 
@@ -24,13 +22,36 @@
     align-items: center;
   }
 
-
   .custom_nav-container .navbar-nav .nav-item .nav-link {
     padding: 5px 25px;
     margin: 5px 0;
   }
 
+  .row-jenjang {
+    flex-direction: column;
+    align-items: center;
+}
 
+.row-jenjang .jenjang-pendidikan {
+    width: 100%;
+    max-width: 400px; /* Menyesuaikan lebar maksimum untuk layar kecil */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Hanya satu kolom */
+  gap: 20px; /* Jarak antar elemen tetap ada */
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+}
+
+.school-box {
+  width: 90%; /* Lebar kotak akan mengecil pada layar kecil */
+}
+  
 }
 
 @media (max-width: 768px) {
@@ -38,13 +59,30 @@
     margin-bottom: 45px;
   }
 
+  .header_section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #C70000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .school-box {
+    width: 80%;
+  }
 }
 
 @media (max-width: 576px) {
   .header_section .header_top .contact_nav a span {
     display: none;
   }
-
 
   .client_section .client_container {
     width: 100%;
@@ -65,6 +103,10 @@
     position: unset;
     margin: 0 2.5px;
   }
+
+  .school-box {
+    width: 100%; /* Lebar penuh pada layar kecil */
+}
 }
 
 @media (max-width: 480px) {
@@ -85,6 +127,15 @@
     padding: 10px 60px;
     margin-top: 10px;
   }
+
+  .school-box {
+    width: 100%;
+  }
+
+  h3,
+  p {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -100,30 +151,16 @@
 
 @media (max-width: 376px) {}
 
+/* Ukuran Layar Besar */
 @media (min-width: 1200px) {
   .container {
     max-width: 1170px;
   }
 }
 
-/* Header tetap di atas saat window dikecilkan */
-@media (max-width: 768px) {
-  .header_section {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #C70000; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-  }
-
-}
-
-/* Mengembalikan fungsi scroll normal saat window dalam keadaan normal */
 @media (min-width: 769px) {
   .header_section {
-    position: static;
-    //box-shadow: none;   
+    position: relative;
   }
 
   .main_content {
@@ -136,46 +173,4 @@
   position: relative;
   width: 100%;
   z-index: 10;
-}
-
-/* Pada ukuran layar kecil (<= 768px) */
-@media (max-width: 768px) {
-  .header_section {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background-color: #C70000; /* Ganti dengan warna yang diinginkan */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Memberikan bayangan */
-  }
-
-}
-
-/* Pada ukuran layar > 768px (kembali ke normal) */
-@media (min-width: 769px) {
-  .header_section {
-      position: relative;
-  }
-}
-
-@media (max-width: 768px) {
-  .grid-container {
-      grid-template-columns: 1fr;
-  }
-
-  .school-box {
-      width: 80%;
-  }
-}
-
-@media (max-width: 480px) {
-  .school-box {
-      width: 100%;
-  }
-
-  h3,
-  p {
-      font-size: 18px;
-  }
 }
