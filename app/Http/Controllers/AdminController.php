@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sekolah;
+use App\Models\Pesertadidik;
 use App\Models\Ptk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -216,6 +217,11 @@ class AdminController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Sekolah updated successfully.');
     }
 
+    public function showPesertadidik($peserta_didik_id)
+    {
+        $pesertadidik = Pesertadidik::findOrFail($peserta_didik_id);
+        return view('admin.showPesertadidik', compact('pesertadidik'));
+    }
 
     public function showSekolah($sekolah_id)
     {

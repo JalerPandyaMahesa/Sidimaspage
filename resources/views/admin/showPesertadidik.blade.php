@@ -231,10 +231,6 @@
                                     <i class="fas fa-trash-alt"></i> Delete
                                 </button>
                             </form>
-
-                            <!-- <a href="{{ route('admin.destroySekolah', ['sekolah_id' => $sekolah->sekolah_id]) }}"
-                                class="badge badge-danger"><i class="fas fa-trash-alt ">@csrf
-                                    @method('DELETE')</i>Delete</a> -->
                         </div>
                         <div class="card-box">
                             <div class="text-center">
@@ -243,123 +239,115 @@
 
                             <div class="row">
                                 <div class="col-md-6 mt-3">
+                                    <p class="text-muted mb-2 font-13"><strong>Peserta Didik ID :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->peserta_didik_id }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Sekolah ID :</strong> <span
-                                            class="ml-2">{{ $sekolah->sekolah_id }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>NPSN :</strong> <span
-                                            class="ml-2">{{ $sekolah->npsn }}</span></p>
+                                            class="ml-2">{{ $peserta_didik->sekolah_id }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Nama :</strong> <span
-                                            class="ml-2">{{ $sekolah->nama }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Provinsi :</strong> <span
-                                            class="ml-2">{{ $sekolah->provinsi }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Akreditasi :</strong> <span
-                                            class="ml-2">{{ $sekolah->akreditasi }}</span></p>
+                                            class="ml-2">{{ $peserta_didik->nama }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>NISN :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nisn }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>NIK :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nik }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>No KK :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->no_kk }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Tempat Lahir :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->tempat_lahir }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Tanggal Lahir :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->tanggal_lahir }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Jenis Kelamin :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->jenis_kelamin }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Agama :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->agama }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Nama Ayah :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nama_ayah }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>NIK Ayah :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nik_ayah }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Tahun Lahir Ayah :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->tahun_lahir_ayah }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Pendidikan Ayah :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->jenjang_pendidikan_ayah }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Pekerjaan Ayah :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->pekerjaan_ayah }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Nama Ibu :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nama_ibu_kandung }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>NIK Ibu :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nik_ibu }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Tahun Lahir Ibu :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->tahun_lahir_ibu }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Pendidikan Ibu :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->jenjang_pendidikan_ibu }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Pekerjaan Ibu :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->pekerjaan_ibu }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Alamat Jalan :</strong> <span
-                                            class="ml-2">{{ $sekolah->alamat_jalan }}</span></p>
+                                            class="ml-2">{{ $peserta_didik->alamat_jalan }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>RT :</strong> <span
-                                            class="ml-2">{{ $sekolah->rt }}</span></p>
+                                            class="ml-2">{{ $peserta_didik->rt }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>RW :</strong> <span
-                                            class="ml-2">{{ $sekolah->rw }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>NSS :</strong> <span
-                                            class="ml-2">{{ $sekolah->nss }}</span></p>
+                                            class="ml-2">{{ $peserta_didik->rw }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Nama Dusun :</strong> <span
-                                            class="ml-2">{{ $sekolah->nama_dusun }}</span></p>
+                                            class="ml-2">{{ $peserta_didik->nama_dusun }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Desa/Kelurahan :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->desa_kelurahan }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Kode Wilayah :</strong> <span
-                                            class="ml-2">{{ $sekolah->kode_wilayah }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Kode Desa Kelurahan :</strong> <span
-                                            class="ml-2">{{ $sekolah->kode_desa_kelurahan }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Desa Kelurahan :</strong> <span
-                                            class="ml-2">{{ $sekolah->desa_kelurahan }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Kode Kecamatan :</strong> <span
-                                            class="ml-2">{{ $sekolah->kode_kecamatan }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Kode Kabupaten :</strong> <span
-                                            class="ml-2">{{ $sekolah->kode_kabupaten }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Kode Provinsi :</strong> <span
-                                            class="ml-2">{{ $sekolah->kode_provinsi }}</span></p>
+                                            class="ml-2">{{ $peserta_didik->kode_wilayah }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Kecamatan :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->kecamatan }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Kabupaten :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->kabupaten }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Provinsi :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->provinsi }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Kode Pos :</strong> <span
-                                            class="ml-2">{{ $sekolah->kode_pos }}</span></p>
+                                            class="ml-2">{{ $peserta_didik->kode_pos }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Lintang :</strong> <span
-                                            class="ml-2">{{ $sekolah->lintang }}</span></p>
+                                            class="ml-2">{{ $peserta_didik->lintang }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Bujur :</strong> <span
-                                            class="ml-2">{{ $sekolah->bujur }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Nomor Telepon :</strong> <span
-                                            class="ml-2">{{ $sekolah->nomor_telepon }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Nomor Fax :</strong> <span
-                                            class="ml-2">{{ $sekolah->nomor_fax }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span
-                                            class="ml-2">{{ $sekolah->email }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Website :</strong> <span
-                                            class="ml-2">{{ $sekolah->website }}</span></p>
+                                            class="ml-2">{{ $peserta_didik->bujur }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Nama Wali :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nama_wali }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Tahun Lahir Wali :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->tahun_lahir_wali }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>NIPD :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nipd }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Tanggal Masuk Sekolah :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->tanggal_masuk_sekolah }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Kebutuhan Khusus :</strong> <span
-                                            class="ml-2">{{ $sekolah->kebutuhan_khusus }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>SK Pendirian Sekolah :</strong> <span
-                                            class="ml-2">{{ $sekolah->sk_pendirian_sekolah }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Tanggal SK Pendirian :</strong> <span
-                                            class="ml-2">{{ $sekolah->tanggal_sk_pendirian }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Status Kepemilikan :</strong> <span
-                                            class="ml-2">{{ $sekolah->status_kepemilikan }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Yayasan :</strong> <span
-                                            class="ml-2">{{ $sekolah->yayasan }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>SK Izin Operasional :</strong> <span
-                                            class="ml-2">{{ $sekolah->sk_izin_operasional }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Tanggal SK Izin Operasional :</strong>
-                                        <span class="ml-2">{{ $sekolah->tanggal_sk_izin_operasional }}</span>
-                                    </p>
+                                            class="ml-2">{{ $peserta_didik->kebutuhan_khusus }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Jenis Tinggal :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->jenis_tinggal }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Alat Transportasi :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->alat_transportasi }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Anak Keberapa :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->anak_keberapa }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>NIK Wali :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nik_wali }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>No Telepon Rumah :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nomor_telepon_rumah }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>No Telepon Seluler :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nomor_telepon_seluler }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->email }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>No Peserta Ujian :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->no_peserta_ujian }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>No Seri Ijazah :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->no_seri_ijazah }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Sekolah Asal :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->sekolah_asal }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Nama Negara :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->nama_negara }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Pekerjaan Wali :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->pekerjaan_wali }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Pendidikan Wali :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->jenjang_pendidikan_wali }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Tahun Ajaran :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->tahun_ajaran }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>No SKHUN :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->no_skhun }}</span></p>
+                                    <p class="text-muted mb-2 font-13"><strong>Jenis Pendaftaran :</strong> <span
+                                            class="ml-2">{{ $peserta_didik->jenis_pendaftaran }}</span></p>
                                 </div>
                                 <div class="col-md-6 mt-3">
-                                    <p class="text-muted mb-2 font-13"><strong>No Rekening :</strong> <span
-                                            class="ml-2">{{ $sekolah->no_rekening }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Nama Bank :</strong> <span
-                                            class="ml-2">{{ $sekolah->nama_bank }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Cabang KCP Unit :</strong> <span
-                                            class="ml-2">{{ $sekolah->cabang_kcp_unit }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Rekening Atas Nama :</strong> <span
-                                            class="ml-2">{{ $sekolah->rekening_atas_nama }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>MBs :</strong> <span
-                                            class="ml-2">{{ $sekolah->mbs }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>NPWP :</strong> <span
-                                            class="ml-2">{{ $sekolah->npwp }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>NM WP :</strong> <span
-                                            class="ml-2">{{ $sekolah->nm_wp }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Keaktifan :</strong> <span
-                                            class="ml-2">{{ $sekolah->keaktifan }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Flag :</strong> <span
-                                            class="ml-2">{{ $sekolah->flag }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Wilayah Terpencil :</strong> <span
-                                            class="ml-2">{{ $sekolah->wilayah_terpencil }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Wilayah Perbatasan :</strong> <span
-                                            class="ml-2">{{ $sekolah->wilayah_perbatasan }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Wilayah Transmigrasi :</strong> <span
-                                            class="ml-2">{{ $sekolah->wilayah_transmigrasi }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Wilayah Adat Terpencil :</strong> <span
-                                            class="ml-2">{{ $sekolah->wilayah_adat_terpencil }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Wilayah Bencana Alam :</strong> <span
-                                            class="ml-2">{{ $sekolah->wilayah_bencana_alam }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Wilayah Bencana Sosial :</strong> <span
-                                            class="ml-2">{{ $sekolah->wilayah_bencana_sosial }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Partisipasi BOS :</strong> <span
-                                            class="ml-2">{{ $sekolah->partisipasi_bos }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Waktu Penyelenggaraan :</strong> <span
-                                            class="ml-2">{{ $sekolah->waktu_penyelenggaraan }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Sumber Listrik :</strong> <span
-                                            class="ml-2">{{ $sekolah->sumber_listrik }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Sertifikasi Iso :</strong> <span
-                                            class="ml-2">{{ $sekolah->sertifikasi_iso }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Akses Internet :</strong> <span
-                                            class="ml-2">{{ $sekolah->akses_internet }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Akses Internet2 :</strong> <span
-                                            class="ml-2">{{ $sekolah->akses_internet_2 }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Luas Tanah Milik :</strong> <span
-                                            class="ml-2">{{ $sekolah->luas_tanah_milik }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Luas Tanah Bukan Milik :</strong> <span
-                                            class="ml-2">{{ $sekolah->luas_tanah_bukan_milik }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Kode Registrasi :</strong> <span
-                                            class="ml-2">{{ $sekolah->kode_registrasi }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Daya Listrik :</strong> <span
-                                            class="ml-2">{{ $sekolah->daya_listrik }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Kontinuitas Listrik :</strong> <span
-                                            class="ml-2">{{ $sekolah->kontinuitas_listrik }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Jarak Listrik :</strong> <span
-                                            class="ml-2">{{ $sekolah->jarak_listrik }}</span></p>
+                                    
                                 </div>
                             </div>
                         </div> <!-- end card-box -->
@@ -380,7 +368,6 @@
                         <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
                         <th>Agama</th>
-                        <th>Action</th>
 
                         <!-- Add other columns as needed -->
                     </tr>
@@ -393,9 +380,6 @@
                             <td>{{ $peserta->tanggal_lahir }}</td>
                             <td>{{ $peserta->jenis_kelamin }}</td>
                             <td>{{ $peserta->agama }}</td>
-                            <td><a href="{{ route('admin.showPesertadidik', ['peserta_didik_id' => $peserta->peserta_didik_id]) }}"
-                                    class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
-                            </td>
 
                             <!-- Add other data fields as needed -->
                         </tr>
