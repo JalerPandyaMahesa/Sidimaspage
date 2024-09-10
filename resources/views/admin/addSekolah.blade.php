@@ -173,9 +173,6 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="#">Tambah</a>
-                                </li>
-                                <li>
                                     <a href="{{route("admin.viewPgtk")}}">Lihat</a>
                                 </li>
                             </ul>
