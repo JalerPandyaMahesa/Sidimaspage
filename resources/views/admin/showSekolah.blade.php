@@ -393,8 +393,10 @@
                             <td>{{ $peserta->tanggal_lahir }}</td>
                             <td>{{ $peserta->jenis_kelamin }}</td>
                             <td>{{ $peserta->agama }}</td>
-                            <td><a href="{{ route('admin.showPesertadidik', ['peserta_didik_id' => $peserta->peserta_didik_id]) }}"
-                                    class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
+                            <td><a href="{{ route('admin.showPesertadidik', ['sekolah_id' => $sekolah->sekolah_id, 'peserta_didik_id' => $peserta->peserta_didik_id]) }}"
+                                    class="badge badge-success">
+                                    <i class="mdi mdi-eye"></i> View
+                                </a>
                             </td>
 
                             <!-- Add other data fields as needed -->

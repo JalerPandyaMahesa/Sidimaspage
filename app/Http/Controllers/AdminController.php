@@ -18,7 +18,7 @@ class AdminController extends Controller
         $totalPgtk = Sekolah::withCount('ptk')->get();
         $totalPgtk = Ptk::count();
 
-        return view('admin.dashboard', compact('totalTk', 'totalSd', 'totalSmp','totalPgtk'));
+        return view('admin.dashboard', compact('totalTk', 'totalSd', 'totalSmp', 'totalPgtk'));
     }
 
     public function viewPaud()
@@ -217,11 +217,12 @@ class AdminController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Sekolah updated successfully.');
     }
 
-    public function showPesertadidik($peserta_didik_id)
+    public function showPesertadidik($sekolah_id, $peserta_didik_id)
     {
-        $pesertadidik = Pesertadidik::findOrFail($peserta_didik_id);
+        $pesertadidik = Pesertadidik::with('sekolah')->findOrFail($peserta_didik_id);
         return view('admin.showPesertadidik', compact('pesertadidik'));
     }
+
 
     public function showSekolah($sekolah_id)
     {

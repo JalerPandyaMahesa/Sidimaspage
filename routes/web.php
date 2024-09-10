@@ -83,7 +83,7 @@ Route::get('/admin/viewPgtk', [AdminController::class, 'viewPtk'])->name('admin.
 Route::get('/admin/addSekolah', [AdminController::class, 'createSekolah'])->name('admin.addSekolah')->middleware('login');
 Route::post('/admin/dashboard', [AdminController::class, 'store'])->name('admin.store')->middleware('login');
 Route::get('/admin/{sekolah_id}', [AdminController::class, 'showSekolah'])->name('admin.showSekolah')->middleware('login');
-Route::get('/admin/{peserta_didik_id}', [AdminController::class, 'showPesertadidik'])->name('admin.showPesertadidik')->middleware('login');
+Route::get('/admin/{sekolah_id}/peserta/{peserta_didik_id}', [AdminController::class, 'showPesertadidik'])->name('admin.showPesertadidik')->middleware('login');
 Route::get('/admin/{sekolah_id}/edit', [AdminController::class, 'editSekolah'])->name('admin.editSekolah')->middleware('login');
 Route::put('/admin/{sekolah_id}', [AdminController::class, 'update'])->name('admin.updateSekolah')->middleware('login');
 Route::delete('/admin/{sekolah_id}', [AdminController::class, 'destroySekolah'])->name('admin.destroySekolah')->middleware('login');
