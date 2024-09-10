@@ -118,16 +118,6 @@
                                                     pendidikan, dan masyarakat dalam mengakses berbagai informasi
                                                     terkait sekolah, siswa, tenaga pendidik, serta fasilitas pendidikan.
                                                 </p>
-                                                <!-- <p>
-                                                    Visi :<br>
-                                                    Meningkatkan kualitas hidup warga melalui pemenuhann kebutuhan dan layanan dasar pendidikan.
-                                                    <br>
-                                                    <br>
-                                                    Misi :<br>
-                                                    1. Meningkatkan layanan aksesbilitas pendidikan yang ramah dan santun.<br>
-                                                    2. Cepat dan tanggap terhadao perubahan, sinergi dengan tata kelola penyelenggaraa pendidikan.<br>
-                                                    3. Akurat dalam penyampaian data dan informasi pendidikan.
-                                                </p> -->
                                             </div>
                                         </div>
                                         <div class="col-md-6">

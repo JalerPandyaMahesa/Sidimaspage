@@ -158,3 +158,24 @@
       position: relative;
   }
 }
+
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: 1fr;
+  }
+
+  .school-box {
+      width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .school-box {
+      width: 100%;
+  }
+
+  h3,
+  p {
+      font-size: 18px;
+  }
+}
