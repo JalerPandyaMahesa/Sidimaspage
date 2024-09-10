@@ -87,3 +87,4 @@ Route::get('/admin/{sekolah_id}/peserta/{peserta_didik_id}', [AdminController::c
 Route::get('/admin/{sekolah_id}/edit', [AdminController::class, 'editSekolah'])->name('admin.editSekolah')->middleware('login');
 Route::put('/admin/{sekolah_id}', [AdminController::class, 'update'])->name('admin.updateSekolah')->middleware('login');
 Route::delete('/admin/{sekolah_id}', [AdminController::class, 'destroySekolah'])->name('admin.destroySekolah')->middleware('login');
+Route::post('/import-excel', [AdminController::class, 'importExcel'])->name('import.excel');

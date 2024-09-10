@@ -6,6 +6,8 @@ use App\Models\Sekolah;
 use App\Models\Pesertadidik;
 use App\Models\Ptk;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\SekolahImport;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -236,6 +238,17 @@ class AdminController extends Controller
         $sekolah->delete();
 
         return redirect()->route('admin.dashboard');
+    }
+
+    public function importExcel(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xls,xlsx'
+        ]);
+    
+        Excel::import(new SekolahImport, $request->file('file'));
+    
+        return redirect()->back()->with('success', 'Data sekolah berhasil diimpor!');
     }
 
 }
