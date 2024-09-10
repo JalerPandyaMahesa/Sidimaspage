@@ -208,7 +208,8 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="{{route("admin.dashboard")}}">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="{{route("admin.dashboard")}}">Dashboard</a>
+                                        </li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Sekolah</a></li>
                                         <li class="breadcrumb-item active">View Sekolah</li>
                                     </ol>
@@ -379,7 +380,8 @@
                         <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
                         <th>Agama</th>
-                        
+                        <th>Action</th>
+
                         <!-- Add other columns as needed -->
                     </tr>
                     @foreach($sekolah->pesertaDidik as $index => $peserta)
@@ -391,7 +393,12 @@
                             <td>{{ $peserta->tanggal_lahir }}</td>
                             <td>{{ $peserta->jenis_kelamin }}</td>
                             <td>{{ $peserta->agama }}</td>
-                            
+                            <td><a href="{{ route('admin.showPesertadidik', ['sekolah_id' => $sekolah->sekolah_id, 'peserta_didik_id' => $peserta->peserta_didik_id]) }}"
+                                    class="badge badge-success">
+                                    <i class="mdi mdi-eye"></i> View
+                                </a>
+                            </td>
+
                             <!-- Add other data fields as needed -->
                         </tr>
                     @endforeach

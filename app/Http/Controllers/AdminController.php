@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sekolah;
+use App\Models\Pesertadidik;
 use App\Models\Ptk;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\SekolahImport;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -17,7 +20,7 @@ class AdminController extends Controller
         $totalPgtk = Sekolah::withCount('ptk')->get();
         $totalPgtk = Ptk::count();
 
-        return view('admin.dashboard', compact('totalTk', 'totalSd', 'totalSmp','totalPgtk'));
+        return view('admin.dashboard', compact('totalTk', 'totalSd', 'totalSmp', 'totalPgtk'));
     }
 
     public function viewPaud()
@@ -216,6 +219,12 @@ class AdminController extends Controller
         return redirect()->route('admin.dashboard')->with('success', 'Sekolah updated successfully.');
     }
 
+    public function showPesertadidik($sekolah_id, $peserta_didik_id)
+    {
+        $pesertadidik = Pesertadidik::with('sekolah')->findOrFail($peserta_didik_id);
+        return view('admin.showPesertadidik', compact('pesertadidik'));
+    }
+
 
     public function showSekolah($sekolah_id)
     {
@@ -229,6 +238,17 @@ class AdminController extends Controller
         $sekolah->delete();
 
         return redirect()->route('admin.dashboard');
+    }
+
+    public function importExcel(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xls,xlsx'
+        ]);
+    
+        Excel::import(new SekolahImport, $request->file('file'));
+    
+        return redirect()->back()->with('success', 'Data sekolah berhasil diimpor!');
     }
 
 }

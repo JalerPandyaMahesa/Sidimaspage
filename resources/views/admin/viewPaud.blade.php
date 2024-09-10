@@ -273,6 +273,13 @@
                                         </form>
 
                                         <button id="export-button" class="btn btn-primary">Export to Excel</button>
+
+                                        <form action="{{ route('import.excel') }}" method="POST"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="file" name="file" required>
+                                            <button type="submit">Import Data</button>
+                                        </form>
                                     </div>
                                     <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
                                         data-page-size="7">
