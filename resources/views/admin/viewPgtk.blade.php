@@ -243,6 +243,7 @@
                                             <th>#</th>
                                             <th>Nama</th>
                                             <th>NIP</th>
+                                            <th>Sekolah</th>
                                             <th>Jenis Kelamin</th>
                                             <th>Status Kepegawaian</th>
                                             <th>Jenis PTK</th>
@@ -256,6 +257,7 @@
                                                 <td>{{ $index + 1 }}</td>
                                                 <td>{{ $ptk->nama }}</td>
                                                 <td>{{ $ptk->nip }}</td>
+                                                <td>{{ $ptk->sekolah->nama }}</td></td>
                                                 <td>{{ $ptk->jenis_kelamin }}</td>
                                                 <td>{{ $ptk->status_kepegawaian }}</td>
                                                 <td>{{ $ptk->jenis_ptk }}</td>

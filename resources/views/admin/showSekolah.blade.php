@@ -376,6 +376,7 @@
                         <th>#</th>
                         <th>NISN</th>
                         <th>Nama</th>
+                        <th>Kelas</th>
                         <th>Tempat Lahir</th>
                         <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
@@ -389,6 +390,7 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $peserta->nisn }}</td>
                             <td>{{ $peserta->nama }}</td>
+                            <td>{{ $peserta->tingkat_pendidikan }}</td>
                             <td>{{ $peserta->tempat_lahir }}</td>
                             <td>{{ $peserta->tanggal_lahir }}</td>
                             <td>{{ $peserta->jenis_kelamin }}</td>

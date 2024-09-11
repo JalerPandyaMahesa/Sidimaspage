@@ -279,13 +279,14 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">NPSN</th>
-                                                <th data-hide="phone">Nama</th>
-                                                <th data-hide="phone">Kecamatan</th>
-                                                <th data-hide="phone">Bentuk Pendidikan</th>
-                                                <th data-hide="phone">Status Sekolah</th>
-                                                <th data-hide="phone">Peserta Didik</th>
-                                                <th data-hide="phone">Action</th>
+                                                <th>Semester</th>
+                                                <th>NPSN</th>
+                                                <th>Nama</th>
+                                                <th>Kecamatan</th>
+                                                <th>Bentuk Pendidikan</th>
+                                                <th>Status Sekolah</th>
+                                                <th>Peserta Didik</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
 
@@ -293,6 +294,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td>{{ $index + 1 }}</td>
+                                                    <td>{{ $s->semester_id }}</td>
                                                     <td>{{ $s->npsn }}</td>
                                                     <td>{{ $s->nama }}</td>
                                                     <td>{{ $s->kecamatan }}</td>
