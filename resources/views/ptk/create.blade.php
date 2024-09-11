@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Peserta Didik</title>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
+
 <body>
     <h1>Create Peserta Didik</h1>
+    <form action="{{ route('ptk.import', $sekolah->first()->sekolah_id) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div>
+            <label for="file">Import PTK:</label>
+            <input type="file" name="file" required>
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+
     <form action="{{ isset($ptk) ? route('ptk.update', $ptk->ptk_id) : route('ptk.store') }}" method="POST">
         @csrf
         @if(isset($ptk))
@@ -25,7 +36,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#sekolah_id').select2({
                 placeholder: 'Select a school',
                 allowClear: true
@@ -33,4 +44,5 @@
         });
     </script>
 </body>
+
 </html>

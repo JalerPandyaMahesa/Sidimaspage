@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Sekolah;
 use App\Models\ptk;
+use App\Imports\PtkImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PtkController extends Controller
 {
@@ -68,5 +70,20 @@ class PtkController extends Controller
 
         return redirect()->route('ptk.index')->with('success', 'ptk deleted successfully.');
     }
+
+    public function import(Request $request, $sekolah_id)
+    {
+        // Validasi file
+        $request->validate([
+            'file' => 'required|mimes:xls,xlsx',
+        ]);
+
+        // Import PTK dari Excel
+        Excel::import(new PtkImport($sekolah_id), $request->file('file'));
+
+        // Redirect kembali ke halaman sekolah dengan pesan sukses
+        return redirect()->route('admin.dashboard', $sekolah_id)->with('success', 'Data PTK berhasil diimpor!');
+    }
+
 }
 

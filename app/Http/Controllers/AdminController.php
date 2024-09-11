@@ -8,6 +8,8 @@ use App\Models\Ptk;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\SekolahImport;
+use App\Imports\PesertaDidikImport;
+use App\Imports\PtkImport;
 use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
@@ -250,5 +252,20 @@ class AdminController extends Controller
     
         return redirect()->back()->with('success', 'Data sekolah berhasil diimpor!');
     }
+
+    public function import(Request $request, Sekolah $sekolah)
+    {
+        // Validasi file yang diunggah
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv',
+        ]);
+
+        // Proses impor dengan Laravel Excel
+        Excel::import(new PesertaDidikImport($sekolah->sekolah_id), $request->file('file'));
+
+        return redirect()->route('sekolah.show', $sekolah->sekolah_id)->with('success', 'Peserta Didik berhasil diimpor');
+    }
+
+    
 
 }

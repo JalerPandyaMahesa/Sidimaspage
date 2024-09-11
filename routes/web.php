@@ -88,3 +88,5 @@ Route::get('/admin/{sekolah_id}/edit', [AdminController::class, 'editSekolah'])-
 Route::put('/admin/{sekolah_id}', [AdminController::class, 'update'])->name('admin.updateSekolah')->middleware('login');
 Route::delete('/admin/{sekolah_id}', [AdminController::class, 'destroySekolah'])->name('admin.destroySekolah')->middleware('login');
 Route::post('/import-excel', [AdminController::class, 'importExcel'])->name('import.excel');
+Route::post('/sekolah/{sekolah}/import-pesertadidik', [PesertaDidikController::class, 'import'])->name('pesertadidik.import');
+Route::post('/sekolah/{sekolah_id}/ptk/import', [PtkController::class, 'import'])->name('ptk.import');
