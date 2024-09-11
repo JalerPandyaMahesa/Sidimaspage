@@ -11,7 +11,7 @@
 <body>
     <h1>Create Peserta Didik</h1>
 
-    <form action="{{ route('pesertadidik.import', $sekolah->first()->sekolah_id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('pesertadidik.import', $sekolah_id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="file">Import Peserta Didik:</label>

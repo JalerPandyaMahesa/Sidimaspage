@@ -10,7 +10,7 @@
 
 <body>
     <h1>Create Peserta Didik</h1>
-    <form action="{{ route('ptk.import', $sekolah->first()->sekolah_id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('ptk.import', $sekolah_id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="file">Import PTK:</label>
