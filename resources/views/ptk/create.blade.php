@@ -204,10 +204,10 @@
                                                 href="{{ route('admin.dashboard') }}">Dashboard</a>
                                         </li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Sekolah</a></li>
-                                        <li class="breadcrumb-item active">Add Sekolah</li>
+                                        <li class="breadcrumb-item active">Add PGTK</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Add Sekolah Details</h4>
+                                <h4 class="page-title">Input PGTK</h4>
                             </div>
                         </div>
                     </div>
