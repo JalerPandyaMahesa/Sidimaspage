@@ -416,39 +416,37 @@
 
             <div class="card-box">
                 <h2>PGTK</h2>
-                <div class="table-responsive">
-                    <table class="table table-bordered toggle-circle mb-0" data-page-size="7">
+            <div class="table-responsive">
+                <table class="table table-bordered toggle-circle mb-0" data-page-size="7">
+                    <tr>
+                        <th>#</th>
+                        <th>Nama</th>
+                        <th>NIP</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Status Kepegawaian</th>
+                        <th>Jenis PTK</th>
+                        <th>Agama</th>
+                        <th>Status Keaktifan</th>
+                        <th>No HP</th>
+                        <th>Email</th>
+                    </tr>
+                    @foreach ($sekolah->ptk as $index => $ptk)
                         <tr>
-                            <th>#</th>
-                            <th>Nama</th>
-                            <th>NIP</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Status Kepegawaian</th>
-                            <th>Jenis PTK</th>
-                            <th>Agama</th>
-                            <th>Status Keaktifan</th>
-                            <th>No HP</th>
-                            <th>Email</th>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $ptk->nama }}</td>
+                            <td>{{ $ptk->nip }}</td>
+                            <td>{{ $ptk->jenis_kelamin }}</td>
+                            <td>{{ $ptk->status_kepegawaian }}</td>
+                            <td>{{ $ptk->jenis_ptk }}</td>
+                            <td>{{ $ptk->agama }}</td>
+                            <td>{{ $ptk->status_keaktifan }}</td>
+                            <td>{{ $ptk->no_hp }}</td>
+                            <td>{{ $ptk->email }}</td>
                         </tr>
-                        @foreach ($sekolah->ptk as $index => $ptk)
-                            <tr>
-                                <td>{{ $index + 1 }}</td>
-                                <td>{{ $ptk->nama }}</td>
-                                <td>{{ $ptk->nip }}</td>
-                                <td>{{ $ptk->jenis_kelamin }}</td>
-                                <td>{{ $ptk->status_kepegawaian }}</td>
-                                <td>{{ $ptk->jenis_ptk }}</td>
-                                <td>{{ $ptk->agama }}</td>
-                                <td>{{ $ptk->status_keaktifan }}</td>
-                                <td>{{ $ptk->no_hp }}</td>
-                                <td>{{ $ptk->email }}</td>
-                            </tr>
-                        @endforeach
-                    </table>
-                    <button type="submit" class="btn btn-success">
-                        <a href="{{ route('ptk.create', $sekolah->sekolah_id) }}">Add New ptgk</a>
-                    </button>
-                </div>
+                    @endforeach
+                </table>
+                <a href="{{ route('ptk.create', $sekolah->sekolah_id) }}">Add New ptgk</a>
+            </div>
             </div>
 
             <!-- Footer Start -->
