@@ -270,7 +270,6 @@
                         <div class="col-md-12">
                             2024 &copy; SIDIMAS</a>
                         </div>
-
                     </div>
                 </div>
             </footer>
