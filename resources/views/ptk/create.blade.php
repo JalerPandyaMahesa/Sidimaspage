@@ -218,38 +218,291 @@
                             <div class="card">
                                 <div class="card-body">
                                     <label class="col-form-label">Create PTK (xls, xlsx)</label>
-                                    <form action="{{ route('ptk.import', $sekolah_id) }}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('ptk.import', $sekolah_id) }}" method="POST"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div>
-                                            <label for="file">Import PTK:</label>
+                                            <label for="file">Import PTK dengan file = </label>
                                             <input type="file" name="file" required>
+                                            <button type="submit">Upload</button>
                                         </div>
-                                        <button type="submit">Upload</button>
+                                        
                                     </form>
 
-                                    <h2></h2>
+                                    <div class="pt-3" >
+
+                                    </div>
+
+                                    <h3>Input Manual PTK</h3>
                                     <!-- <h4 class="header-title">Fill all fields</h4> -->
                                     <!--Create Ptk Form-->
-                                    <form action="{{ isset($ptk) ? route('ptk.update', $ptk->ptk_id) : route('ptk.store') }}" method="POST">
+                                    <form
+                                        action="{{ isset($ptk) ? route('ptk.update', $ptk->ptk_id) : route('ptk.store') }}"
+                                        method="POST">
                                         @csrf
                                         @if (isset($ptk))
                                             @method('PUT')
                                         @endif
-                                    
+
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="nama" class="col-form-label">Nama:</label>
-                                                <input type="text" id="nama" name="nama" class="form-control"
-                                                    value="{{ isset($ptk) ? $ptk->nama : '' }}" required>
+                                                <label for="nama">Nama</label>
+                                                <input type="text" name="nama" class="form-control" id="nama"
+                                                    value="{{ isset($ptk) ? $ptk->nama : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="nuptk">NUPTK</label>
+                                                <input type="text" name="nuptk" class="form-control" id="nuptk"
+                                                    value="{{ isset($ptk) ? $ptk->nuptk : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="jk">Jenis Kelamin</label>
+                                                <input type="text" name="jk" class="form-control" id="jk"
+                                                    value="{{ isset($ptk) ? $ptk->jk : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="tempat_lahir">Tempat Lahir</label>
+                                                <input type="text" name="tempat_lahir" class="form-control"
+                                                    id="tempat_lahir"
+                                                    value="{{ isset($ptk) ? $ptk->tempat_lahir : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="tanggal_lahir">Tanggal Lahir</label>
+                                                <input type="date" name="tanggal_lahir" class="form-control"
+                                                    id="tanggal_lahir"
+                                                    value="{{ isset($ptk) ? $ptk->tanggal_lahir : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="nip">NIP</label>
+                                                <input type="text" name="nip" class="form-control" id="nip"
+                                                    value="{{ isset($ptk) ? $ptk->nip : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="status_kepegawaian">Status Kepegawaian</label>
+                                                <input type="text" name="status_kepegawaian" class="form-control"
+                                                    id="status_kepegawaian"
+                                                    value="{{ isset($ptk) ? $ptk->status_kepegawaian : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="jenis_ptk">Jenis PTK</label>
+                                                <input type="text" name="jenis_ptk" class="form-control" id="jenis_ptk"
+                                                    value="{{ isset($ptk) ? $ptk->jenis_ptk : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="agama">Agama</label>
+                                                <input type="text" name="agama" class="form-control" id="agama"
+                                                    value="{{ isset($ptk) ? $ptk->agama : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="alamat_jalan">Alamat Jalan</label>
+                                                <input type="text" name="alamat_jalan" class="form-control"
+                                                    id="alamat_jalan"
+                                                    value="{{ isset($ptk) ? $ptk->alamat_jalan : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="rt">RT</label>
+                                                <input type="text" name="rt" class="form-control" id="rt"
+                                                    value="{{ isset($ptk) ? $ptk->rt : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="rw">RW</label>
+                                                <input type="text" name="rw" class="form-control" id="rw"
+                                                    value="{{ isset($ptk) ? $ptk->rw : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="nama_dusun">Nama Dusun</label>
+                                                <input type="text" name="nama_dusun" class="form-control"
+                                                    id="nama_dusun" value="{{ isset($ptk) ? $ptk->nama_dusun : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="desa_kelurahan">Desa/Kelurahan</label>
+                                                <input type="text" name="desa_kelurahan" class="form-control"
+                                                    id="desa_kelurahan"
+                                                    value="{{ isset($ptk) ? $ptk->desa_kelurahan : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="kecamatan">Kecamatan</label>
+                                                <input type="text" name="kecamatan" class="form-control" id="kecamatan"
+                                                    value="{{ isset($ptk) ? $ptk->kecamatan : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="kode_pos">Kode Pos</label>
+                                                <input type="text" name="kode_pos" class="form-control" id="kode_pos"
+                                                    value="{{ isset($ptk) ? $ptk->kode_pos : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="telepon">Telepon</label>
+                                                <input type="text" name="telepon" class="form-control" id="telepon"
+                                                    value="{{ isset($ptk) ? $ptk->telepon : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="hp">HP</label>
+                                                <input type="text" name="hp" class="form-control" id="hp"
+                                                    value="{{ isset($ptk) ? $ptk->hp : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="email">Email</label>
+                                                <input type="email" name="email" class="form-control" id="email"
+                                                    value="{{ isset($ptk) ? $ptk->email : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="tugas_tambahan">Tugas Tambahan</label>
+                                                <input type="text" name="tugas_tambahan" class="form-control"
+                                                    id="tugas_tambahan"
+                                                    value="{{ isset($ptk) ? $ptk->tugas_tambahan : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="sk_cpns">SK CPNS</label>
+                                                <input type="text" name="sk_cpns" class="form-control" id="sk_cpns"
+                                                    value="{{ isset($ptk) ? $ptk->sk_cpns : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="tanggal_cpns">Tanggal CPNS</label>
+                                                <input type="date" name="tanggal_cpns" class="form-control"
+                                                    id="tanggal_cpns"
+                                                    value="{{ isset($ptk) ? $ptk->tanggal_cpns : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="sk_pengangkatan">SK Pengangkatan</label>
+                                                <input type="text" name="sk_pengangkatan" class="form-control"
+                                                    id="sk_pengangkatan"
+                                                    value="{{ isset($ptk) ? $ptk->sk_pengangkatan : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="tmt_pengangkatan">TMT Pengangkatan</label>
+                                                <input type="date" name="tmt_pengangkatan" class="form-control"
+                                                    id="tmt_pengangkatan"
+                                                    value="{{ isset($ptk) ? $ptk->tmt_pengangkatan : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="lembaga_pengangkatan">Lembaga Pengangkatan</label>
+                                                <input type="text" name="lembaga_pengangkatan" class="form-control"
+                                                    id="lembaga_pengangkatan"
+                                                    value="{{ isset($ptk) ? $ptk->lembaga_pengangkatan : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="pangkat_golongan">Pangkat Golongan</label>
+                                                <input type="text" name="pangkat_golongan" class="form-control"
+                                                    id="pangkat_golongan"
+                                                    value="{{ isset($ptk) ? $ptk->pangkat_golongan : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="sumber_gaji">Sumber Gaji</label>
+                                                <input type="text" name="sumber_gaji" class="form-control"
+                                                    id="sumber_gaji" value="{{ isset($ptk) ? $ptk->sumber_gaji : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="nama_ibu_kandung">Nama Ibu Kandung</label>
+                                                <input type="text" name="nama_ibu_kandung" class="form-control"
+                                                    id="nama_ibu_kandung"
+                                                    value="{{ isset($ptk) ? $ptk->nama_ibu_kandung : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="status_perkawinan">Status Perkawinan</label>
+                                                <input type="text" name="status_perkawinan" class="form-control"
+                                                    id="status_perkawinan"
+                                                    value="{{ isset($ptk) ? $ptk->status_perkawinan : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="nama_suami_istri">Nama Suami/Istri</label>
+                                                <input type="text" name="nama_suami_istri" class="form-control"
+                                                    id="nama_suami_istri"
+                                                    value="{{ isset($ptk) ? $ptk->nama_suami_istri : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="nip_suami_istri">NIP Suami/Istri</label>
+                                                <input type="text" name="nip_suami_istri" class="form-control"
+                                                    id="nip_suami_istri"
+                                                    value="{{ isset($ptk) ? $ptk->nip_suami_istri : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="pekerjaan_suami_istri">Pekerjaan Suami/Istri</label>
+                                                <input type="text" name="pekerjaan_suami_istri" class="form-control"
+                                                    id="pekerjaan_suami_istri"
+                                                    value="{{ isset($ptk) ? $ptk->pekerjaan_suami_istri : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="tmt_pns">TMT PNS</label>
+                                                <input type="date" name="tmt_pns" class="form-control" id="tmt_pns"
+                                                    value="{{ isset($ptk) ? $ptk->tmt_pns : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="npwp">NPWP</label>
+                                                <input type="text" name="npwp" class="form-control" id="npwp"
+                                                    value="{{ isset($ptk) ? $ptk->npwp : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="nama_wajib_pajak">Nama Wajib Pajak</label>
+                                                <input type="text" name="nama_wajib_pajak" class="form-control"
+                                                    id="nama_wajib_pajak"
+                                                    value="{{ isset($ptk) ? $ptk->nama_wajib_pajak : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="kewarganegaraan">Kewarganegaraan</label>
+                                                <input type="text" name="kewarganegaraan" class="form-control"
+                                                    id="kewarganegaraan"
+                                                    value="{{ isset($ptk) ? $ptk->kewarganegaraan : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="bank">Bank</label>
+                                                <input type="text" name="bank" class="form-control" id="bank"
+                                                    value="{{ isset($ptk) ? $ptk->bank : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="nomor_rekening_bank">Nomor Rekening Bank</label>
+                                                <input type="text" name="nomor_rekening_bank" class="form-control"
+                                                    id="nomor_rekening_bank"
+                                                    value="{{ isset($ptk) ? $ptk->nomor_rekening_bank : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="rekening_atas_nama">Rekening Atas Nama</label>
+                                                <input type="text" name="rekening_atas_nama" class="form-control"
+                                                    id="rekening_atas_nama"
+                                                    value="{{ isset($ptk) ? $ptk->rekening_atas_nama : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="nik">NIK</label>
+                                                <input type="text" name="nik" class="form-control" id="nik"
+                                                    value="{{ isset($ptk) ? $ptk->nik : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="no_kk">Nomor KK</label>
+                                                <input type="text" name="no_kk" class="form-control" id="no_kk"
+                                                    value="{{ isset($ptk) ? $ptk->no_kk : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="karpeg">Karpeg</label>
+                                                <input type="text" name="karpeg" class="form-control" id="karpeg"
+                                                    value="{{ isset($ptk) ? $ptk->karpeg : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="karis_karsu">Karis/Karsu</label>
+                                                <input type="text" name="karis_karsu" class="form-control"
+                                                    id="karis_karsu" value="{{ isset($ptk) ? $ptk->karis_karsu : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="lintang">Lintang</label>
+                                                <input type="text" name="lintang" class="form-control" id="lintang"
+                                                    value="{{ isset($ptk) ? $ptk->lintang : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="bujur">Bujur</label>
+                                                <input type="text" name="bujur" class="form-control" id="bujur"
+                                                    value="{{ isset($ptk) ? $ptk->bujur : '' }}">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="nuks">NUKS</label>
+                                                <input type="text" name="nuks" class="form-control" id="nuks"
+                                                    value="{{ isset($ptk) ? $ptk->nuks : '' }}">
                                             </div>
                                         </div>
-                                    
+
                                         <input type="hidden" name="sekolah_id" value="{{ $sekolah_id }}">
-                                    
+
                                         <button type="submit" class="btn btn-success">
                                             {{ isset($ptk) ? 'Update' : 'Create' }}
                                         </button>
-                                    </form>                                    
+                                    </form>
                                     <!--End Create Ptk Form-->
                                 </div> <!-- end card-body -->
                             </div> <!-- end card-->
@@ -288,7 +541,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#sekolah_id').select2({
                 placeholder: 'Select a school',
                 allowClear: true

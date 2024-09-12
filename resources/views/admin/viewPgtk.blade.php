@@ -248,7 +248,6 @@
                                             <th>Status Kepegawaian</th>
                                             <th>Jenis PTK</th>
                                             <th>Agama</th>
-                                            <th>Status Keaktifan</th>
                                             <th>No HP</th>
                                             <th>Email</th>
                                         </tr>
@@ -262,8 +261,7 @@
                                                 <td>{{ $ptk->status_kepegawaian }}</td>
                                                 <td>{{ $ptk->jenis_ptk }}</td>
                                                 <td>{{ $ptk->agama }}</td>
-                                                <td>{{ $ptk->status_keaktifan }}</td>
-                                                <td>{{ $ptk->no_hp }}</td>
+                                                <td>{{ $ptk->hp }}</td>
                                                 <td>{{ $ptk->email }}</td>
                                             </tr>
                                         @endforeach
