@@ -400,7 +400,7 @@
                 let rowIndex = 1; // Start row index from 1
 
                 tableRows.forEach(row => {
-                    const kecamatanCell = row.querySelector('td:nth-child(4)');
+                    const kecamatanCell = row.querySelector('td:nth-child(5)');
                     const kecamatan = kecamatanCell ? kecamatanCell.textContent.toLowerCase() : '';
 
                     if (selectedKecamatan === '' || kecamatan.includes(selectedKecamatan)) {
