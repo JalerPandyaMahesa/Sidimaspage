@@ -428,7 +428,7 @@
                         <th>Agama</th>
                         <th>Status Keaktifan</th>
                         <th>No HP</th>
-                        <th>Email</th>
+                        
                     </tr>
                     @foreach ($sekolah->ptk as $index => $ptk)
                         <tr>
@@ -441,10 +441,10 @@
                             <td>{{ $ptk->agama }}</td>
                             <td>{{ $ptk->status_keaktifan }}</td>
                             <td>{{ $ptk->no_hp }}</td>
-                            <td>{{ $ptk->email }}</td>
+                            
                         </tr>
                     @endforeach
-                </table>
+                </table>    
                 <a href="{{ route('ptk.create', $sekolah->sekolah_id) }}">Add New ptgk</a>
             </div>
             </div>
