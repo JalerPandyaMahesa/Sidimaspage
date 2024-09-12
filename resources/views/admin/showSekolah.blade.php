@@ -70,7 +70,8 @@
                             @csrf
                         </form>
 
-                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a href="#"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Logout
                         </a>
                     </div>
@@ -79,7 +80,7 @@
 
             <!-- LOGO -->
             <div class="logo-box">
-                <a href="{{route("admin.dashboard")}}" class="logo text-center">
+                <a href="{{ route('admin.dashboard') }}" class="logo text-center">
                     <span class="logo-lg">
                         <img src="{{ asset('img/Asset/Logo_Sidimas2.png') }}" alt="" height="24">
                     </span>
@@ -113,7 +114,7 @@
                         <li class="menu-title">Navigation</li>
 
                         <li>
-                            <a href="{{route("admin.dashboard")}}">
+                            <a href="{{ route('admin.dashboard') }}">
                                 <i class="fe-airplay"></i>
                                 <span> Dashboard </span>
                             </a>
@@ -128,10 +129,10 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
+                                    <a href="{{ route('admin.addSekolah') }}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="{{route("admin.viewPaud")}}">Lihat</a>
+                                    <a href="{{ route('admin.viewPaud') }}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -144,10 +145,10 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
+                                    <a href="{{ route('admin.addSekolah') }}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="{{route("admin.viewSd")}}">Lihat</a>
+                                    <a href="{{ route('admin.viewSd') }}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -160,10 +161,10 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{route("admin.addSekolah")}}">Tambah Sekolah</a>
+                                    <a href="{{ route('admin.addSekolah') }}">Tambah Sekolah</a>
                                 </li>
                                 <li>
-                                    <a href="{{route("admin.viewSmp")}}">Lihat</a>
+                                    <a href="{{ route('admin.viewSmp') }}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -176,7 +177,7 @@
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="{{route("admin.viewPgtk")}}">Lihat</a>
+                                    <a href="{{ route('admin.viewPgtk') }}">Lihat</a>
                                 </li>
                             </ul>
                         </li>
@@ -208,7 +209,8 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="{{route("admin.dashboard")}}">Dashboard</a>
+                                        <li class="breadcrumb-item"><a
+                                                href="{{ route('admin.dashboard') }}">Dashboard</a>
                                         </li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Sekolah</a></li>
                                         <li class="breadcrumb-item active">View Sekolah</li>
@@ -238,7 +240,8 @@
                         </div>
                         <div class="card-box">
                             <div class="text-center">
-                                <img src="#.jpg" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
+                                <img src="#.jpg" class="rounded-circle avatar-lg img-thumbnail"
+                                    alt="profile-image">
                             </div>
 
                             <div class="row">
@@ -369,76 +372,83 @@
 
             </div> <!-- content -->
 
-            <h2>Peserta Didik</h2>
-            <div class="table-responsive">
-                <table class="table table-bordered toggle-circle mb-0" data-page-size="7">
-                    <tr>
-                        <th>#</th>
-                        <th>NISN</th>
-                        <th>Nama</th>
-                        <th>Kelas</th>
-                        <th>Tempat Lahir</th>
-                        <th>Tanggal Lahir</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Agama</th>
-                        <th>Action</th>
-
-                        <!-- Add other columns as needed -->
-                    </tr>
-                    @foreach($sekolah->pesertaDidik as $index => $peserta)
+            <div class="card-box">
+                <h2>Peserta Didik</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered toggle-circle mb-0" data-page-size="7">
                         <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $peserta->nisn }}</td>
-                            <td>{{ $peserta->nama }}</td>
-                            <td>{{ $peserta->tingkat_pendidikan }}</td>
-                            <td>{{ $peserta->tempat_lahir }}</td>
-                            <td>{{ $peserta->tanggal_lahir }}</td>
-                            <td>{{ $peserta->jenis_kelamin }}</td>
-                            <td>{{ $peserta->agama }}</td>
-                            <td><a href="{{ route('admin.showPesertadidik', ['sekolah_id' => $sekolah->sekolah_id, 'peserta_didik_id' => $peserta->peserta_didik_id]) }}"
-                                    class="badge badge-success">
-                                    <i class="mdi mdi-eye"></i> View
-                                </a>
-                            </td>
+                            <th>#</th>
+                            <th>NISN</th>
+                            <th>Nama</th>
+                            <th>Kelas</th>
+                            <th>Tempat Lahir</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Agama</th>
+                            <th>Action</th>
 
-                            <!-- Add other data fields as needed -->
+                            <!-- Add other columns as needed -->
                         </tr>
-                    @endforeach
-                </table>
-                <a href="{{ route('pesertadidik.create', $sekolah->sekolah_id) }}">Add New Peserta Didik</a>
+                        @foreach ($sekolah->pesertaDidik as $index => $peserta)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $peserta->nisn }}</td>
+                                <td>{{ $peserta->nama }}</td>
+                                <td>{{ $peserta->tingkat_pendidikan }}</td>
+                                <td>{{ $peserta->tempat_lahir }}</td>
+                                <td>{{ $peserta->tanggal_lahir }}</td>
+                                <td>{{ $peserta->jenis_kelamin }}</td>
+                                <td>{{ $peserta->agama }}</td>
+                                <td><a href="{{ route('admin.showPesertadidik', ['sekolah_id' => $sekolah->sekolah_id, 'peserta_didik_id' => $peserta->peserta_didik_id]) }}"
+                                        class="badge badge-success">
+                                        <i class="mdi mdi-eye"></i> View
+                                    </a>
+                                </td>
+
+                                <!-- Add other data fields as needed -->
+                            </tr>
+                        @endforeach
+                    </table>
+                    <a href="{{ route('pesertadidik.create', $sekolah->sekolah_id) }}">Add New Peserta Didik</a>
+                </div>
             </div>
+            <!-- End Card Box -->
 
-            <h2>PGTK</h2>
-            <div class="table-responsive">
-                <table class="table table-bordered toggle-circle mb-0" data-page-size="7">
-                    <tr>
-                        <th>#</th>
-                        <th>Nama</th>
-                        <th>NIP</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Status Kepegawaian</th>
-                        <th>Jenis PTK</th>
-                        <th>Agama</th>
-                        <th>Status Keaktifan</th>
-                        <th>No HP</th>
-                        <th>Email</th>
-                    </tr>
-                    @foreach($sekolah->ptk as $index => $ptk)
+            <div class="card-box">
+                <h2>PGTK</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered toggle-circle mb-0" data-page-size="7">
                         <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $ptk->nama }}</td>
-                            <td>{{ $ptk->nip }}</td>
-                            <td>{{ $ptk->jenis_kelamin }}</td>
-                            <td>{{ $ptk->status_kepegawaian }}</td>
-                            <td>{{ $ptk->jenis_ptk }}</td>
-                            <td>{{ $ptk->agama }}</td>
-                            <td>{{ $ptk->status_keaktifan }}</td>
-                            <td>{{ $ptk->no_hp }}</td>
-                            <td>{{ $ptk->email }}</td>
+                            <th>#</th>
+                            <th>Nama</th>
+                            <th>NIP</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Status Kepegawaian</th>
+                            <th>Jenis PTK</th>
+                            <th>Agama</th>
+                            <th>Status Keaktifan</th>
+                            <th>No HP</th>
+                            <th>Email</th>
                         </tr>
-                    @endforeach
-                </table>
-                <a href="{{ route('ptk.create', $sekolah->sekolah_id) }}">Add New ptgk</a>
+                        @foreach ($sekolah->ptk as $index => $ptk)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $ptk->nama }}</td>
+                                <td>{{ $ptk->nip }}</td>
+                                <td>{{ $ptk->jenis_kelamin }}</td>
+                                <td>{{ $ptk->status_kepegawaian }}</td>
+                                <td>{{ $ptk->jenis_ptk }}</td>
+                                <td>{{ $ptk->agama }}</td>
+                                <td>{{ $ptk->status_keaktifan }}</td>
+                                <td>{{ $ptk->no_hp }}</td>
+                                <td>{{ $ptk->email }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                    <button type="submit" class="btn btn-success">
+                        <a href="{{ route('ptk.create', $sekolah->sekolah_id) }}">Add New ptgk</a>
+                    </button>
+                </div>
             </div>
 
             <!-- Footer Start -->
