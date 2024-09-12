@@ -10,14 +10,13 @@ class SekolahImport implements ToModel
     public function model(array $row)
     {
         return new Sekolah([
-            'nama' => $row[0],
-            'npsn' => $row[1],
-            'bentuk_pendidikan' => $row[2],
-            'provinsi' => $row[3],
-            'kabupaten' => $row[4],
-            'kecamatan' => $row[5],
-            'a' => $row[6],
-            // 'akreditasi' => $row[7],
+            'nama' => $row[1],
+            'npsn' => $row[2],
+            'bentuk_pendidikan' => $row[3],
+            'provinsi' => $row[4],
+            'kabupaten' => $row[5],
+            'kecamatan' => $row[6],
+            'akreditasi' => $row[7],
             // 'rt' => $row[8],
             // 'rw' => $row[9],
             // 'nss' => $row[10],

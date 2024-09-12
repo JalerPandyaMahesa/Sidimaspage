@@ -15,9 +15,17 @@ class ptk extends Model
 
     // Define the fillable fields
     protected $fillable = [
-        'ptk_id', // Ensure that the UUID is fillable if set manually
-        'nama',
-        'sekolah_id' // Include sekolah_id as fillable
+        'sekolah_id', 'nama', 'nuptk', 'jk', 'tempat_lahir', 'tanggal_lahir', 
+        'nip', 'status_kepegawaian', 'jenis_ptk', 'agama', 'alamat_jalan', 
+        'rt', 'rw', 'nama_dusun', 'desa_kelurahan', 'kecamatan', 'kode_pos', 
+        'telepon', 'hp', 'email', 'tugas_tambahan', 'sk_cpns', 'tanggal_cpns', 
+        'sk_pengangkatan', 'tmt_pengangkatan', 'lembaga_pengangkatan', 
+        'pangkat_golongan', 'sumber_gaji', 'nama_ibu_kandung', 'status_perkawinan', 
+        'nama_suami_istri', 'nip_suami_istri', 'pekerjaan_suami_istri', 'tmt_pns', 
+        'sudah_lisensi_kepala_sekolah', 'pernah_diklat_kepengawasan', 'keahlian_braille', 
+        'keahlian_bahasa_isyarat', 'npwp', 'nama_wajib_pajak', 'kewarganegaraan', 
+        'bank', 'nomor_rekening_bank', 'rekening_atas_nama', 'nik', 'no_kk', 
+        'karpeg', 'karis_karsu', 'lintang', 'bujur', 'nuks' // Include sekolah_id as fillable
     ];
 
     // Disable timestamps if you don't have created_at and updated_at columns

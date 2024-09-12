@@ -258,7 +258,7 @@
                                                 <td>{{ $ptk->nama }}</td>
                                                 <td>{{ $ptk->nip }}</td>
                                                 <td>{{ $ptk->sekolah->nama }}</td></td>
-                                                <td>{{ $ptk->jenis_kelamin }}</td>
+                                                <td>{{ $ptk->jk }}</td>
                                                 <td>{{ $ptk->status_kepegawaian }}</td>
                                                 <td>{{ $ptk->jenis_ptk }}</td>
                                                 <td>{{ $ptk->agama }}</td>

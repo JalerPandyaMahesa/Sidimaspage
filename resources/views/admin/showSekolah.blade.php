@@ -239,15 +239,15 @@
                                     @method('DELETE')</i>Delete</a> -->
                         </div>
                         <div class="card-box">
-                            <div class="text-center">
+                            <!-- <div class="text-center">
                                 <img src="#.jpg" class="rounded-circle avatar-lg img-thumbnail"
                                     alt="profile-image">
-                            </div>
+                            </div> -->
 
                             <div class="row">
                                 <div class="col-md-6 mt-3">
-                                    <p class="text-muted mb-2 font-13"><strong>Sekolah ID :</strong> <span
-                                            class="ml-2">{{ $sekolah->sekolah_id }}</span></p>
+                                    <!-- <p class="text-muted mb-2 font-13"><strong>Sekolah ID :</strong> <span
+                                            class="ml-2">{{ $sekolah->sekolah_id }}</span></p> -->
                                     <p class="text-muted mb-2 font-13"><strong>NPSN :</strong> <span
                                             class="ml-2">{{ $sekolah->npsn }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Nama :</strong> <span
@@ -262,22 +262,22 @@
                                             class="ml-2">{{ $sekolah->rt }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>RW :</strong> <span
                                             class="ml-2">{{ $sekolah->rw }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>NSS :</strong> <span
-                                            class="ml-2">{{ $sekolah->nss }}</span></p>
+                                    <!-- <p class="text-muted mb-2 font-13"><strong>NSS :</strong> <span
+                                            class="ml-2">{{ $sekolah->nss }}</span></p> -->
                                     <p class="text-muted mb-2 font-13"><strong>Nama Dusun :</strong> <span
                                             class="ml-2">{{ $sekolah->nama_dusun }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Kode Wilayah :</strong> <span
+                                    <!-- <p class="text-muted mb-2 font-13"><strong>Kode Wilayah :</strong> <span
                                             class="ml-2">{{ $sekolah->kode_wilayah }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Kode Desa Kelurahan :</strong> <span
-                                            class="ml-2">{{ $sekolah->kode_desa_kelurahan }}</span></p>
+                                            class="ml-2">{{ $sekolah->kode_desa_kelurahan }}</span></p> -->
                                     <p class="text-muted mb-2 font-13"><strong>Desa Kelurahan :</strong> <span
                                             class="ml-2">{{ $sekolah->desa_kelurahan }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Kode Kecamatan :</strong> <span
+                                    <!-- <p class="text-muted mb-2 font-13"><strong>Kode Kecamatan :</strong> <span
                                             class="ml-2">{{ $sekolah->kode_kecamatan }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Kode Kabupaten :</strong> <span
                                             class="ml-2">{{ $sekolah->kode_kabupaten }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Kode Provinsi :</strong> <span
-                                            class="ml-2">{{ $sekolah->kode_provinsi }}</span></p>
+                                            class="ml-2">{{ $sekolah->kode_provinsi }}</span></p> -->
                                     <p class="text-muted mb-2 font-13"><strong>Kode Pos :</strong> <span
                                             class="ml-2">{{ $sekolah->kode_pos }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Lintang :</strong> <span
@@ -286,14 +286,14 @@
                                             class="ml-2">{{ $sekolah->bujur }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Nomor Telepon :</strong> <span
                                             class="ml-2">{{ $sekolah->nomor_telepon }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Nomor Fax :</strong> <span
-                                            class="ml-2">{{ $sekolah->nomor_fax }}</span></p>
+                                    <!-- <p class="text-muted mb-2 font-13"><strong>Nomor Fax :</strong> <span
+                                            class="ml-2">{{ $sekolah->nomor_fax }}</span></p> -->
                                     <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span
                                             class="ml-2">{{ $sekolah->email }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Website :</strong> <span
                                             class="ml-2">{{ $sekolah->website }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Kebutuhan Khusus :</strong> <span
-                                            class="ml-2">{{ $sekolah->kebutuhan_khusus }}</span></p>
+                                    <!-- <p class="text-muted mb-2 font-13"><strong>Kebutuhan Khusus :</strong> <span
+                                            class="ml-2">{{ $sekolah->kebutuhan_khusus }}</span></p> -->
                                     <p class="text-muted mb-2 font-13"><strong>SK Pendirian Sekolah :</strong> <span
                                             class="ml-2">{{ $sekolah->sk_pendirian_sekolah }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Tanggal SK Pendirian :</strong> <span
@@ -327,7 +327,7 @@
                                             class="ml-2">{{ $sekolah->keaktifan }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Flag :</strong> <span
                                             class="ml-2">{{ $sekolah->flag }}</span></p>
-                                    <p class="text-muted mb-2 font-13"><strong>Wilayah Terpencil :</strong> <span
+                                    <!-- <p class="text-muted mb-2 font-13"><strong>Wilayah Terpencil :</strong> <span
                                             class="ml-2">{{ $sekolah->wilayah_terpencil }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Wilayah Perbatasan :</strong> <span
                                             class="ml-2">{{ $sekolah->wilayah_perbatasan }}</span></p>
@@ -338,7 +338,7 @@
                                     <p class="text-muted mb-2 font-13"><strong>Wilayah Bencana Alam :</strong> <span
                                             class="ml-2">{{ $sekolah->wilayah_bencana_alam }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Wilayah Bencana Sosial :</strong> <span
-                                            class="ml-2">{{ $sekolah->wilayah_bencana_sosial }}</span></p>
+                                            class="ml-2">{{ $sekolah->wilayah_bencana_sosial }}</span></p> -->
                                     <p class="text-muted mb-2 font-13"><strong>Partisipasi BOS :</strong> <span
                                             class="ml-2">{{ $sekolah->partisipasi_bos }}</span></p>
                                     <p class="text-muted mb-2 font-13"><strong>Waktu Penyelenggaraan :</strong> <span
@@ -435,7 +435,7 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $ptk->nama }}</td>
                             <td>{{ $ptk->nip }}</td>
-                            <td>{{ $ptk->jenis_kelamin }}</td>
+                            <td>{{ $ptk->jk }}</td>
                             <td>{{ $ptk->status_kepegawaian }}</td>
                             <td>{{ $ptk->jenis_ptk }}</td>
                             <td>{{ $ptk->agama }}</td>
