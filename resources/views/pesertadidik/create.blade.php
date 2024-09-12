@@ -231,24 +231,26 @@
                                     <h2></h2>
                                     <!-- <h4 class="header-title">Fill all fields</h4> -->
                                     <!--Create Peserta Didik Form-->
-                                    <form
-                                        action="{{ isset($pesertadidik) ? route('pesertadidik.update', $pesertadidik->peserta_didik_id) : route('pesertadidik.store') }}"
-                                        method="POST">
+                                    <form action="{{ isset($pesertadidik) ? route('pesertadidik.update', $pesertadidik->peserta_didik_id) : route('pesertadidik.store') }}" method="POST">
                                         @csrf
                                         @if (isset($pesertadidik))
                                             @method('PUT')
                                         @endif
-
-                                        <label for="nama">Nama:</label>
-                                        <input type="text" id="nama" name="nama"
-                                            value="{{ isset($pesertadidik) ? $pesertadidik->nama : '' }}"
-                                            required><br>
-
+                                    
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="nama" class="col-form-label">Nama:</label>
+                                                <input type="text" id="nama" name="nama" class="form-control"
+                                                    value="{{ isset($pesertadidik) ? $pesertadidik->nama : '' }}" required>
+                                            </div>
+                                        </div>
+                                    
                                         <input type="hidden" name="sekolah_id" value="{{ $sekolah_id }}">
-
-                                        <button
-                                            type="submit">{{ isset($pesertadidik) ? 'Update' : 'Create' }}</button>
-                                    </form>
+                                    
+                                        <button type="submit" class="btn btn-success">
+                                            {{ isset($pesertadidik) ? 'Update' : 'Create' }}
+                                        </button>
+                                    </form>                                    
                                     <!--End Create Peserta Didik Form-->
                                 </div> <!-- end card-body -->
                             </div> <!-- end card-->

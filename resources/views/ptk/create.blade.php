@@ -232,17 +232,24 @@
                                     <!--Create Ptk Form-->
                                     <form action="{{ isset($ptk) ? route('ptk.update', $ptk->ptk_id) : route('ptk.store') }}" method="POST">
                                         @csrf
-                                        @if(isset($ptk))
+                                        @if (isset($ptk))
                                             @method('PUT')
                                         @endif
-                                
-                                        <label for="nama">Nama:</label>
-                                        <input type="text" id="nama" name="nama" value="{{ isset($ptk) ? $ptk->nama : '' }}" required><br>
-                                
+                                    
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="nama" class="col-form-label">Nama:</label>
+                                                <input type="text" id="nama" name="nama" class="form-control"
+                                                    value="{{ isset($ptk) ? $ptk->nama : '' }}" required>
+                                            </div>
+                                        </div>
+                                    
                                         <input type="hidden" name="sekolah_id" value="{{ $sekolah_id }}">
-                                
-                                        <button type="submit">{{ isset($ptk) ? 'Update' : 'Create' }}</button>
-                                    </form>
+                                    
+                                        <button type="submit" class="btn btn-success">
+                                            {{ isset($ptk) ? 'Update' : 'Create' }}
+                                        </button>
+                                    </form>                                    
                                     <!--End Create Ptk Form-->
                                 </div> <!-- end card-body -->
                             </div> <!-- end card-->
