@@ -204,10 +204,10 @@
                                                 href="{{ route('admin.dashboard') }}">Dashboard</a>
                                         </li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Sekolah</a></li>
-                                        <li class="breadcrumb-item active">Add Peserta Didik</li>
+                                        <li class="breadcrumb-item active">Create Peserta Didik</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Input Peserta Didik</h4>
+                                <h4 class="page-title">Create Peserta Didik Details</h4>
                             </div>
                         </div>
                     </div>
@@ -270,7 +270,6 @@
                         <div class="col-md-12">
                             2024 &copy; SIDIMAS</a>
                         </div>
-
                     </div>
                 </div>
             </footer>

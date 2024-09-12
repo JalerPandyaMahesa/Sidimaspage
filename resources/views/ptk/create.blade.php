@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Peserta Didik</title>
+    <title>SIDIMAS</title>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="MartDevelopers" name="author" />
@@ -204,10 +204,10 @@
                                                 href="{{ route('admin.dashboard') }}">Dashboard</a>
                                         </li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Sekolah</a></li>
-                                        <li class="breadcrumb-item active">Add PGTK</li>
+                                        <li class="breadcrumb-item active">Create PTK</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Input PGTK</h4>
+                                <h4 class="page-title">Create PTK Details</h4>
                             </div>
                         </div>
                     </div>
