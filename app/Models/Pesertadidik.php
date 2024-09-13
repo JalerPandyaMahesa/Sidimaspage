@@ -16,14 +16,18 @@ class Pesertadidik extends Model
 
     // Define the fillable fields
     protected $fillable = [
-        'peserta_didik_id', // Ensure that the UUID is fillable if set manually
+        'peserta_didik_id',
         'nama',
         'nisn',
         'nik',
         'no_kk',
         'tempat_lahir',
-        'sekolah_id' // Include sekolah_id as fillable
+        'tanggal_lahir',
+        'jenis_kelamin',
+        'agama',
+        'sekolah_id'
     ];
+    
 
     // Disable timestamps if you don't have created_at and updated_at columns
     public $timestamps = false;
