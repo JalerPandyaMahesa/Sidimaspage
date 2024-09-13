@@ -215,7 +215,7 @@
 
                     <div class="row">
                         <!--Start Out-->
-                        <div class="col-md-6 col-xl-6">
+                        <div class="col-md-6 col-xl-12">
                             <div class="widget-rounded-circle card-box">
                                 <div class="row">
                                     <div class="col-6">
@@ -223,7 +223,7 @@
                                             <i class="font-22 avatar-title text-primary"></i>
                                             IMAGE SAJA
                                         </div> -->
-                                        <img src="{{ asset('img/Asset/p&d.png') }}" style="width:50%">
+                                        <img src="{{ asset('img/Asset/p&d.png') }}" style="width:35%">
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
@@ -239,7 +239,7 @@
 
 
                         <!--Start -->
-                        <div class="col-md-6 col-xl-6">
+                        <div class="col-md-6 col-xl-12">
                             <div class="widget-rounded-circle card-box">
                                 <div class="row">
                                     <div class="col-6">
@@ -247,7 +247,7 @@
                                             <i class="font-22 avatar-title text-primary"></i>
                                             IMAGE SAJA
                                         </div> -->
-                                        <img src="{{ asset('img/Asset/sd.png') }}" style="width:50%">
+                                        <img src="{{ asset('img/Asset/sd.png') }}" style="width:35%">
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
@@ -270,7 +270,7 @@
                     <div class="row">
 
                         <!--Start -->
-                        <div class="col-md-6 col-xl-6">
+                        <div class="col-md-6 col-xl-12">
                             <div class="widget-rounded-circle card-box">
                                 <div class="row">
                                     <div class="col-6">
@@ -278,7 +278,7 @@
                                             <i class="font-22 avatar-title text-primary"></i>
                                             IMAGE SAJA
                                         </div> -->
-                                        <img src="{{ asset('img/Asset/pgtk.png') }}" style="width:30%">
+                                        <img src="{{ asset('img/Asset/pgtk.png') }}" style="width:15%">
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
@@ -290,7 +290,9 @@
                             </div> <!-- end widget-rounded-circle-->
                         </div> <!-- end col-->
                         <!--End -->
-                        <div class="col-md-6 col-xl-6">
+
+                        <div></div>
+                        <div class="col-md-6 col-xl-12">
                             <div class="widget-rounded-circle card-box">
                                 <div class="row">
                                     <div class="col-6">
@@ -298,7 +300,7 @@
                                             <i class="font-22 avatar-title text-primary"></i>
                                             IMAGE SAJA
                                         </div> -->
-                                        <img src="{{ asset('img/Asset/smp.png') }}" style="width:50%">
+                                        <img src="{{ asset('img/Asset/smp.png') }}" style="width:35%">
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
@@ -313,7 +315,7 @@
                     </div>
 
                     <!--Bawah-->
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-xl-12">
                             <div class="card-box">
                                 <h4 class="header-title mb-3">Lorem Ipsum</h4>
@@ -354,8 +356,8 @@
                                     </table>
                                 </div>
                             </div>
-                        </div> <!-- end col -->
-                    </div>
+                        </div> 
+                    </div> -->
                     <!-- end row -->
 
                 </div> <!-- container -->
