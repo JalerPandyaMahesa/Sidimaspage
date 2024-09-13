@@ -194,17 +194,19 @@ class PesertadidikController extends Controller
         return redirect()->route('pesertadidik.index')->with('success', 'Pesertadidik deleted successfully.');
     }
 
-    public function import(Request $request, Sekolah $sekolah)
+    public function import(Request $request, $sekolah_id)
     {
         // Validasi file yang diunggah
         $request->validate([
-            'file' => 'required|mimes:xlsx,xls,csv',
+            'file' => 'required|mimes:xlsx,xls',
         ]);
 
-        // Proses impor dengan Laravel Excel
-        Excel::import(new PesertaDidikImport($sekolah->sekolah_id), $request->file('file'));
+        // Lakukan proses import
+        Excel::import(new PesertaDidikImport($sekolah_id), $request->file('file'));
 
-        return redirect()->route('admin.dashboard', $sekolah->sekolah_id)->with('success', 'Peserta Didik berhasil diimpor');
+        // Redirect atau berikan response setelah import
+        return redirect()->route('admin.dashboard', $sekolah_id)->with('success', 'Data Peserta Didik berhasil diimpor.');
     }
+
 
 }

@@ -16,7 +16,7 @@ class Pesertadidik extends Model
 
     // Define the fillable fields
     protected $fillable = [
-        'peserta_didik_id', // Ensure that the UUID is fillable if set manually
+        'peserta_didik_id',
         'nama',
         'nisn',
         'nik',
