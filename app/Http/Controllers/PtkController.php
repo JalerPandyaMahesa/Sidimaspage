@@ -33,7 +33,8 @@ class PtkController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required|string|max:255',
-            'sekolah_id' => 'required|exists:sekolah,sekolah_id' // Corrected validation rule
+            'sekolah_id' => 'required|exists:sekolah,sekolah_id',
+            'nama_suami_istri' => '' // Corrected validation rule
         ]);
 
         ptk::create($validatedData);

@@ -99,7 +99,7 @@ class PesertadidikController extends Controller
             'nama_wali' => 'nullable|string|max:255',
             'tahun_lahir_wali' => '' ,
             'nipd' => 'nullable|string|max:20',
-            'tanggal_masuk_sekolah' => 'required|date',
+            'tanggal_masuk_sekolah' => 'nullable|date',
             'kebutuhan_khusus_id' => 'nullable|integer',
             'jenis_tinggal_id' => 'nullable|integer',
             'alat_transportasi_id' => 'nullable|integer',
