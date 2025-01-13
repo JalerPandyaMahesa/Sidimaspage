@@ -269,8 +269,8 @@
                             <div class="school-box">
                                 <h3>Sekolah Dasar</h3>
                                 <p class="jmlh-sklh">{{ $totalSd }}</p>
-                                <p class="status_sekolah">Negeri : {{ $tTkn }}</p>
-                                <p class="status_sekolah">Swasta : {{ $tTks }}</p>
+                                <p class="status_sekolah">Negeri : {{ $tSdn }}</p>
+                                <p class="status_sekolah">Swasta : {{ $tSds }}</p>
                             </div>
                         </div>
                         <div class="grid-item">
