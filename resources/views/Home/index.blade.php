@@ -269,8 +269,8 @@
                             <div class="school-box">
                                 <h3>Sekolah Dasar</h3>
                                 <p class="jmlh-sklh">{{ $totalSd }}</p>
-                                <p class="status_sekolah">Negeri : {{ $tTkn }}</p>
-                                <p class="status_sekolah">Swasta : {{ $tTks }}</p>
+                                <p class="status_sekolah">Negeri : {{ $tSdn }}</p>
+                                <p class="status_sekolah">Swasta : {{ $tSds }}</p>
                             </div>
                         </div>
                         <div class="grid-item">
@@ -307,6 +307,30 @@
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Grafik Siswa</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="isi-text-grafik">
+                            <p class="isi-text-kepala">Grafik Sekolah</p>
+                            <p class="isi-text-badan">Grafik sekolah adalah visualisasi data yang menggambarkan
+                                berapa banyak sekolah yang terdaftar di kabupaten banyumas. </p>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="grafik-isi justify-content-center align-items-center">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Grafik Sekolah</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">

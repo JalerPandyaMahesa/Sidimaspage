@@ -10,6 +10,52 @@
     <meta content="MartDevelopers" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <style>
+    /* Styling untuk modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 50%;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .close-btn {
+      background-color: #ff5c5c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button#openModal {
+  width: 80px; /* Lebar tombol */
+  height: 50px; /* Tinggi tombol */
+  font-size: 10px; /* Ukuran teks */
+  padding: 10px; /* Padding dalam tombol */
+  border-radius: 5px; /* Sudut melengkung tombol */
+}
+
+    .close-btn:hover {
+      background-color: #ff3232;
+
+    }
+  </style>
     <!-- App favicon -->
     <link rel="shortcut icon" href=" {{ asset('img/Asset/favicon.ico') }} ">
 
@@ -228,6 +274,47 @@
                                         </div>
                                         
                                     </form>
+
+                                    <button class="col-form-label" id="openModal">Panduan Import</button>
+                                    <button class="col-form-label" id="openModal">Unduh Template</button>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h2>Panduan Import</h2>
+      <p>Berikut adalah panduan untuk mengimport data:</p>
+      <ul>
+        <li>Gunakan format Excel (.xlsx atau .csv).</li>
+        <li>Pastikan kolom-kolom sesuai dengan template yang diberikan.</li>
+        <li>Periksa data sebelum melakukan upload untuk memastikan kevalidannya.</li>
+      </ul>
+      <button class="close-btn" id="closeModal">Tutup</button>
+    </div>
+  </div>
+
+  <script>
+    // Ambil elemen
+    const openModal = document.getElementById('openModal');
+    const closeModal = document.getElementById('closeModal');
+    const modal = document.getElementById('myModal');
+
+    // Event listener untuk membuka modal
+    openModal.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+
+    // Event listener untuk menutup modal
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // Klik di luar modal untuk menutupnya
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
 
                                     <div class="pt-3" >
 

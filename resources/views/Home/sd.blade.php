@@ -142,6 +142,7 @@
 
                             <div class="table-responsive">
                                 <button id="export-button" class="btn btn-primary mb-3">Export to Excel</button>
+                                <button id="format-export" class="btn btn-primary mb-3">Format Export</button>
                                 <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0"
                                     data-page-size="7">
                                     <thead>
